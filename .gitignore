@@ -12,3 +12,6 @@ $RECYCLE.BIN/
 
 # Node.js
 node_modules/
+
+# key
+tcb_custom_login_key(petpanel-5g9bjtoxf9c9c11c).json
