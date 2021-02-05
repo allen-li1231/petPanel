@@ -1,3 +1,6 @@
 {
-    "navigationBarTitleText": "小程序官方组件展示"
+    "usingComponents": {
+        "search-bar": "../API/components/search-bar/search-bar"
+      },
+    "navigationBarTitleText": "知萌"
 }

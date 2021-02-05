@@ -1,11 +1,18 @@
 Page({
   onShow() {
-    wx.reportAnalytics('enter_home_programmatically', {})
+    wx.getSystemInfo({
+      success: (res) => {
+         wx.reportAnalytics('visit_report', {
+            time_stamp: JSON.stringify(new Date()),
+            system: JSON.stringify(res)
+         })
+       }
+      })
   },
   onShareAppMessage() {
     return {
-      title: '小程序官方组件展示',
-      path: 'page/component/index'
+      title: '知萌',
+      path: 'page/homePage/index'
     }
   },
 

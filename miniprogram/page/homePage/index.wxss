@@ -1,6 +1,21 @@
 @import "../common/index.wxss";
 
-.weui-agree__link {
-  display: inline;
-  color: var(--weui-LINK);
+.flex-wrp{
+  margin-bottom: 2.5%;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.flex-item{
+  display: flex;
+  padding: 7.725% 0;
+  height: 0;
+  width: 22%;
+  align-items: center;
+  justify-content: center;
+  color: #353535;
+  background-color: #F1F1F1;
+  border-radius: 10%;
+  border: 1px solid #353535;
 }

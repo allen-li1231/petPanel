@@ -1,5 +1,5 @@
 .index-hd {
-  padding: 40px 40px 20px;
+  padding: 40px 40px 10px;
   text-align: center;
 }
 .index-bd {
@@ -13,8 +13,9 @@
 .index-logo {
   /* width: 43px;
   height: 43px; */
-  width: 43px;
-  height: 43px;
+  width: 90px;
+  height: 90px;
+  border-radius: 100%;
 }
 .index-desc {
   margin-top: 10px;
@@ -93,9 +94,14 @@
 
 .kind-list-item {
   /* margin: 10px 0; */
+  width: 95%;
+  align-items: center;
+  justify-content: space-evenly;
+  display: flex;
+  flex: 1;
   margin: 10px 0;
   background-color: var(--weui-BG-2);
-  border-radius: 2px;
+  border-radius: 10%;
   overflow: hidden;
 }
 .kind-list-item:first-child {
