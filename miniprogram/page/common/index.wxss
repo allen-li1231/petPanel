@@ -91,6 +91,10 @@
   right: 14px;
 }
 
+.btn-area-img {
+  width: 45px;
+  height: 60px;
+}
 
 .kind-list-item {
   /* margin: 10px 0; */

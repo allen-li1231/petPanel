@@ -8,18 +8,14 @@
       <view class="index-desc">Welcome to PetPanel, here we provide various of medical services for your beloved pets.</view>
     </view>
     <view class="btn-area">
-      <view class="flex-wrp">
-        <view class="flex-item">疫苗接种</view>
-        <view class="flex-item">绝育</view>
-        <view class="flex-item">体检</view>
-        <view class="flex-item">普通问诊</view>
-      </view>
-      <view class="flex-wrp">
-        <view class="flex-item">办狗证</view>
-        <view class="flex-item">待定</view>
-        <view class="flex-item">待定</view>
-        <view class="flex-item">待定</view>
-      </view>
+      <block wx:for="{{navBtnLst}}">
+        <view class="flex-wrp">
+          <navigator wx:for="{{item}}" wx:for-item="navBtn" class="flex-item" url="pages/{{navBtn.page}}/index">
+            <image class="kind-list-img" src="resources/kind/{{navBtn.page}}.png"></image>
+            <view class="navigator-text">{{navBtn.name}}</view>
+          </navigator>
+        </view>
+      </block>
     </view>
     <view class="page-section-spacing">
       <search-bar placeholder="请输入关键字" bind:handleSearch="handleSearch"></search-bar>

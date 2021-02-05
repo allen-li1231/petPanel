@@ -171,10 +171,11 @@ input {
 
 /* widget */
 .btn-area{
-  margin-top: 30px;
   box-sizing: border-box;
-  width: 100%;
-  padding: 0 15px;
+  width: 92.5%;
+  padding: 5px 5px;
+  background-color: #F1F1F1;
+  border-radius: 10%;
 }
 
 .image-plus {
