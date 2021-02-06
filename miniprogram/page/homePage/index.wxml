@@ -1,4 +1,5 @@
 <import src="../../common/foot.wxml" />
+<import src="../../common/head.wxml" />
 
 
 <view class="container">
