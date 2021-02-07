@@ -137,8 +137,8 @@
       },
       {
         "pagePath": "page/discover/index",
-        "iconPath": "@iconPathComponent",
-        "selectedIconPath": "@selectedIconPathComponent",
+        "iconPath": "@iconPathCloud",
+        "selectedIconPath": "@selectedIconPathCloud",
         "text": "发现"
       },
       {
