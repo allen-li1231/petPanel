@@ -1,6 +1,0 @@
-{
-    "usingComponents": {
-        "search-bar": "../API/components/search-bar/search-bar"
-      },
-    "navigationBarTitleText": "知萌"
-}
