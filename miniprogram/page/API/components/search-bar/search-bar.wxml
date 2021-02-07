@@ -11,12 +11,6 @@
       class="input"
       confirm-type="search"
     ></input>
-    <image
-     wx:if="{{inputValue}}" 
-     bindtap="handleDeleteClick"
-     src="../../assets/images/delete-circle.png" 
-     class="delete-icon"
-    ></image>
   </view>
   <view wx:if="{{inputValue}}" bindtap="handleTextbtnClick" class="text-btn">取消</view>
 </view>
