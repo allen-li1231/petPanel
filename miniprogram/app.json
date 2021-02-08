@@ -7,8 +7,7 @@
     "page/homePage/pages/sterilization/index",
     "page/homePage/pages/physical-examination/index",
     "page/homePage/pages/general-clinic/index",
-    "page/homePage/pages/dog-license/index",
-    "page/API/components/search-bar/search-bar"
+    "page/homePage/pages/dog-license/index"
   ],
   "subpackages": [
     {

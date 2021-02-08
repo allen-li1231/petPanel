@@ -1,7 +1,7 @@
 <!--page/API/components/search-bar/search-bar.wxml-->
 <view class="searchbar">
   <view class="content">
-    <image src="../../resources/kind/search.png" class="search-icon"></image>
+    <image src="./search.png" class="search-icon"></image>
     <input
       bindinput="handleInput"
       bindconfirm="handleConfirm"
@@ -11,12 +11,6 @@
       class="input"
       confirm-type="search"
     ></input>
-    <image
-     wx:if="{{inputValue}}" 
-     bindtap="handleDeleteClick"
-     src="../../assets/images/delete-circle.png" 
-     class="delete-icon"
-    ></image>
   </view>
   <view wx:if="{{inputValue}}" bindtap="handleTextbtnClick" class="text-btn">取消</view>
 </view>
