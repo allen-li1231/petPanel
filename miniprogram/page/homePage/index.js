@@ -20,7 +20,7 @@ Page({
     navBtnLst: [
       [
         {
-          name: '疫苗接种',
+          name: '打疫苗',
           page: 'vaccination'
         },
         {
@@ -32,7 +32,7 @@ Page({
           page: 'physical-examination'
         },
         {
-          name: '普通问诊',
+          name: '看病',
           page: 'general-clinic'
         },
       ], 
@@ -42,8 +42,8 @@ Page({
           page: 'dog-license'
         },
         {
-          name: '待定',
-          page: 'tt'
+          name: '美容',
+          page: 'cosmetology'
         },
         {
           name: '待定',
