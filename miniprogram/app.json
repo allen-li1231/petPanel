@@ -154,17 +154,6 @@
     "uploadFile": 10000,
     "downloadFile": 10000
   },
-  "navigateToMiniProgramAppIdList": [
-    "wx4f1b24bdc99fa23b"
-  ],
-  "workers": "workers",
-  "debug": false,
-  "style": "v2",
-  "permission": {
-    "scope.userLocation": {
-      "desc": "你的位置信息将用于医院的筛选功能"
-    }
-  },
   "cloud": true,
   "sitemapLocation": "sitemap.json",
   "themeLocation": "theme.json",
