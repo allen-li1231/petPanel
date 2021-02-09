@@ -7,7 +7,11 @@
     "page/homePage/pages/sterilization/index",
     "page/homePage/pages/physical-examination/index",
     "page/homePage/pages/general-clinic/index",
-    "page/homePage/pages/dog-license/index"
+    "page/homePage/pages/dog-license/index",
+    "page/userHome/pages/favorites/index",
+    "page/userHome/pages/petview/index",
+    "page/userHome/pages/petadd/index",
+    "page/userHome/pages/profile/index"
   ],
   "subpackages": [
     {

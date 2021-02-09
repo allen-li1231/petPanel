@@ -1,4 +1,4 @@
-// page/userHome/pages/pet/index.js
+// page/userHome/pages/petadd/index.js
 Page({
 
   /**
