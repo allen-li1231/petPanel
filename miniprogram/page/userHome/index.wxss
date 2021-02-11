@@ -15,16 +15,9 @@
 .userinfo-nickname {
   color: #aaa;
 }
-.kind-list-item {
-  /* margin: 10px 0; */
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  justify-content: space-evenly;
-  display: flex;
+.kind-list-text{
   flex: 1;
   margin: 10px 0;
-  background-color: var(--weui-BG-2);
-  border-radius: 10%;
+  border-radius: 2px;
   overflow: hidden;
 }

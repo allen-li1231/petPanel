@@ -16,11 +16,9 @@
   <view class="index-bd">
     <view class="kind-list">
       <block wx:for-items="{{List}}">
-        <view class="kind-list-item">
           <navigator url="pages/{{item.page}}/index" class="navigator">
             <view class="kind-list-text">{{item.name}}</view>
           </navigator>
-        </view>
       </block>
     </view>
   </view>
