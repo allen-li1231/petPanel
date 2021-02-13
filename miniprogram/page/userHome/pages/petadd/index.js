@@ -10,23 +10,6 @@ CustomPage({
     data: {
         showTopTips: false,
 
-        radioItems: [
-            {name: 'cell standard', value: '0', checked: true},
-            {name: 'cell standard', value: '1'}
-        ],
-        checkboxItems: [
-            {name: 'standard is dealt for u.', value: '0', checked: true},
-            {name: 'standard is dealicient for u.', value: '1'}
-        ],
-        items: [
-            {name: 'USA', value: '美国'},
-            {name: 'CHN', value: '中国', checked: 'true'},
-            {name: 'BRA', value: '巴西'},
-            {name: 'JPN', value: '日本'},
-            {name: 'ENG', value: '英国'},
-            {name: 'TUR', value: '法国'},
-        ],
-
         date: "2016-09-01",
         time: "12:01",
 
@@ -34,73 +17,24 @@ CustomPage({
         kind: ["猫", "狗"],
         kindIndex: 0,
 
-        history: ["无", "还没想好"],
-        historyIndex: 0,
-
-        isAgree: false,
-        formData: {
+        sterilization: ["暂未绝育", "怀孕中","已绝育"],
+        sterilizationIndex: 0,
+        
+        health: ["良好", "轻微皮肤病", "有"],
+        healthIndex: 0,
+        
+        vaccination: "2021-02-13"
 
         },
         rules: [{
-            name: 'radio',
-            rules: {required: false, message: '单选列表是必选项'},
-        }, {
-            name: 'checkbox',
-            rules: {required: true, message: '多选列表是必选项'},
-        }, {
             name: 'name',
             rules: {required: true, message: '请输入姓名'},
-        }, {
-            name: 'qq',
-            rules: {required: true, message: 'qq必填'},
-        }, {
-            name: 'mobile',
-            rules: [{required: true, message: 'mobile必填'}, {mobile: true, message: 'mobile格式不对'}],
-        }, {
-            name: 'vcode',
-            rules: {required: true, message: '验证码必填'},
-        }, {
-            name: 'idcard',
-            rules: {validator: function(rule, value, param, modeels) {
-                if (!value || value.length !== 18) {
-                    return 'idcard格式不正确'
-                }
-            }},
-        }]
-    },
-    radioChange: function (e) {
-        console.log('radio发生change事件，携带value值为：', e.detail.value);
-
-        var radioItems = this.data.radioItems;
-        for (var i = 0, len = radioItems.length; i < len; ++i) {
-            radioItems[i].checked = radioItems[i].value == e.detail.value;
+        },
+        {
+            name: 'gender',
+            rules:{required: true, message:'请填写宠物性别'},
         }
-
-        this.setData({
-            radioItems: radioItems,
-            [`formData.radio`]: e.detail.value
-        });
-    },
-    checkboxChange: function (e) {
-        console.log('checkbox发生change事件，携带value值为：', e.detail.value);
-
-        var checkboxItems = this.data.checkboxItems, values = e.detail.value;
-        for (var i = 0, lenI = checkboxItems.length; i < lenI; ++i) {
-            checkboxItems[i].checked = false;
-
-            for (var j = 0, lenJ = values.length; j < lenJ; ++j) {
-                if(checkboxItems[i].value == values[j]){
-                    checkboxItems[i].checked = true;
-                    break;
-                }
-            }
-        }
-
-        this.setData({
-            checkboxItems: checkboxItems,
-            [`formData.checkbox`]: e.detail.value
-        });
-    },
+    ],
     bindDateChange: function (e) {
         this.setData({
             date: e.detail.value,
@@ -125,17 +59,25 @@ CustomPage({
             kindIndex: e.detail.value
         })
     },
-    bindhistoryChange: function(e) {
-        console.log('picker history 发生选择改变，携带值为', e.detail.value);
+    bindsterilizationChange: function(e) {
+        console.log('picker sterilization 发生选择改变，携带值为', e.detail.value);
 
         this.setData({
-            historyIndex: e.detail.value
+            sterilizationIndex: e.detail.value
         })
     },
-    bindAgreeChange: function (e) {
+    bindhealthChange: function(e) {
+        console.log('picker health 发生选择改变，携带值为', e.detail.value);
+
         this.setData({
-            isAgree: !!e.detail.value.length
-        });
+            healthIndex: e.detail.value
+        })
+    },
+    bindVaccinationchange: function (e) {
+        this.setData({
+            vaccination: e.detail.value,
+            [`formData.vaccination`]: e.detail.value
+        })
     },
     submitForm() {
         this.selectComponent('#form').validate((valid, errors) => {
@@ -150,7 +92,7 @@ CustomPage({
                 }
             } else {
                 wx.showToast({
-                    title: '校验通过'
+                    title: '保存成功'
                 })
             }
         })

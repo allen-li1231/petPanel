@@ -12,7 +12,7 @@
                         <view class="weui-input">{{date}}</view>
                     </picker>
                 </mp-cell>
-                <mp-cell prop="page-section-title" title="性别" >
+                <mp-cell prop="gender" title="性别" >
                     <radio-group name="radio">
                         <label>
                             <radio value="radio1" />男</label>
@@ -29,21 +29,20 @@
                         <view class="weui-select">{{kind[kindIndex]}}</view>
                     </picker>
                 </mp-cell>
-                <mp-cell prop="history" ext-class="" title="重大疾病史">
-                    <picker bindchange="bindhistoryChange" value="{{historyIndex}}" range="{{history}}">
-                        <view class="weui-select">{{history[historyIndex]}}</view>
+                <mp-cell ext-class="weui-cell_select weui-cell_select-after">
+                    <view slot="title" class="weui-label">绝育情况</view>
+                    <picker bindchange="bindsterilizationChange" value="{{sterilizationIndex}}" range="{{sterilization}}">
+                        <view class="weui-select">{{sterilization[sterilizationIndex]}}</view>
                     </picker>
-                        </mp-cell>
+                </mp-cell>
+                <mp-cell prop="vaccination" title="最近疫苗时间" ext-class="">
+                    <picker data-field="vaccination" mode="date" value="{{vaccination}}" start="2000-09-01" end="2022-01-01"
+                        bindchange="bindVaccinationchange">
+                        <view class="weui-input">{{vaccination}}</view>
+                    </picker>
+                </mp-cell>
             </mp-cells>
         </mp-form>
-
-        <checkbox-group slot="tips" bindchange="bindAgreeChange">
-            <label class="weui-agree">
-                <checkbox class="weui-agree__checkbox-check" />
-                <text class="weui-agree__checkbox"></text>
-                <view class="weui-agree__text">阅读并同意<navigator>《相关条款》</navigator></view>
-            </label>
-        </checkbox-group>
         <view slot="button">
             <button class="weui-btn" type="primary" bindtap="submitForm">确定</button>
         </view>
