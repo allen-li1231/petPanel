@@ -1,0 +1,17 @@
+<!--page/userHome/pages/petview/birth/index.wxml-->
+<view class="container">
+  <view class="page-body">
+    <view class="page-section">
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <mp-cell prop="date" title="生日" ext-class="">
+            <picker data-field="date" mode="date" value="{{date}}" start="1980-09-01" end="2022-01-01"
+              bindchange="bindDateChange">
+              <view class="weui-input">{{date}}</view>
+            </picker>
+          </mp-cell>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

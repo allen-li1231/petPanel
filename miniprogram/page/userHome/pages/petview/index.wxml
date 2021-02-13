@@ -1,31 +1,19 @@
 <view class="page" data-weui-theme="{{theme}}">
     <view class="page__bd">
         <mp-cells ext-class="my-cells" title="基本信息">
-          <mp-cell>
-                <view>宠物</view>
-                <view slot="footer">名字</view>
+            <mp-cell link url="/page/userHome/pages/petview/petname/index" value="名字" footer="DefaultValue">
             </mp-cell>
-            <mp-cell>
-                <view>年龄</view>
-                <view slot="footer">现在时间-生日</view>
+            <mp-cell link url="/page/userHome/pages/petview/birth/index" value="生日" footer="DefaultValue">
             </mp-cell>
-            <mp-cell>
-                <view>性别</view>
-                <view slot="footer">男or女</view>
+            <mp-cell link url="/page/userHome/pages/petview/gender/index" value="性别" footer="DefaultValue">
             </mp-cell>
         </mp-cells>
         <mp-cells>
-          <mp-cell>
-                <view>种类</view>
-                <view slot="footer">猫or狗</view>
+            <mp-cell link url="/page/userHome/pages/petview/kind/index" value="种类" footer="DefaultValue">
             </mp-cell>
-            <mp-cell>
-                <view>绝育情况</view>
-                <view slot="footer">不知道</view>
+            <mp-cell link url="/page/userHome/pages/petview/sterilization/index" value="绝育情况" footer="DefaultValue">
             </mp-cell>
-            <mp-cell>
-                <view>上次疫苗时间</view>
-                <view slot="footer">不知道</view>
+            <mp-cell link url="/page/userHome/pages/petview/vaccination/index" value="上次疫苗时间" footer="DefaultValue">
             </mp-cell>
         </mp-cells>
     </view>

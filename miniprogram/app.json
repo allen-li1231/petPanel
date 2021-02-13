@@ -11,7 +11,13 @@
     "page/userHome/pages/favorites/index",
     "page/userHome/pages/petview/index",
     "page/userHome/pages/petadd/index",
-    "page/userHome/pages/profile/index"
+    "page/userHome/pages/profile/index",
+    "page/userHome/pages/petview/petname/index",
+    "page/userHome/pages/petview/birth/index",
+    "page/userHome/pages/petview/gender/index",
+    "page/userHome/pages/petview/kind/index",
+    "page/userHome/pages/petview/sterilization/index",
+    "page/userHome/pages/petview/vaccination/index"
   ],
   "subpackages": [
     {
