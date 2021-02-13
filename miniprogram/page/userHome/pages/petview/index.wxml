@@ -1,2 +1,32 @@
-<!--page/userHome/pages/petview/index.wxml-->
-<text>page/userHome/pages/petview/index.wxml</text>
+<view class="page" data-weui-theme="{{theme}}">
+    <view class="page__bd">
+        <mp-cells ext-class="my-cells" title="基本信息">
+          <mp-cell>
+                <view>宠物</view>
+                <view slot="footer">名字</view>
+            </mp-cell>
+            <mp-cell>
+                <view>年龄</view>
+                <view slot="footer">现在时间-生日</view>
+            </mp-cell>
+            <mp-cell>
+                <view>性别</view>
+                <view slot="footer">男or女</view>
+            </mp-cell>
+        </mp-cells>
+        <mp-cells>
+          <mp-cell>
+                <view>种类</view>
+                <view slot="footer">猫or狗</view>
+            </mp-cell>
+            <mp-cell>
+                <view>绝育情况</view>
+                <view slot="footer">不知道</view>
+            </mp-cell>
+            <mp-cell>
+                <view>上次疫苗时间</view>
+                <view slot="footer">不知道</view>
+            </mp-cell>
+        </mp-cells>
+    </view>
+</view>
