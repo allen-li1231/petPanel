@@ -9,6 +9,7 @@
     "page/homePage/pages/general-clinic/index",
     "page/homePage/pages/dog-license/index",
     "page/userHome/pages/favorites/favorites",
+    "page/userHome/pages/pets/pets",
     "page/userHome/pages/petview/petview",
     "page/userHome/pages/petadd/petadd",
     "page/userHome/pages/profile/profile",

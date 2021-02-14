@@ -1,13 +1,37 @@
 // page/userHome/pages/petview/sterilization/sterilization.js
-Page({
+import CustomPage from '../../../base/CustomPage'
+
+CustomPage({
+  onShareAppMessage() {
+    return {
+      title: 'form',
+      path: 'page/userHome/petview/sterilization/sterilization'
+    }
+  },
 
   /**
    * 页面的初始数据
    */
   data: {
+    radioItems: [
+    {name: '已绝育', value: '0', checked: true},
+    {name: '未绝育', value: '1'},
+    {name: '怀孕中',value:'2'}]
 
   },
+  radioChange: function (e) {
+    console.log('radio发生change事件，携带value值为：', e.detail.value);
 
+    var radioItems = this.data.radioItems;
+    for (var i = 0, len = radioItems.length; i < len; ++i) {
+        radioItems[i].checked = radioItems[i].value == e.detail.value;
+    }
+
+    this.setData({
+        radioItems: radioItems,
+        [`formData.radio`]: e.detail.value
+    });
+},
   /**
    * 生命周期函数--监听页面加载
    */

@@ -1,0 +1,28 @@
+<!--page/userHome/pages/pets/pets.wxml-->
+<view class="page" data-weui-theme="{{theme}}">
+    <view class="page__bd">
+      <mp-cells>
+        <mp-slideview show="{{true}}" buttons="{{slideButtons}}" bindbuttontap="slideButtonTap">
+                <mp-cell value="瓜瓜信息" image footer = "{{item.icon}}">
+                  <block wx:for="{{iconList}}" wx:key="*this">
+            <navigator url="" class="weui-grid">
+              <mp-icon icon="info" color="colorLight" size="25"></mp-icon>
+              <view class="weui-grid__label">info</view>
+            </navigator>
+          </block>
+                </mp-cell>
+            </mp-slideview>
+      </mp-cells>
+      <view class="icon-box">
+        <view class="icon-box__title">描边型</view>
+        <view class="weui-grids">
+          <block wx:for="{{iconList}}" wx:key="*this">
+            <navigator url="" class="weui-grid">
+              <mp-icon icon="info" color="colorLight" size="25"></mp-icon>
+              <view class="weui-grid__label">info</view>
+            </navigator>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>

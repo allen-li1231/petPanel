@@ -1,4 +1,4 @@
-// page/userHome/pages/petview/kind/index.js
+// page/userHome/pages/petview/kind/kind.js
 import CustomPage from '../../../base/CustomPage'
 
 CustomPage({

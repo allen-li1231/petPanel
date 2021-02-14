@@ -1,13 +1,26 @@
 // page/userHome/pages/petview/vaccination/vaccination.js
 Page({
+  onShareAppMessage() {
+    return {
+      title: 'form',
+      path: 'page/userHome/petview/vaccination/vaccination'
+    }
+  },
 
   /**
    * 页面的初始数据
    */
   data: {
+    showTopTips: false,
 
+    date: "2020-09-01",
   },
-
+  bindDateChange: function (e) {
+    this.setData({
+        date: e.detail.value,
+        [`formData.date`]: e.detail.value
+    })
+},
   /**
    * 生命周期函数--监听页面加载
    */

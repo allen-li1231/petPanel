@@ -22,6 +22,10 @@ Page({
           page: 'petview'
         },
         {
+          name: 'new宠物信息',
+          page: 'pets'
+        },
+        {
           name: '个人资料',
           page: 'profile'
         },
