@@ -13,41 +13,27 @@ Page({
    */
   data: {
     List: [
-      [
-        {
-          name: '编辑资料',
-          page: 'profile'
-        },
         {
           name: '添加宠物',
-          page: 'pet'
+          page: 'petadd'
+        },
+        {
+          name: '宠物信息',
+          page: 'petview'
+        },
+        {
+          name: '个人资料',
+          page: 'profile'
         },
         {
           name: '我的收藏',
           page: 'favorites'
         },
-      ]
     ],
     theme: 'light',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    txtList:[
-      [
-        {
-          id: '宠物名字：',
-          value: '应该从【添加宠物】里获取来的'
-        },
-        {
-          id:'性别：',
-          value: '同上'
-        },
-        { 
-          id: '年龄：',
-          value: '同上'
-        },
-      ]
-    ]
   },
 
   onLoad() {

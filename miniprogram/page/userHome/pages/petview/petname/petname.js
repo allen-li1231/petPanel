@@ -1,11 +1,19 @@
-// page/userHome/pages/pet/index.js
+// page/userHome/pages/petview/petname/petname.js
 Page({
+  onShareAppMessage() {
+    return {
+      title: 'input',
+      path: 'page/userHome/pages/petview/petname/petname'
+    }
+  },
+
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    focus: false,
+    inputValue: ''
   },
 
   /**

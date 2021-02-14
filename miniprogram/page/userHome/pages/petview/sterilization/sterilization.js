@@ -1,4 +1,4 @@
-// page/userHome/pages/favorites/index.js
+// page/userHome/pages/petview/sterilization/sterilization.js
 Page({
 
   /**

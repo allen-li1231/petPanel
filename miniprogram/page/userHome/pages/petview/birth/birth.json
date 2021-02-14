@@ -1,0 +1,6 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "宠物生日",
+  "mp-cells": "weui-miniprogram/cells/cells",
+  "mp-cell": "weui-miniprogram/cell/cell"
+}

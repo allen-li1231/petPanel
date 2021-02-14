@@ -1,0 +1,50 @@
+<view class="page" data-weui-theme="{{theme}}">
+    <mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+    <mp-form-page title="宠物信息" subtitle="请在此填写您的宠物信息，我们将根据以下信息匹配合适的医疗服务。">
+        <mp-form id="form" rules="{{rules}}" models="{{formData}}">
+            <mp-cells title="基本信息">
+                <mp-cell prop="name" title="名字" ext-class="">
+                    <input bindinput="formInputChange" data-field="name" class="weui-input" placeholder="请输入宠物名字" />
+                </mp-cell>
+                <mp-cell prop="date" title="生日" ext-class="">
+                    <picker data-field="date" mode="date" value="{{date}}" start="1980-09-01" end="2022-01-01"
+                        bindchange="bindDateChange">
+                        <view class="weui-input">{{date}}</view>
+                    </picker>
+                </mp-cell>
+                <mp-cell prop="gender" title="性别" >
+                    <radio-group name="radio">
+                        <label>
+                            <radio value="radio1" />男</label>
+                        <label>
+                            <radio value="radio2" />女</label>
+                    </radio-group>
+                </mp-cell>
+
+            </mp-cells>
+            <mp-cells title="详细信息">
+                <mp-cell ext-class="weui-cell_select weui-cell_select-after">
+                    <view slot="title" class="weui-label">种类</view>
+                    <picker bindchange="bindKindChange" value="{{kindIndex}}" range="{{kind}}">
+                        <view class="weui-select">{{kind[kindIndex]}}</view>
+                    </picker>
+                </mp-cell>
+                <mp-cell ext-class="weui-cell_select weui-cell_select-after">
+                    <view slot="title" class="weui-label">绝育情况</view>
+                    <picker bindchange="bindsterilizationChange" value="{{sterilizationIndex}}" range="{{sterilization}}">
+                        <view class="weui-select">{{sterilization[sterilizationIndex]}}</view>
+                    </picker>
+                </mp-cell>
+                <mp-cell prop="vaccination" title="最近疫苗时间" ext-class="">
+                    <picker data-field="vaccination" mode="date" value="{{vaccination}}" start="2000-09-01" end="2022-01-01"
+                        bindchange="bindVaccinationchange">
+                        <view class="weui-input">{{vaccination}}</view>
+                    </picker>
+                </mp-cell>
+            </mp-cells>
+        </mp-form>
+        <view slot="button">
+            <button class="weui-btn" type="primary" bindtap="submitForm">保存</button>
+        </view>
+    </mp-form-page>
+</view>
