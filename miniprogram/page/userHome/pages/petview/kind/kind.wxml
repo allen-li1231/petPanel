@@ -1,4 +1,4 @@
-<!--page/userHome/pages/petview/gender/index.wxml-->
+<!--page/userHome/pages/petview/kind/kind.wxml-->
 <view class="container">
   <view class="page" data-weui-theme="{{theme}}">
     <mp-cells title="">

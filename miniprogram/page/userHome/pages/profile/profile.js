@@ -1,4 +1,4 @@
-// page/userHome/pages/petview/vaccination/index.js
+// page/userHome/pages/profile/profile.js
 Page({
 
   /**

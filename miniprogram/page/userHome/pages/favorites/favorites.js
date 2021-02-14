@@ -1,27 +1,13 @@
-// page/userHome/pages/petview/birth/index.js
+// page/userHome/pages/favorites/favorites.js
 Page({
-  onShareAppMessage() {
-    return {
-      title: 'form',
-      path: 'page/userHome/petview/birth/index'
-    }
-  },
 
   /**
    * 页面的初始数据
    */
   data: {
-    showTopTips: false,
 
-    date: "2016-09-01",
-    time: "12:01"
   },
-  bindDateChange: function (e) {
-    this.setData({
-        date: e.detail.value,
-        [`formData.date`]: e.detail.value
-    })
-},
+
   /**
    * 生命周期函数--监听页面加载
    */

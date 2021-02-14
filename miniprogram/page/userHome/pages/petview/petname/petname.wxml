@@ -1,4 +1,4 @@
-<!--page/userHome/pages/petview/petname/index.wxml-->
+<!--page/userHome/pages/petview/petname/petname.wxml-->
 <view class="container">
 <view class="page-body">
     <view class="page-section">

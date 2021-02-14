@@ -1,21 +1,36 @@
-// page/userHome/pages/petview/petname/index.js
-Page({
+// page/userHome/pages/petview/kind/index.js
+import CustomPage from '../../../base/CustomPage'
+
+CustomPage({
   onShareAppMessage() {
     return {
-      title: 'input',
-      path: 'page/userHome/pages/petview/petname/index'
+      title: 'form',
+      path: 'page/userHome/petview/kind/kind'
     }
   },
-
 
   /**
    * 页面的初始数据
    */
   data: {
-    focus: false,
-    inputValue: ''
-  },
+    radioItems: [
+    {name: '猫', value: '0', checked: true},
+    {name: '狗', value: '1'}]
 
+  },
+  radioChange: function (e) {
+    console.log('radio发生change事件，携带value值为：', e.detail.value);
+
+    var radioItems = this.data.radioItems;
+    for (var i = 0, len = radioItems.length; i < len; ++i) {
+        radioItems[i].checked = radioItems[i].value == e.detail.value;
+    }
+
+    this.setData({
+        radioItems: radioItems,
+        [`formData.radio`]: e.detail.value
+    });
+},
   /**
    * 生命周期函数--监听页面加载
    */

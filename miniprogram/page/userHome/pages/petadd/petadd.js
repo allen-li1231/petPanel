@@ -4,7 +4,7 @@ CustomPage({
     onShareAppMessage() {
         return {
           title: 'form',
-          path: 'page/userHome/petadd/index'
+          path: 'page/userHome/petadd/petadd'
         }
       },
     data: {

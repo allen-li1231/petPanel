@@ -8,16 +8,16 @@
     "page/homePage/pages/physical-examination/index",
     "page/homePage/pages/general-clinic/index",
     "page/homePage/pages/dog-license/index",
-    "page/userHome/pages/favorites/index",
-    "page/userHome/pages/petview/index",
-    "page/userHome/pages/petadd/index",
-    "page/userHome/pages/profile/index",
-    "page/userHome/pages/petview/petname/index",
-    "page/userHome/pages/petview/birth/index",
-    "page/userHome/pages/petview/gender/index",
-    "page/userHome/pages/petview/kind/index",
-    "page/userHome/pages/petview/sterilization/index",
-    "page/userHome/pages/petview/vaccination/index"
+    "page/userHome/pages/favorites/favorites",
+    "page/userHome/pages/petview/petview",
+    "page/userHome/pages/petadd/petadd",
+    "page/userHome/pages/profile/profile",
+    "page/userHome/pages/petview/petname/petname",
+    "page/userHome/pages/petview/birth/birth",
+    "page/userHome/pages/petview/gender/gender",
+    "page/userHome/pages/petview/kind/kind",
+    "page/userHome/pages/petview/sterilization/sterilization",
+    "page/userHome/pages/petview/vaccination/vaccination"
   ],
   "subpackages": [
     {

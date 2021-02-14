@@ -1,4 +1,4 @@
-// page/userHome/pages/petview/index.js
+// page/userHome/pages/petview/petview.js
 Page({
 
   /**

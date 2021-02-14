@@ -1,4 +1,4 @@
-/* page/userHome/pages/petadd/index.wxss */
+/* page/userHome/pages/petadd/petadd.wxss */
 @import '../common.wxss';
 .weui-agree .weui-agree__text {
   display: inline;

@@ -1,11 +1,11 @@
-// page/userHome/pages/petview/gender/index.js
+// page/userHome/pages/petview/gender/gender.js
 import CustomPage from '../../../base/CustomPage'
 
 CustomPage({
   onShareAppMessage() {
     return {
       title: 'form',
-      path: 'page/userHome/petview/gender/index'
+      path: 'page/userHome/petview/gender/gender'
     }
   },
 

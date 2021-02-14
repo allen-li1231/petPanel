@@ -1,4 +1,4 @@
-<!--page/userHome/pages/petview/birth/index.wxml-->
+<!--page/userHome/pages/petview/birth/birth.wxml-->
 <view class="container">
   <view class="page-body">
     <view class="page-section">
