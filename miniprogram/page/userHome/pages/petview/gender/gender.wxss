@@ -1,5 +1,0 @@
-/* page/userHome/pages/petview/gender/index.wxss */
-@import '../../common.wxss';
-.weui-agree .weui-agree__text {
-  display: inline;
-}

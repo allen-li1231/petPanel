@@ -12,17 +12,14 @@ CustomPage({
       }
     },
   data: {
-      iconList: [
-          {
-              icon: 'info',
-              color: colorLight,
-              size: 25,
-              name: ''
-          }]
+
   },
   onLoad: function(){
     this.setData({
         slideButtons: [{
+          text: '编辑',
+          src: global.isDemo ? '/page/weui/example/cell/icon_love.svg' : '/example/cell/icon_love.svg', // icon的路径
+        },{
           type: 'warn',
           text: '删除',
           extClass: 'test',
@@ -31,7 +28,9 @@ CustomPage({
     });
 },
 slideButtonTap(e) {
-    console.log('slide button tap', e.detail)
-}
+
+   },
+
+
   
 })
