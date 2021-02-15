@@ -5,11 +5,17 @@
 <view class="index">
   <view class="index-hd">
     <view class="userinfo">
-      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称
-      </button>
+      <block wx:if="{{!appGlobal.hasUserInfo && appGlobal.canIUse}}">
+        <button open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 
+          授权小程序
+        </button>
+        <view class="index-desc">
+          点击按钮，授权小程序获得您的基本公开信息
+        </view>
+      </block>
       <block wx:else>
-        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{appGlobal.userInfo.avatarUrl}}" mode="cover"></image>
+        <text class="userinfo-nickname">{{appGlobal.userInfo.nickName}}</text>
       </block>
     </view>
   </view>
