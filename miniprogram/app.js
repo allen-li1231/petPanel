@@ -15,7 +15,7 @@ App({
       wx.getBackgroundFetchData({
         fetchType: 'pre',
         success(res) {
-          that.globalData.backgroundFetchData  = res;
+          that.globalData.backgroundFetchData = res;
           console.log('读取预拉取数据成功')
         },
         fail() {
