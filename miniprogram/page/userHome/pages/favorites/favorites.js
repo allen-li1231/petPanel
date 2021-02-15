@@ -1,66 +1,66 @@
 // page/userHome/pages/favorites/favorites.js
-Page({
+import CustomPage from '../../base/CustomPage'
+const colorLight = 'rgba(0, 0, 0, .9)'
 
-  /**
-   * 页面的初始数据
-   */
+CustomPage({
+  onShareAppMessage() {
+    return {
+      title: '我的收藏',
+      path: 'page/userHome/pages/favorites/favorites'
+    }
+  },
   data: {
-
+    selected: 0,
+    list: ['医院', '医生'],
+    hospitalList:[
+      {
+        name:'医院A',
+        distance:'距离x公里',
+        tag:'疫苗；普通外科'
+      },
+      {
+        name:'医院B',
+        distance:'距离y公里',
+        tag:'24小时急诊；中兽医'
+      },
+     {
+      name:'医院C',
+      distance:'距离z公里',
+      tag:'狗证'
+     }
+ ],
+ vetList:[
+   {
+     name:'医生A',
+     hospital:'医院A',
+     expertise:'肾内科'
+   },
+   {
+    name:'医生B',
+    hospital:'医院B',
+    expertise:'心脏科'
+   },
+   {
+    name:'医生C',
+    hospital:'医院C',
+    expertise:'牙科'
+   }
+ ]
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  //tab框
+  selected: function (e) {
+    let that = this
+    //console.log(e)
+    let index = e.currentTarget.dataset.index
+    //console.log("index",index)
+    if (index == 0) {
+      that.setData({
+        selected: 0
+      })
+    } else {
+      that.setData({
+        selected: 1
+      })
+    } 
   }
 })

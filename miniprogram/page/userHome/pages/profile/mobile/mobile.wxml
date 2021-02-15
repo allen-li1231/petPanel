@@ -3,7 +3,7 @@
     <view class="page__bd">
 <mp-cell ext-class="weui-cell_select weui-cell_select-before">
                     <view slot="title" style="width: 105px">
-                      <view class="mobile">+86</view>
+                      <view class="countrycode">+86</view>
                       </view>
                     <input class="weui-input" placeholder="请输入号码" />
                 </mp-cell>

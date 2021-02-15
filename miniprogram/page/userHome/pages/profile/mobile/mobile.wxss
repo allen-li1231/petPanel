@@ -1,4 +1,4 @@
 /* page/userHome/pages/profile/mobile/mobile.wxss */
-.mobile{
+.countrycode{
   text-align: center;
 }
