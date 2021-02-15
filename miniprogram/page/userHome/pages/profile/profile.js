@@ -1,6 +1,11 @@
 // page/userHome/pages/profile/profile.js
 Page({
-
+  onShareAppMessage() {
+    return {
+      title: '名字',
+      path: 'page/userHome/pages/profile/profile'
+    }
+  },
   /**
    * 页面的初始数据
    */

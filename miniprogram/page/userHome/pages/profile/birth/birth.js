@@ -1,9 +1,9 @@
-// page/userHome/pages/pets/petedit/vaccination/vaccination.js
+// page/userHome/pages/profile/birth/birth.js
 Page({
   onShareAppMessage() {
     return {
-      title: '上次疫苗时间',
-      path: 'page/userHome/pages/pets/petedit/vaccination/vaccination'
+      title: '生日',
+      path: 'page/userHome/pages/profile/birth/birth'
     }
   },
 
@@ -13,7 +13,8 @@ Page({
   data: {
     showTopTips: false,
 
-    date: "2020-09-01",
+    date: "2016-09-01",
+    time: "12:01"
   },
   bindDateChange: function (e) {
     this.setData({

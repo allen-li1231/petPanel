@@ -1,24 +1,25 @@
-// page/userHome/pages/pets/petedit/vaccination/vaccination.js
-Page({
-  onShareAppMessage() {
-    return {
-      title: '上次疫苗时间',
-      path: 'page/userHome/pages/pets/petedit/vaccination/vaccination'
-    }
-  },
+// page/userHome/pages/profile/mobile/mobile.js
+import CustomPage from '../../../base/CustomPage'
+
+CustomPage({    
+    onShareAppMessage() {
+        return {
+          title: '手机号',
+          path: 'page/userHome/pages/profile/mobile/mobile'
+        }
+      },
 
   /**
    * 页面的初始数据
    */
   data: {
-    showTopTips: false,
-
-    date: "2020-09-01",
+        countryCodes: ["+86", "+80", "+84", "+87"],
+        countryCodeIndex: 0,
   },
-  bindDateChange: function (e) {
+  formInputChange(e) {
+    const {field} = e.currentTarget.dataset
     this.setData({
-        date: e.detail.value,
-        [`formData.date`]: e.detail.value
+        [`formData.${field}`]: e.detail.value
     })
 },
   /**

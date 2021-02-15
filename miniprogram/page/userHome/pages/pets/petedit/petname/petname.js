@@ -2,7 +2,7 @@
 Page({
   onShareAppMessage() {
     return {
-      title: 'input',
+      title: '宠物名字',
       path: 'page/userHome/pages/pets/petedit/petname/petname'
     }
   },

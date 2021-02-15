@@ -1,9 +1,11 @@
-// page/userHome/pages/pets/petedit/vaccination/vaccination.js
-Page({
+// page/userHome/pages/profile/gender/gender.js
+import CustomPage from '../../../base/CustomPage'
+
+CustomPage({
   onShareAppMessage() {
     return {
-      title: '上次疫苗时间',
-      path: 'page/userHome/pages/pets/petedit/vaccination/vaccination'
+      title: '性别',
+      path: 'page/userHome/pages/profile/gender/gender'
     }
   },
 
@@ -11,15 +13,23 @@ Page({
    * 页面的初始数据
    */
   data: {
-    showTopTips: false,
+    radioItems: [
+    {name: '男', value: '0', checked: true},
+    {name: '女', value: '1'}]
 
-    date: "2020-09-01",
   },
-  bindDateChange: function (e) {
+  radioChange: function (e) {
+    console.log('radio发生change事件，携带value值为：', e.detail.value);
+
+    var radioItems = this.data.radioItems;
+    for (var i = 0, len = radioItems.length; i < len; ++i) {
+        radioItems[i].checked = radioItems[i].value == e.detail.value;
+    }
+
     this.setData({
-        date: e.detail.value,
-        [`formData.date`]: e.detail.value
-    })
+        radioItems: radioItems,
+        [`formData.radio`]: e.detail.value
+    });
 },
   /**
    * 生命周期函数--监听页面加载

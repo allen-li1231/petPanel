@@ -4,7 +4,7 @@ import CustomPage from '../../../../base/CustomPage'
 CustomPage({
   onShareAppMessage() {
     return {
-      title: 'form',
+      title: '绝育情况',
       path: 'page/userHome/pages/pets/petedit/sterilization/sterilization'
     }
   },
