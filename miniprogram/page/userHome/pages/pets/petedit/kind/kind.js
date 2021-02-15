@@ -4,7 +4,7 @@ import CustomPage from '../../../../base/CustomPage'
 CustomPage({
   onShareAppMessage() {
     return {
-      title: 'form',
+      title: '宠物种类',
       path: 'page/userHome/pages/pets/petedit/kind/kind'
     }
   },

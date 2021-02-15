@@ -1,26 +1,21 @@
-// page/userHome/pages/pets/petedit/vaccination/vaccination.js
+// page/userHome/pages/profile/name/name.js
 Page({
   onShareAppMessage() {
     return {
-      title: '上次疫苗时间',
-      path: 'page/userHome/pages/pets/petedit/vaccination/vaccination'
+      title: '名字',
+      path: 'page/userHome/pages/profile/name/name'
     }
   },
+
 
   /**
    * 页面的初始数据
    */
   data: {
-    showTopTips: false,
-
-    date: "2020-09-01",
+    focus: false,
+    inputValue: ''
   },
-  bindDateChange: function (e) {
-    this.setData({
-        date: e.detail.value,
-        [`formData.date`]: e.detail.value
-    })
-},
+
   /**
    * 生命周期函数--监听页面加载
    */

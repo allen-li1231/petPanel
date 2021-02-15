@@ -7,7 +7,7 @@ const colorDark = 'rgba(255, 255, 255, .8)'
 CustomPage({
   onShareAppMessage() {
       return {
-        title: 'icons',
+        title: '宠物信息',
         path: 'page/userHome/pages/pets/pets'
       }
     },

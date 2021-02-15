@@ -1,0 +1,4 @@
+/* page/userHome/pages/profile/mobile/mobile.wxss */
+.mobile{
+  text-align: center;
+}

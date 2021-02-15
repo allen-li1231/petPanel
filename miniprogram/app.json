@@ -9,6 +9,7 @@
     "page/homePage/pages/general-clinic/index",
     "page/homePage/pages/dog-license/index",
     "page/userHome/pages/favorites/favorites",
+
     "page/userHome/pages/pets/pets",
     "page/userHome/pages/pets/petadd/petadd",
     "page/userHome/pages/pets/petedit/petedit",
@@ -18,7 +19,12 @@
     "page/userHome/pages/pets/petedit/kind/kind",
     "page/userHome/pages/pets/petedit/sterilization/sterilization",
     "page/userHome/pages/pets/petedit/vaccination/vaccination",
-    "page/userHome/pages/profile/profile"
+
+    "page/userHome/pages/profile/profile",
+    "page/userHome/pages/profile/name/name",
+    "page/userHome/pages/profile/gender/gender",
+    "page/userHome/pages/profile/birth/birth",
+    "page/userHome/pages/profile/mobile/mobile"
   ],
   "subpackages": [
     {
