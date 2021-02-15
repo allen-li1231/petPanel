@@ -1,0 +1,6 @@
+/* page/userHome/pages/pets/pets.wxss */
+
+  .other-navigator-hover button{
+    background-color: #DEDEDE;
+    align-items: center;
+  }

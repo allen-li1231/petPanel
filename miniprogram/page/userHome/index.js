@@ -14,12 +14,8 @@ Page({
   data: {
     List: [
         {
-          name: '添加宠物',
-          page: 'petadd'
-        },
-        {
           name: '宠物信息',
-          page: 'petview'
+          page: 'pets'
         },
         {
           name: '个人资料',
