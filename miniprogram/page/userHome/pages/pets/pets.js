@@ -8,7 +8,7 @@ CustomPage({
   onShareAppMessage() {
       return {
         title: 'icons',
-        path: 'page/weui/example/icons/icons'
+        path: 'page/userHome/pages/pets/pets'
       }
     },
   data: {
@@ -17,9 +17,6 @@ CustomPage({
   onLoad: function(){
     this.setData({
         slideButtons: [{
-          text: '编辑',
-          src: global.isDemo ? '/page/weui/example/cell/icon_love.svg' : '/example/cell/icon_love.svg', // icon的路径
-        },{
           type: 'warn',
           text: '删除',
           extClass: 'test',

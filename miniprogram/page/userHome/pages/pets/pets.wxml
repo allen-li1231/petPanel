@@ -3,15 +3,14 @@
     <view class="page__bd">
       <mp-cells>
         <mp-slideview show="{{false}}" buttons="{{slideButtons}}" bindbuttontap="slideButtonTap">
+          <navigator url="petedit/petedit" > 
                 <mp-cell value="瓜瓜信息" >
                 </mp-cell>
+                </navigator>
             </mp-slideview>
       </mp-cells>
         <navigator url="petadd/petadd" hover-class="ohter-navigator">
        <button type="default">新建宠物信息</button>
-      </navigator>
-      <navigator url="petedit/petedit" hover-class="ohter-navigator">
-       <button type="default">编辑宠物信息</button>
       </navigator>
 </view>
 </view>
