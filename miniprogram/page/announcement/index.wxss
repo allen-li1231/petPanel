@@ -1,6 +1,7 @@
-/* page/userHome/pages/favorites/favorites.wxss */
-
+/* page/announcement/index.wxss */
 /* 页面背景色 */
+@import "../common/index.wxss";
+
 page {
   background: rgb(247, 247, 247);
 }
@@ -74,35 +75,39 @@ page {
     background-color: var(--weui-BG-2) !important;
     color: var(--weui-FG-0) !important;
 }
-
-.flex-wrp{
-  display:flex;
-  flex-direction:row-reverse;
-}
-.flex-item{
-  display:flex;
-  flex-direction:row-reverse;
-}
-.title-name{
-  font-size: 24px;
-  color:rgb(94,103,175);
-}
 .page-section{
   width: 702rpx;
   display: flex;
   flex-direction: column;
   margin: 20rpx auto;
 }
-.title{
-width: 230px;
+.text-box{
+  background-color:#ef9ba83f;
+  border-radius: 5%;
+  margin-bottom: 30px;
 }
-
-/* 修改button默认背景色 */
-.mini-btn {
-color: rgb(94,103,175);
-background-color:	#F8F8FF;
-margin-right: 1px;
+.page-section-title{
+  color:rgb(94,103,175);
+  font-size: 19px;
+  padding-left: 0px;
 }
-.mini-btn::after {
-  border: none;
+.textarea-wrp{
+  background-color:#fff;
+  font-size: 18px;
+  margin-bottom: 30px;
 }
+.page-section-discription{
+  color:grey;
+  font-size: 14px;
+}
+.submit{
+  color: rgb(94,103,175);
+  background-color:#ef9ba83f;
+  margin-right: 80px;
+  margin-left: 80px;
+  margin-top:30px;
+  }
+  .submit::after {
+    border: none;
+  }
+  

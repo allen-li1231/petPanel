@@ -11,43 +11,46 @@
   </view>
   <!-- tab1  -->
   <view wx:if="{{selected == 0}}">
+  <view class ="page-section">
     <block wx:for="{{hospitalList}}" wx:key="*this">
       <mp-cells>
         <mp-cell>
-          <view slot="title" style="width: 260px">
+          <view slot="title" style="width:230px">
             <view class="title-name">{{item.name}}</view>
             <view class="distance">{{item.distance}}</view>
             <view class="tag">推荐：{{item.tag}}</view>
           </view>
           <view class="flex-wrp" style="flex-direction:column;">
             <view class="flex-item icon">
-            <mp-icon type="filled" icon="star" color="#FFFF00" size="25"></mp-icon>
+            <mp-icon type="filled" icon="star" color="#ef9ba8" size="25"></mp-icon>
             </view>
-            <button class="flex-item mini-btn" type="primary" size="mini">详情>></button>
+            <button class="mini-btn" size="mini">详情>></button>
           </view>
         </mp-cell>
       </mp-cells>
     </block>
   </view>
-
+</view>
   <!-- tab2 -->
   <view wx:if="{{selected == 1}}">
+    <view class ="page-section">
     <block wx:for="{{vetList}}" wx:key="*this">
       <mp-cells>
         <mp-cell>
-          <view slot="title" style="width: 260px">
+          <view slot="title" style="width: 230px">
             <view class="title-name">{{item.name}}</view>
             <view class="hospital">{{item.hospital}}</view>
             <view class="tag">擅长：{{item.expertise}}</view>
           </view>
           <view class="flex-wrp" style="flex-direction:column;">
             <view class="flex-item icon">
-            <mp-icon type="filled" icon="star" color="#FFFF00" size="25"></mp-icon>
+            <mp-icon type="filled" icon="star" color="#ef9ba8" size="25"></mp-icon>
             </view>
-            <button class="flex-item mini-btn" type="primary" size="mini">详情>></button>
+            <button class="mini-btn" size="mini">详情>></button>
           </view>
         </mp-cell>
       </mp-cells>
     </block>
   </view>
+</view>
 </view>
