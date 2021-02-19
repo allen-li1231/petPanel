@@ -11,6 +11,7 @@ exports.main = async (event, context) => {
   console.log(event)
   // client has logged in
   if (event.loginid) {
+    // TODO: check if works
     // update userInfo if client exists
     if (event.userInfo) {
       loginActionDB

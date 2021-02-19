@@ -91,7 +91,7 @@ App({
       name: 'wxContext',
       data: {},
       success: res => {
-        console.log("getWXContext returned: ", res);
+        console.log("getWXContext returned:", res);
         this.globalData.openid = res.result.openid;
         this.globalData.appid = res.result.appid;
       },
@@ -109,7 +109,7 @@ App({
         userInfo: this.globalData.userInfo
       },
       success: res => {
-        console.log(res)
+        console.log("loginAction returned:", res)
         this.globalData.accessTime = res.result.createTime
         this.globalData.loginid = res.result.loginid
         this.globalData.userInfo = res.result.userInfo
