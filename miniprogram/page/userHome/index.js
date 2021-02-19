@@ -1,5 +1,6 @@
 // page/userHome/index.js
 const app = getApp()
+
 Page({
   onShareAppMessage() {
     return {
@@ -42,6 +43,7 @@ Page({
     }
     if (!this.data.appGlobal.canIUse) {
       // 在没有 open-type=getUserInfo 版本的兼容处理
+      // manually call getUserInfo instead of using button recommended
       wx.getUserInfo({
         success: res => {
           this.setData({
@@ -53,13 +55,19 @@ Page({
     }
   },
 
-  getUserInfo(e) {
-    console.log(e)
-    this.setData({
-      'appGlobal.userInfo': e.detail.userInfo,
-      'appGlobal.hasUserInfo': true
-    })
+  getUserInfo(res) {
+    if (!res) {
+      console.warn("Wrong value getUserInfo returned", res)
+      return
+    }
 
+    this.setData({
+      'appGlobal.userInfo': res.detail.userInfo,
+      'appGlobal.hasUserInfo': true,
+    })
+    app.globalData.userInfo = res.detail.userInfo
+    app.globalData.hasUserInfo = true
+    console.log(res)
     //TODO: update login record and fill blank variables matching timestamp and openid
   },
   
