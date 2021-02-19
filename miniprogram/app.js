@@ -43,9 +43,8 @@ App({
         env: config.envId,
         traceUser: true,
       })
+      this.getWXContext()
     }
-    this.loginAction()
-    console.log(this.globalData.openid)
   },
 
   
@@ -76,12 +75,12 @@ App({
 
   globalData: {
     theme: wx.getSystemInfoSync().theme,
-    id: null,
+    loginid: null,
     openid: null,
     appid: null,
-    unionid: null,
     userInfo: {},
     hasUserInfo: false,
+    hasLoggedIn: false,
     accessTime: 0,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
   },
@@ -90,19 +89,37 @@ App({
   getWXContext() {
     wx.cloud.callFunction({
       name: 'wxContext',
-      data: {}
-    }).then(res => {
-      this.globalData.openid = res.openid
-      this.globalData.appid = res.appid
-      this.globalData.unionid = res.unionid
-      return res.result
+      data: {},
+      success: res => {
+        console.log("getWXContext returned: ", res);
+        this.globalData.openid = res.result.openid;
+        this.globalData.appid = res.result.appid;
+      },
+      fail: err => { console.error("Unable to get wxContext in time", err); },
+      complete: () => this.loginAction()
     })
-    .catch(console.error("Unable to get wxContext"))
-  },
+},
 
   loginAction() {
-    const res = this.getWXContext()
-    console.log(res)
-    //TODO: create a record for timestamp and openid, leaving province, city, country, gender, nickName and avatarUrl blank
+    wx.cloud.callFunction({
+      name: "loginAction",
+      data: {
+        loginid: this.globalData.loginid,
+        openid: this.globalData.openid,
+        userInfo: this.globalData.userInfo
+      },
+      success: res => {
+        console.log(res)
+        this.globalData.accessTime = res.result.createTime
+        this.globalData.loginid = res.result.loginid
+        this.globalData.userInfo = res.result.userInfo
+        this.globalData.hasLoggedIn = true
+        console.log("Login successful on", this.globalData.accessTime)
+        
+      },
+      fail: err => {
+        console.error(err)
+      },
+    })
   }
 })

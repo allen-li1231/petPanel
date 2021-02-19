@@ -6,7 +6,7 @@ cloud.init()
 
 // 云函数入口函数
 exports.main = async (event, context) => {
-  const wxContext = cloud.getWXContext()
+  const wxContext = await cloud.getWXContext()
   console.log(wxContext)
   // const db = wx.cloud.database()
   // if (db.collection('loginAction').where({
@@ -20,6 +20,5 @@ exports.main = async (event, context) => {
   return {
     openid: wxContext.OPENID,
     appid: wxContext.APPID,
-    unionid: wxContext.UNIONID,
   }
 }

@@ -1,3 +1,5 @@
+const app = getApp()
+
 Page({
   onShow() {
     wx.getSystemInfo({
@@ -69,7 +71,7 @@ Page({
       })
     }
   },
-
+  
   kindToggle(e) {
     const id = e.currentTarget.id
     const list = this.data.list
