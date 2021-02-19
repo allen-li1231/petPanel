@@ -21,7 +21,7 @@ CustomPage({
       {
         name:'医院B',
         distance:'距离y公里',
-        tag:'24小时急诊；中兽医'
+        tag:'24小时急诊；中兽医；牙科；狗证'
       },
      {
       name:'医院C',

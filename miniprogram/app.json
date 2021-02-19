@@ -3,11 +3,14 @@
     "page/homePage/index",
     "page/discover/index",
     "page/userHome/index",
+    "page/announcement/index",
+    
     "page/homePage/pages/vaccination/index",
     "page/homePage/pages/sterilization/index",
     "page/homePage/pages/physical-examination/index",
     "page/homePage/pages/general-clinic/index",
     "page/homePage/pages/dog-license/index",
+
     "page/userHome/pages/favorites/favorites",
 
     "page/userHome/pages/pets/pets",

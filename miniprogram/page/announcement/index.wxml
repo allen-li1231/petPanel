@@ -1,0 +1,60 @@
+<!--page/announcement/index.wxml-->
+<view class="nav_title">
+  <view class="nav_tab">
+    <!-- 如果选中的下表等于当前的索引，就使用active class名，否则class名为common -->
+    <view wx:for="{{list}}" wx:key="list" class="{{selected==index?'active':'common'}}" data-index='{{index}}'
+      bindtap="selected">
+      {{item}}
+      <!-- 如果选中的下表等于当前的索引，就添加下划线 -->
+      <view class="{{selected==index?'nav_underline':''}}"></view>
+    </view>
+  </view>
+  <!-- tab1  -->
+  <view wx:if="{{selected == 0}}">
+    <view class="container">
+  <view class="page-body-wrapper">
+    <view class="index-hd">
+      <image class="index-logo" src="../homePage/resources/kind/petPanel_logo.jpg"></image>
+      <view class="page__bd">
+        <view class="weui-article">
+            <view class="weui-article__h1">大标题</view>
+            <view class="weui-article__section">
+                <view class="weui-article__h2">章标题</view>
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">1.1 节标题</view>
+                    <view class="weui-article__p">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat.
+                    </view>
+                    </view>
+                    </view>
+                    </view>
+                    </view>
+
+      </view>
+      </view>
+      </view>
+  </view>
+  <!-- tab2 -->
+  <view wx:if="{{selected == 1}}">
+    <view class ="page-section">
+      <view class="text-box">
+        <text style="color:grey">您在产品使用中遇到的问题建议，或者对信息的指正，都非常欢迎反馈给我们~</text>
+      </view> 
+      <view class="page-section-title">反馈内容</view>
+      <view class="textarea-wrp">
+        <textarea bindblur="bindTextAreaBlur" maxlength="500" style="height: 10em" fixed="true" ></textarea>
+      </view>
+      <view class="page-section-title">联系方式（非必填）</view>
+      <view class="page-section-discription">关于信息指正的内容，我们需要与您取得联系后进行进一步核实。</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input class="weui-input" maxlength="20" placeholder="手机号或者邮箱都可以"></input>
+      </view>
+      </view>
+    </view>
+    <button class="submit">提交</button>
+  </view>
+  </view>
