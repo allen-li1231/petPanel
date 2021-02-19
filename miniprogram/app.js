@@ -44,6 +44,8 @@ App({
         traceUser: true,
       })
     }
+    this.loginAction()
+    console.log(this.globalData.openid)
   },
 
   
@@ -71,31 +73,36 @@ App({
           themeListeners.splice(index, 1)
       }
   },
+
   globalData: {
     theme: wx.getSystemInfoSync().theme,
+    id: null,
     openid: null,
     appid: null,
     unionid: null,
     userInfo: {},
     hasUserInfo: false,
+    accessTime: 0,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
   },
 
   // 通过云函数获取用户 openid，支持回调或 Promise
-  getWxContext() {
-    var self = this
+  getWXContext() {
     wx.cloud.callFunction({
       name: 'wxContext',
       data: {}
     }).then(res => {
-      console.log(res)
-      self.globalData.openid = res.openid
-      self.globalData.appid = res.appid
-      self.globalData.unionid = res.unionid
+      this.globalData.openid = res.openid
+      this.globalData.appid = res.appid
+      this.globalData.unionid = res.unionid
+      return res.result
     })
+    .catch(console.error("Unable to get wxContext"))
   },
 
-  login() {
+  loginAction() {
+    const res = this.getWXContext()
+    console.log(res)
     //TODO: create a record for timestamp and openid, leaving province, city, country, gender, nickName and avatarUrl blank
   }
 })
