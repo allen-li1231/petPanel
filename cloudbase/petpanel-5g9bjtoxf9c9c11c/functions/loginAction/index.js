@@ -8,17 +8,20 @@ cloud.init({
 
 exports.main = async (event, context) => {
   const loginActionDB = cloud.database().collection("loginAction")
-  console.log(event)
+  console.log("event:", event)
   // client has logged in
   if (event.loginid) {
-    // TODO: check if works
     // update userInfo if client exists
     if (event.userInfo) {
       loginActionDB
       .doc(event.loginid)
-      .update({userInfo: event.userInfo})
+      .update({
+        data: {
+          userInfo: event.userInfo
+        }
+      })
       .then(res => {
-        console.log("userInfo updated")
+        console.log("userInfo updated for user:", event.userInfo.nickName)
         return res
       })
       .catch(err => {
@@ -27,18 +30,19 @@ exports.main = async (event, context) => {
     }
     // client not logged in
     else {
+      console.log("has loginid but no userInfo to update, id:", event.loginid)
       // return userInfo if server record exists
-      console.log("Record returned")
-      loginActionDB
-        .doc(event.loginid)
-        .get()
-        .then(res => {
-          console.log("Record returned", res)
-          return res.data
-        })
-        .catch(err => {
-          console.error(err)
-        })
+      // console.log("Record returned")
+      // loginActionDB
+      //   .doc(event.loginid)
+      //   .get()
+      //   .then(res => {
+      //     console.log("Record returned", res)
+      //     return res.data
+      //   })
+      //   .catch(err => {
+      //     console.error(err)
+      //   })
     }
   }
   else {
@@ -51,7 +55,7 @@ exports.main = async (event, context) => {
         userInfo: event.userInfo? event.userInfo: {}
       }
     })
-    
+    console.log(res)
     return {
       createTime: now,
       loginid: res._id

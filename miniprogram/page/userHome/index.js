@@ -28,12 +28,15 @@ Page({
         },
     ],
     theme: 'light',
-    appGlobal: app.globalData,
+    appGlobal: null,
+    canIUseGetUserInfo: true,
   },
 
   onLoad() {
     this.setData({
-      theme: wx.getSystemInfoSync().theme || 'light'
+      theme: wx.getSystemInfoSync().theme || 'light',
+      appGlobal: app.globalData,
+      canIUseGetUserInfo: wx.canIUse('button.open-type.getUserInfo'),
     })
 
     if (wx.onThemeChange) {
@@ -41,7 +44,7 @@ Page({
         this.setData({ theme })
       })
     }
-    if (!this.data.appGlobal.canIUse) {
+    if (!this.data.canIUseGetUserInfo && !app.globalData.hasUserInfo) {
       // 在没有 open-type=getUserInfo 版本的兼容处理
       // manually call getUserInfo instead of using button recommended
       wx.getUserInfo({
@@ -50,14 +53,16 @@ Page({
             'appGlobal.userInfo': res.userInfo,
             'appGlobal.hasUserInfo': true
           })
+          app.globalData.userInfo = res.userInfo
+          app.globalData.hasUserInfo = true
         }
       })
     }
   },
 
   getUserInfo(res) {
-    if (!res) {
-      console.warn("Wrong value getUserInfo returned", res)
+    if (!res || !res.detail.userInfo) {
+      console.warn("getUserInfo returned", res)
       return
     }
 
@@ -67,7 +72,18 @@ Page({
     })
     app.globalData.userInfo = res.detail.userInfo
     app.globalData.hasUserInfo = true
-    console.log(res)
+
+    wx.cloud.callFunction({
+      name: "loginAction",
+      data: {
+        loginid: app.globalData.loginid,
+        openid: app.globalData.openid,
+        userInfo: app.globalData.userInfo,
+      },
+      fail: err => {
+        console.error(err)
+      },
+    })
     //TODO: update login record and fill blank variables matching timestamp and openid
   },
   

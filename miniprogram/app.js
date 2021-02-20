@@ -1,8 +1,22 @@
 const config = require('./config')
 const themeListeners = []
 global.isDemo = true
+
+
 App({
   
+  globalData: {
+    theme: wx.getSystemInfoSync().theme,
+    loginid: null,
+    openid: null,
+    appid: null,
+    userInfo: {},
+    hasUserInfo: false,
+    hasLoggedIn: false,
+    accessTime: 0,
+
+  },
+
   onLaunch(opts, data) {
     const that = this;
     const canIUseSetBackgroundFetchToken = wx.canIUse('setBackgroundFetchToken')
@@ -31,11 +45,13 @@ App({
       })
     }
     console.log('App Launch', opts)
+
     if (data && data.path) {
       wx.navigateTo({
         url: data.path,
       })
     }
+
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
     } else {
@@ -43,7 +59,30 @@ App({
         env: config.envId,
         traceUser: true,
       })
-      this.getWXContext()
+
+      // 获取userInfo
+      wx.getSetting({
+        success: function(res) {
+          if (res.authSetting['scope.userInfo']) {
+            // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+            wx.getUserInfo({
+              success: function(res) {
+                that.globalData.userInfo = res.userInfo
+                that.globalData.hasUserInfo = true
+                console.log("getUserInfo returns:", res.userInfo)
+              },
+            })
+          }
+        },
+        fail: function(err) {
+          console.error("getSetting returns:", err)
+          wx.showToast({
+            title: '请检查网络',
+            icon: 'none'
+          })
+        },
+        complete: () => that.getWXContext(that.loginAction)
+      })
     }
   },
 
@@ -73,53 +112,46 @@ App({
       }
   },
 
-  globalData: {
-    theme: wx.getSystemInfoSync().theme,
-    loginid: null,
-    openid: null,
-    appid: null,
-    userInfo: {},
-    hasUserInfo: false,
-    hasLoggedIn: false,
-    accessTime: 0,
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
-  },
 
   // 通过云函数获取用户 openid，支持回调或 Promise
-  getWXContext() {
+  getWXContext(callback) {
     wx.cloud.callFunction({
       name: 'wxContext',
       data: {},
       success: res => {
-        console.log("getWXContext returned:", res);
+        console.log("getWXContext returns:", res);
         this.globalData.openid = res.result.openid;
         this.globalData.appid = res.result.appid;
       },
       fail: err => { console.error("Unable to get wxContext in time", err); },
-      complete: () => this.loginAction()
+      complete: () => {if (callback) callback()}
     })
 },
 
-  loginAction() {
+  loginAction(callback) {
+    console.log("data to call loginAction:", this.globalData, {
+      loginid: this.globalData.loginid,
+      openid: this.globalData.openid,
+      userInfo: this.globalData.userInfo,
+    })
     wx.cloud.callFunction({
       name: "loginAction",
       data: {
         loginid: this.globalData.loginid,
         openid: this.globalData.openid,
-        userInfo: this.globalData.userInfo
+        userInfo: this.globalData.userInfo,
       },
       success: res => {
-        console.log("loginAction returned:", res)
+        console.log("loginAction returns:", res)
         this.globalData.accessTime = res.result.createTime
         this.globalData.loginid = res.result.loginid
-        this.globalData.userInfo = res.result.userInfo
         this.globalData.hasLoggedIn = true
-        console.log("Login successful on", this.globalData.accessTime)
-        
+        console.log("Login success on", this.globalData.accessTime)
       },
       fail: err => {
         console.error(err)
       },
+      complete: () => {if (callback) callback()}
     })
   }
 })
