@@ -8,7 +8,7 @@ cloud.init({
 
 exports.main = async (event, context) => {
   const loginActionDB = cloud.database().collection("loginAction")
-  console.log("event:", event)
+  // console.log("loginAction event:", event)
   // client has logged in
   if (event.loginid) {
     // update userInfo if client exists
@@ -30,7 +30,7 @@ exports.main = async (event, context) => {
     }
     // client not logged in
     else {
-      console.log("has loginid but no userInfo to update, id:", event.loginid)
+      console.warn("has loginid but no userInfo to update, id:", event.loginid)
       // return userInfo if server record exists
       // console.log("Record returned")
       // loginActionDB

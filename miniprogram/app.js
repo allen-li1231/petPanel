@@ -7,13 +7,13 @@ App({
   
   globalData: {
     theme: wx.getSystemInfoSync().theme,
+    accessTime: null,
     loginid: null,
     openid: null,
     appid: null,
     userInfo: {},
     hasUserInfo: false,
     hasLoggedIn: false,
-    accessTime: 0,
 
   },
 
@@ -69,7 +69,7 @@ App({
               success: function(res) {
                 that.globalData.userInfo = res.userInfo
                 that.globalData.hasUserInfo = true
-                console.log("getUserInfo returns:", res.userInfo)
+                // console.log("getUserInfo returns:", res.userInfo)
               },
             })
           }
@@ -119,7 +119,7 @@ App({
       name: 'wxContext',
       data: {},
       success: res => {
-        console.log("getWXContext returns:", res);
+        // console.log("getWXContext returns:", res);
         this.globalData.openid = res.result.openid;
         this.globalData.appid = res.result.appid;
       },
@@ -129,11 +129,6 @@ App({
 },
 
   loginAction(callback) {
-    console.log("data to call loginAction:", this.globalData, {
-      loginid: this.globalData.loginid,
-      openid: this.globalData.openid,
-      userInfo: this.globalData.userInfo,
-    })
     wx.cloud.callFunction({
       name: "loginAction",
       data: {
@@ -142,7 +137,7 @@ App({
         userInfo: this.globalData.userInfo,
       },
       success: res => {
-        console.log("loginAction returns:", res)
+        // console.log("loginAction returns:", res)
         this.globalData.accessTime = res.result.createTime
         this.globalData.loginid = res.result.loginid
         this.globalData.hasLoggedIn = true
