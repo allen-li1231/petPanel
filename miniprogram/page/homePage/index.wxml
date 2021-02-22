@@ -8,9 +8,9 @@
       <view class="index-desc">Welcome to PetPanel, here we provide various medical services for your beloved pets.</view>
     </view>
     <view class="btn-area">
-      <block wx:for="{{navBtnLst}}">
+      <block wx:for="{{navBtnLst}}" wx:key="_">
         <view class="flex-wrp">
-          <navigator wx:for="{{item}}" wx:for-item="navBtn" class="flex-item" url="pages/{{navBtn.page}}/index">
+          <navigator wx:for="{{item}}" wx:key="_" wx:for-item="navBtn" class="flex-item" url="pages/{{navBtn.page}}/index">
             <image class="kind-list-img" src="resources/kind/{{navBtn.page}}.png"></image>
             <view class="navigator-text">{{navBtn.name}}</view>
           </navigator>

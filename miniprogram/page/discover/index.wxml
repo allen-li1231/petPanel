@@ -1,6 +1,6 @@
 <!--page/discover/index.wxml-->
 <view class ="page-section">
-    <block wx:for="{{hospitalList}}" wx:key="*this">
+    <block wx:for="{{hospitalList}}" wx:key="item">
       <mp-cells>
         <mp-cell>
           <view slot="title" style="width:230px">
