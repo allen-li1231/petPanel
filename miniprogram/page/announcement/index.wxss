@@ -82,7 +82,7 @@ page {
   margin: 20rpx auto;
 }
 .text-box{
-  background-color:#ef9ba83f;
+  background-color:#FAFAD2;
   border-radius: 5%;
   margin-bottom: 30px;
 }
@@ -102,7 +102,7 @@ page {
 }
 .submit{
   color: rgb(94,103,175);
-  background-color:#ef9ba83f;
+  background-color:#FAFAD2;
   margin-right: 80px;
   margin-left: 80px;
   margin-top:30px;

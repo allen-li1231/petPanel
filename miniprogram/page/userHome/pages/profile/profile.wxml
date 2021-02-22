@@ -2,15 +2,15 @@
 <view class="page" data-weui-theme="{{theme}}">
     <view class="page__bd">
         <mp-cells ext-class="my-cells" title="基本信息">
-            <mp-cell link url="/page/userHome/pages/profile/name/name" value="名字" footer="DefaultValue">
+            <mp-cell link url="name/name" value="名字" footer="{{userName}}">
             </mp-cell>
-            <mp-cell link url="/page/userHome/pages/profile/birth/birth" value="生日" footer="DefaultValue">
+            <mp-cell link url="birth/birth" value="生日" footer="{{userBirth}}">
             </mp-cell>
-            <mp-cell link url="/page/userHome/pages/profile/gender/gender" value="性别" footer="DefaultValue">
+            <mp-cell link url="gender/gender" value="性别" footer="{{userGender}}">
             </mp-cell>
         </mp-cells>
         <mp-cells>
-          <mp-cell link url="/page/userHome/pages/profile/mobile/mobile" value="手机号" footer="非必填项">
+          <mp-cell link url="mobile/mobile" value="手机号" footer="{{userMobile}}">
           </mp-cell>
         </mp-cells>
     </view>

@@ -1,3 +1,9 @@
 {
-  "usingComponents": {}
+  "disableScroll": true,
+  "navigationBarTitleText": "附近医院",
+  "usingComponents": {
+    "mp-cells": "weui-miniprogram/cells/cells",
+    "mp-cell": "weui-miniprogram/cell/cell",
+    "mp-icon": "weui-miniprogram/icon/icon"
+  }
 }

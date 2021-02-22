@@ -10,14 +10,13 @@ CustomPage({
     data: {
         showTopTips: false,
 
-        date: "2016-09-01",
-        time: "12:01",
+        date: "2016-07-01",
 
 
-        kind: ["猫", "狗"],
+        kind: ["请选择种类","猫", "狗"],
         kindIndex: 0,
 
-        sterilization: ["暂未绝育", "怀孕中","已绝育"],
+        sterilization: ["请选择绝育情况","暂未绝育", "怀孕中","已绝育"],
         sterilizationIndex: 0,
         
         health: ["良好", "轻微皮肤病", "有"],

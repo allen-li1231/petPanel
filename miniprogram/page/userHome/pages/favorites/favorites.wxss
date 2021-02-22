@@ -74,7 +74,7 @@ page {
     background-color: var(--weui-BG-2) !important;
     color: var(--weui-FG-0) !important;
 }
-
+/*修改文本对齐*/
 .flex-wrp{
   display:flex;
   flex-direction:row-reverse;

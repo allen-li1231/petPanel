@@ -44,7 +44,7 @@
             </mp-cells>
         </mp-form>
         <view slot="button">
-            <button class="weui-btn" type="primary" bindtap="submitForm">保存</button>
+            <button class="save-btn" bindtap="submitForm">保存</button>
         </view>
     </mp-form-page>
 </view>

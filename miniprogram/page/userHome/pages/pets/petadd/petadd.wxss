@@ -3,3 +3,13 @@
 .weui-agree .weui-agree__text {
   display: inline;
 }
+.save-btn{
+  color: rgb(94,103,175);
+  background-color:#FAFAD2;
+  margin-right: 80px;
+  margin-left: 80px;
+  margin-top: -40px;
+  }
+  .save-btn::after {
+    border: none;
+  }

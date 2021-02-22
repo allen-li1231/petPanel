@@ -1,2 +1,20 @@
 <!--page/discover/index.wxml-->
-<text>page/discover/index.wxml</text>
+<view class ="page-section">
+    <block wx:for="{{hospitalList}}" wx:key="*this">
+      <mp-cells>
+        <mp-cell>
+          <view slot="title" style="width:230px">
+            <view class="title-name">{{item.name}}</view>
+            <view class="distance">{{item.distance}}</view>
+            <view class="tag">推荐：{{item.tag}}</view>
+          </view>
+          <view class="flex-wrp" style="flex-direction:column;">
+            <view class="flex-item icon">
+            <mp-icon type="outline" icon="star" color="#6495ED" size="25"></mp-icon>
+            </view>
+            <button class="mini-btn" size="mini">详情>></button>
+          </view>
+        </mp-cell>
+      </mp-cells>
+    </block>
+  </view>

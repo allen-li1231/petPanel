@@ -4,3 +4,13 @@
     background-color: #DEDEDE;
     align-items: center;
   }
+  .addNew-btn{
+    color: rgb(94,103,175);
+    background-color:#FAFAD2;
+    margin-right: 80px;
+    margin-left: 80px;
+    margin-top:30px;
+    }
+    .addNew-btn::after {
+      border: none;
+    }

@@ -12,6 +12,7 @@ CustomPage({
       }
     },
   data: {
+    profileName:'瓜瓜',
 
   },
   onLoad: function(){

@@ -10,7 +10,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    userName:'未填写',
+    userBirth:'未填写',
+    userGender:'未填写',
+    userMobile:'未填写（非必填项）',
   },
 
   /**

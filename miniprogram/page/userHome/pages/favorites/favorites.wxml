@@ -22,7 +22,7 @@
           </view>
           <view class="flex-wrp" style="flex-direction:column;">
             <view class="flex-item icon">
-            <mp-icon type="filled" icon="star" color="#ef9ba8" size="25"></mp-icon>
+            <mp-icon type="field" icon="star" color="#6495ED" size="25"></mp-icon>
             </view>
             <button class="mini-btn" size="mini">详情>></button>
           </view>
@@ -44,7 +44,7 @@
           </view>
           <view class="flex-wrp" style="flex-direction:column;">
             <view class="flex-item icon">
-            <mp-icon type="filled" icon="star" color="#ef9ba8" size="25"></mp-icon>
+            <mp-icon type="field" icon="star" color="#6495ED" size="25"></mp-icon>
             </view>
             <button class="mini-btn" size="mini">详情>></button>
           </view>

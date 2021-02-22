@@ -10,7 +10,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    petName:'未填写',
+    petBirth:'未填写',
+    petGender:'未填写',
+    petKind:'未填写',
+    petSter:'未填写',
+    petVacc:'未填写',
   },
 
   /**
