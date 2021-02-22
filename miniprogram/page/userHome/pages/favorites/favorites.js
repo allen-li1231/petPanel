@@ -45,7 +45,9 @@ CustomPage({
     hospital:'医院C',
     expertise:'牙科'
    }
- ]
+ ],
+ navHos:'../../../discover/details/details',
+ navVet:'../../../discover/details/details',
   },
   //tab框
   selected: function (e) {

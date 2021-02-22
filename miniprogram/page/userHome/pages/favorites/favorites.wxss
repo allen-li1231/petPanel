@@ -75,18 +75,6 @@ page {
     color: var(--weui-FG-0) !important;
 }
 /*修改文本对齐*/
-.flex-wrp{
-  display:flex;
-  flex-direction:row-reverse;
-}
-.flex-item{
-  display:flex;
-  flex-direction:row-reverse;
-}
-.title-name{
-  font-size: 24px;
-  color:rgb(94,103,175);
-}
 .page-section{
   width: 702rpx;
   display: flex;
@@ -94,15 +82,26 @@ page {
   margin: 20rpx auto;
 }
 .title{
-width: 230px;
+  padding: 1px;
+  display: flex;
+  justify-content: space-between;
 }
-
-/* 修改button默认背景色 */
-.mini-btn {
+.detail{
+  padding: 1px;
+  display: flex;
+  justify-content: space-between;
+}
+.title-name{
+  font-size: 24px;
+  color:rgb(94,103,175);
+}
+/* 修改navigator-text默认背景色 */
+.text-navigator {
 color: rgb(94,103,175);
 background-color:	#F8F8FF;
-margin-right: 1px;
 }
-.mini-btn::after {
-  border: none;
+.tag{
+  width:80%;
+  font-size:15px;
+  color:#A9A9A9;
 }

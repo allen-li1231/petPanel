@@ -11,6 +11,9 @@
     "page/homePage/pages/general-clinic/index",
     "page/homePage/pages/dog-license/index",
 
+    "page/discover/details/details",
+
+
     "page/userHome/pages/favorites/favorites",
 
     "page/userHome/pages/pets/pets",
