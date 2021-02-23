@@ -9,13 +9,13 @@
             <mp-icon type="outline" icon="star" color="#6495ED" size="25"></mp-icon>
           </view>
         </view>
+        <view class="distance">距离{{item.distance}}公里</view>
         <view class="detail">
-          <view class="distance">距离{{item.distance}}公里</view>
+          <view class="tag">推荐：{{item.tag}}</view>
           <navigator url="{{navHos}}" hover-class="ohter-navigator">
             <view class="text-navigator">详情>></view>
             </navigator>
           </view>
-          <view class="tag">推荐：{{item.tag}}</view>
       </mp-cell>
     </mp-cells>
   </block>

@@ -1,17 +1,50 @@
 <!--page/discover/hosdetail/hosdetail.wxml-->
-<view class="page-section">
-  <view class="message-section">
-  </view>
+<view class="page" data-weui-theme="{{theme}}">
+  <view class="page-section">
+    <view class="msg-box">
+      <text style="color:grey">"{{msg}}"</text>
+    </view>
+    <mp-cells>
+      <mp-cell>
+        <view class="hospital-info">
+          <view class="title-name">{{hosName}}</view>
+          <view class="flex-item icon">
+            <mp-icon type="outline" icon="star" color="#6495ED" size="25"></mp-icon>
+          </view>
+        </view>
+      </mp-cell>
+      <mp-cell>
+        <view class="base-info">
+          <view class="address">{{hosAddress}}</view>
+          <view class="flex-item icon">
+            <mp-icon type="outline" icon="location" color="#6495ED" size="25"></mp-icon>
+          </view>
+        </view>
+        <view class="tele">{{hosTele}}</view>
+      </mp-cell>
+      <mp-cell>
+        <view class="base-info">
+          <view class="licenseTitle">诊疗范围：</view>
+          <view class="license">{{hosLicense}}</view>
+        </view>
+        <view class="base-info">
+          <view class="expiredTitle">有效期限：</view>
+          <view class="expireddate">{{hosExpired}}</view>
+        </view>
+      </mp-cell>
+    </mp-cells>
+    <mp-cells>
+    <view class="vet-info">
+      <mp-cell>
+      <view class="title-vetname">院内医生</view>
+    </mp-cell>
+      <navigator>
+      </navigator>
+    </view>
+  </mp-cells>
 
-  <view class="hospital-info">
-  </view>
+    <view class="device-info">
+    </view>
 
-  <view class="vet-info">
-    <navigator>
-    </navigator>
   </view>
-
-  <view class="device-info">
-  </view>
-
 </view>

@@ -1,11 +1,23 @@
 // page/discover/hosdetail/hosdetail.js
-Page({
+import CustomPage from '../../userHome/base/CustomPage'
 
+CustomPage({
+  onShareAppMessage() {
+    return {
+      title: '医院详情',
+      path: 'page/discover/hosdetail/hosdetail',
+    }
+  },
   /**
    * 页面的初始数据
    */
   data: {
-
+    msg:'温馨提示：防火防盗防诈骗',
+    hosName:'喜乐缘宠物医院',
+    hosAddress:'川沙镇妙镜路656号',
+    hosTele:'021-58982400',
+    hosLicense:'全范围',
+    hosExpired:'2021/10/21',
   },
 
   /**

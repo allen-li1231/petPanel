@@ -1,1 +1,34 @@
 /* page/discover/hosdetail/hosdetail.wxss */
+.page-section{
+  width: 702rpx;
+  display:flex;
+  flex-direction:column;
+  margin: 20rpx auto;
+}
+.msg-box{
+  background-color:#FAFAD2;
+  margin-bottom: 30px;
+}
+.hospital-info{
+  padding: 1px;
+  display: flex;
+  justify-content: space-between;
+}
+.base-info{
+  padding: 1px;
+  display: flex;
+  justify-content: space-between;
+}
+.detail{
+  padding: 1px;
+  display: flex;
+  justify-content: space-between;
+}
+.title-name{
+  font-size: 24px;
+  color:rgb(94,103,175);
+}
+.title-vetname{
+  font-size: 20px;
+  color:rgb(94,103,175);
+}
