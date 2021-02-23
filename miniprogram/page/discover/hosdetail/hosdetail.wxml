@@ -1,0 +1,17 @@
+<!--page/discover/hosdetail/hosdetail.wxml-->
+<view class="page-section">
+  <view class="message-section">
+  </view>
+
+  <view class="hospital-info">
+  </view>
+
+  <view class="vet-info">
+    <navigator>
+    </navigator>
+  </view>
+
+  <view class="device-info">
+  </view>
+
+</view>

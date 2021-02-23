@@ -1,4 +1,4 @@
-// page/discover/details/details.js
+// page/discover/hosdetail/hosdetail.js
 Page({
 
   /**

@@ -22,7 +22,7 @@
               </view>
             </view>
             <view class="detail">
-              <view class="distance">{{item.distance}}</view>
+              <view class="distance">距离{{item.distance}}公里</view>
               <navigator url="{{navHos}}" hover-class="ohter-navigator">
                 <view class="text-navigator">详情>></view>
               </navigator>
