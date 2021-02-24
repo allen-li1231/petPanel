@@ -9,6 +9,7 @@
   background-color:#FAFAD2;
   margin-bottom: 30px;
 }
+
 .hospital-info{
   padding: 1px;
   display: flex;
