@@ -33,10 +33,10 @@ Page({
   },
 
   onLoad() {
+    //TODO: client must wait until loginAction finish
     this.setData({
       theme: wx.getSystemInfoSync().theme || 'light',
       appGlobal: app.globalData,
-      canIUseGetUserInfo: wx.canIUse('button.open-type.getUserInfo'),
     })
 
     if (wx.onThemeChange) {
@@ -44,47 +44,37 @@ Page({
         this.setData({ theme })
       })
     }
-    if (!this.data.canIUseGetUserInfo && !app.globalData.hasUserInfo) {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      // manually call getUserInfo instead of using button recommended
-      wx.getUserInfo({
-        success: res => {
-          this.setData({
-            'appGlobal.userInfo': res.userInfo,
-            'appGlobal.hasUserInfo': true
-          })
-          app.globalData.userInfo = res.userInfo
-          app.globalData.hasUserInfo = true
-        }
-      })
-    }
   },
 
-  getUserInfo(res) {
-    if (!res || !res.detail.userInfo) {
-      console.warn("getUserInfo returned", res)
-      return
-    }
+  getUserInfo() {
+    wx.getUserProfile({
+      desc: "获取和使用您的头像和基本信息",
+      success: (res) => {
+        console.log("getUserProfile returns", res)
+        this.setData({
+          'appGlobal.userInfo': res.userInfo,
+          'appGlobal.hasUserInfo': true,
+        })
+        
+        app.globalData.userInfo = res.userInfo
+        app.globalData.hasUserInfo = true
 
-    this.setData({
-      'appGlobal.userInfo': res.detail.userInfo,
-      'appGlobal.hasUserInfo': true,
+        wx.cloud.callFunction({
+          name: "loginAction",
+          data: {
+            loginid: app.globalData.loginid,
+            openid: app.globalData.openid,
+            userInfo: app.globalData.userInfo,
+          },
+          success: (res) => {
+            console.log("userInfo update returns", res)
+          },
+          fail: err => {
+            console.error(err)
+          },
+        })
+      }
     })
-    app.globalData.userInfo = res.detail.userInfo
-    app.globalData.hasUserInfo = true
-
-    wx.cloud.callFunction({
-      name: "loginAction",
-      data: {
-        loginid: app.globalData.loginid,
-        openid: app.globalData.openid,
-        userInfo: app.globalData.userInfo,
-      },
-      fail: err => {
-        console.error(err)
-      },
-    })
-    //TODO: update login record and fill blank variables matching timestamp and openid
   },
   
 })

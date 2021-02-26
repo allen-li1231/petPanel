@@ -6,7 +6,7 @@
   <view class="index-hd">
     <view class="userinfo">
       <block wx:if="{{!appGlobal.hasUserInfo && canIUseGetUserInfo}}">
-        <button open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 
+        <button bindtap="getUserInfo"> 
           授权小程序
         </button>
         <view class="index-desc">

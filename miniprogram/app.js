@@ -14,7 +14,7 @@ App({
     userInfo: {},
     hasUserInfo: false,
     hasLoggedIn: false,
-
+    lastLoginid: null
   },
 
   onLaunch(opts, data) {
@@ -60,28 +60,18 @@ App({
         traceUser: true,
       })
 
-      // 获取userInfo
-      wx.getSetting({
-        success: function(res) {
-          if (res.authSetting['scope.userInfo']) {
-            // 已经授权，可以直接调用 getUserInfo 获取头像昵称
-            wx.getUserInfo({
-              success: function(res) {
-                that.globalData.userInfo = res.userInfo
-                that.globalData.hasUserInfo = true
-                // console.log("getUserInfo returns:", res.userInfo)
-              },
-            })
-          }
+      // 获取loginid
+      wx.getStorage({
+        key: 'lastLoginid',
+        success: res => {
+          this.globalData.lastLoginid = res.data
         },
-        fail: function(err) {
-          console.error("getSetting returns:", err)
-          wx.showToast({
-            title: '请检查网络',
-            icon: 'none'
-          })
+        fail: () => {
+          console.log('读取本地loginid失败')
         },
-        complete: () => that.getWXContext(that.loginAction)
+        complete: () => {
+          this.getWXContext(this.loginAction)
+        }
       })
     }
   },
@@ -129,18 +119,36 @@ App({
 },
 
   loginAction(callback) {
+    console.log("loginAction pushes data:", {
+      loginid: this.globalData.lastLoginid,
+      openid: this.globalData.openid,
+      userInfo: this.globalData.userInfo,
+    })
     wx.cloud.callFunction({
       name: "loginAction",
       data: {
-        loginid: this.globalData.loginid,
+        loginid: this.globalData.lastLoginid,
         openid: this.globalData.openid,
         userInfo: this.globalData.userInfo,
       },
       success: res => {
-        // console.log("loginAction returns:", res)
+        console.log("loginAction returns:", res)
         this.globalData.accessTime = res.result.createTime
         this.globalData.loginid = res.result.loginid
         this.globalData.hasLoggedIn = true
+        if (res.result.userInfo && Object.keys(res.result.userInfo).length !== 0) {
+          this.globalData.userInfo = res.result.userInfo
+          this.globalData.hasUserInfo = true
+        }
+        wx.setStorage({
+          key: 'lastLoginid',
+          data: res.result.loginid,
+          success:function(){
+              console.log("缓存loginid成功！")     
+          },fail:function(){
+              console.log("缓存loginid失败！")     
+          }
+        })
         console.log("Login success on", this.globalData.accessTime)
       },
       fail: err => {
