@@ -2472,7 +2472,7 @@ a.weui-media-box:active {
   vertical-align: top;
   margin: 0 8px;
   position: relative;
-  font-size: 14px
+  font-size: 14px;
 }
 
 .weui-footer__link:before {
@@ -2499,7 +2499,7 @@ a.weui-media-box:active {
 
 .weui-footer__text {
   padding: 0 16px;
-  font-size: 12px
+  font-size: 12px;
 }
 
 .weui-flex {

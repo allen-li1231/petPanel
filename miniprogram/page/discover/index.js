@@ -14,19 +14,20 @@ CustomPage({
     hospitalList:[
       {
         name:'医院A',
-        distance:'距离x公里',
+        distance:'x',
         tag:'疫苗；普通外科'
       },
       {
         name:'医院B',
-        distance:'距离y公里',
+        distance:'y',
         tag:'24小时急诊；中兽医；牙科；狗证'
       },
      {
       name:'医院C',
-      distance:'距离z公里',
+      distance:'z',
       tag:'狗证'
      }
  ],
+ navHos:'hosdetail/hosdetail',
   },
 })

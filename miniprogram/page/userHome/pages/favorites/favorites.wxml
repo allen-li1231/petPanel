@@ -11,46 +11,50 @@
   </view>
   <!-- tab1  -->
   <view wx:if="{{selected == 0}}">
-  <view class ="page-section">
-    <block wx:for="{{hospitalList}}" wx:key="*this">
-      <mp-cells>
-        <mp-cell>
-          <view slot="title" style="width:230px">
-            <view class="title-name">{{item.name}}</view>
-            <view class="distance">{{item.distance}}</view>
-            <view class="tag">推荐：{{item.tag}}</view>
-          </view>
-          <view class="flex-wrp" style="flex-direction:column;">
-            <view class="flex-item icon">
-            <mp-icon type="field" icon="star" color="#6495ED" size="25"></mp-icon>
+    <view class="page-section">
+      <block wx:for="{{hospitalList}}" wx:key="*this">
+        <mp-cells>
+          <mp-cell>
+            <view class="title">
+              <view class="title-name">{{item.name}}</view>
+              <view class="flex-item icon">
+                <mp-icon type="field" icon="star" color="#6495ED" size="25"></mp-icon>
+              </view>
             </view>
-            <button class="mini-btn" size="mini">详情>></button>
-          </view>
-        </mp-cell>
-      </mp-cells>
-    </block>
+            <view class="distance">距离{{item.distance}}公里</view>
+            <view class="detail">
+              <view class="tag">推荐：{{item.tag}}</view>
+              <navigator url="{{navHos}}" hover-class="ohter-navigator">
+                <view class="text-navigator">详情>></view>
+              </navigator>
+            </view>
+          </mp-cell>
+        </mp-cells>
+      </block>
+    </view>
   </view>
-</view>
   <!-- tab2 -->
   <view wx:if="{{selected == 1}}">
-    <view class ="page-section">
-    <block wx:for="{{vetList}}" wx:key="*this">
-      <mp-cells>
-        <mp-cell>
-          <view slot="title" style="width: 230px">
-            <view class="title-name">{{item.name}}</view>
-            <view class="hospital">{{item.hospital}}</view>
-            <view class="tag">擅长：{{item.expertise}}</view>
-          </view>
-          <view class="flex-wrp" style="flex-direction:column;">
-            <view class="flex-item icon">
-            <mp-icon type="field" icon="star" color="#6495ED" size="25"></mp-icon>
+    <view class="page-section">
+      <block wx:for="{{vetList}}" wx:key="*this">
+        <mp-cells>
+          <mp-cell>
+            <view class="title">
+              <view class="title-name">{{item.name}}</view>
+              <view class="flex-item icon">
+                <mp-icon type="field" icon="star" color="#6495ED" size="25"></mp-icon>
+              </view>
             </view>
-            <button class="mini-btn" size="mini">详情>></button>
-          </view>
-        </mp-cell>
-      </mp-cells>
-    </block>
+            <view class="hospital">{{item.hospital}}</view>
+            <view class="detail">
+              <view class="tag">擅长：{{item.expertise}}</view>
+              <navigator url="{{navVet}}" hover-class="ohter-navigator">
+                <view class="text-navigator">详情>></view>
+              </navigator>
+            </view>
+          </mp-cell>
+        </mp-cells>
+      </block>
+    </view>
   </view>
-</view>
 </view>
