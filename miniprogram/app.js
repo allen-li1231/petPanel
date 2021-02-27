@@ -14,7 +14,7 @@ App({
     userInfo: {},
     hasUserInfo: false,
     hasLoggedIn: false,
-    lastLoginid: null
+    lastLoginid: null,
   },
 
   onLaunch(opts, data) {
@@ -119,6 +119,10 @@ App({
 },
 
   loginAction(callback) {
+    wx.showLoading({
+      title: "加载中...",
+      mask: true,
+      });
     console.log("loginAction pushes data:", {
       loginid: this.globalData.lastLoginid,
       openid: this.globalData.openid,
@@ -154,7 +158,10 @@ App({
       fail: err => {
         console.error(err)
       },
-      complete: () => {if (callback) callback()}
+      complete: () => {
+        wx.hideLoading();
+        if (callback) callback()
+      }
     })
   }
 })

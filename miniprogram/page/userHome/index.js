@@ -33,7 +33,6 @@ Page({
   },
 
   onLoad() {
-    //TODO: client must wait until loginAction finish
     this.setData({
       theme: wx.getSystemInfoSync().theme || 'light',
       appGlobal: app.globalData,
