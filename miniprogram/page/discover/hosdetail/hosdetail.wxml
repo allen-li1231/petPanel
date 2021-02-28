@@ -33,38 +33,30 @@
     </mp-cell>
   </mp-cells>
   <mp-cells>
-    <view class="vet-info">
-      <mp-cell>
-        <view class="title-vetname">院内医生</view>
-      </mp-cell>
-      <i-grid>
-    <i-row>
-        <i-grid-item>
-            <i-grid-icon>
-                <i-icon size="24" type="activity" />
-                <i-grid-label>宫格</i-grid-label>
-            </i-grid-icon>
-        </i-grid-item>
-        <i-grid-item>
-            <i-grid-icon>
-                <i-icon size="24" type="addressbook" />
-                <i-grid-label>宫格</i-grid-label>
-            </i-grid-icon>
-        </i-grid-item>
-        <i-grid-item>
-            <i-grid-icon>
-                <i-icon size="24" type="barrage" />
-                <i-grid-label>宫格</i-grid-label>
-            </i-grid-icon>
-        </i-grid-item>
-    </i-row>
-    </i-grid>
-      <navigator>
-      </navigator>
+    <mp-cell>
+      <view class="title-vetname">院内医生</view>
+    </mp-cell>
+    <scroll-view class="vet-info" scroll-x="true" bindscroll="scroll">
+      <block wx:for="{{vetList}}" wx:key="item">
+        <navigator url="{{item.navLink}}" class="multi-info">
+          <image class="vetPhoto" src="{{item.img}}"></image>
+          <view class="vetName">{{item.name}}</view>
+        </navigator>
+      </block>
+    </scroll-view>
+  </mp-cells>
+
+  <mp-cells>
+    <view class="caption-wrap">
+      <text class="title-devicename">特色设施介绍</text>
+      <i-collapse name="{{name}}" accordion>
+        <block wx:for="{{deviceList}}" wx:key="item">
+        <i-collapse-item title="{{item.name}}">
+          <view slot="content">{{item.content}}</view>
+        </i-collapse-item>
+      </block>
+      </i-collapse>
     </view>
   </mp-cells>
 
-  <view class="device-info">
-  </view>
- 
 </view>

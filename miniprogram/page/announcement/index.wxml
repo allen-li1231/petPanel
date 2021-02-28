@@ -41,7 +41,7 @@
   <view wx:if="{{selected == 1}}">
     <view class ="page-section">
       <view class="text-box">
-        <text style="color:grey">您在产品使用中遇到的问题建议，或者对信息的指正，都非常欢迎反馈给我们~</text>
+        <text style="color:white">欢迎您向我们反馈在产品使用中遇到的任何问题和建议，或者对信息的指正等。</text>
       </view> 
       <view class="page-section-title">反馈内容</view>
       <view class="textarea-wrp">
