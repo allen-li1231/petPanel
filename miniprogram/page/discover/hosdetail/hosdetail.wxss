@@ -41,9 +41,14 @@
   width: 25%;
   position: relative;
 }
-.vetPhoto{
-  width: 50%;
+.image{
+  display:block;
+  width: 50px;
   height: 50px;
+}
+.vetPhoto{
+  width: 100%;
+  height: 100%;
 }
 .title-devicename{
   font-size: 20px;

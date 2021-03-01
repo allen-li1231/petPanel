@@ -39,7 +39,9 @@
     <scroll-view class="vet-info" scroll-x="true" bindscroll="scroll">
       <block wx:for="{{vetList}}" wx:key="item">
         <navigator url="{{item.navLink}}" class="multi-info">
-          <image class="vetPhoto" src="{{item.img}}"></image>
+          <view class="image">
+            <image class="vetPhoto" src="{{item.vetImg}}"></image>
+          </view>
           <view class="vetName">{{item.name}}</view>
         </navigator>
       </block>
@@ -51,10 +53,10 @@
       <text class="title-devicename">特色设施介绍</text>
       <i-collapse name="{{name}}" accordion>
         <block wx:for="{{deviceList}}" wx:key="item">
-        <i-collapse-item title="{{item.name}}">
-          <view slot="content">{{item.content}}</view>
-        </i-collapse-item>
-      </block>
+          <i-collapse-item title="{{item.name}}" name="{{item.id}}">
+            <view slot="content">{{item.content}}</view>
+          </i-collapse-item>
+        </block>
       </i-collapse>
     </view>
   </mp-cells>

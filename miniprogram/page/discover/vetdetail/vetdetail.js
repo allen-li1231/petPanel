@@ -5,7 +5,27 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    msg:'小心假文凭',
+    speed:'1000',
+    vetImg:'../../API/components/image/avatar-default-icon.png',
+    vetName:'王医生',
+    hosName:'喜乐缘宠物医院',
+    certiList:[{
+      id:'name1',
+      name:'兽医资格证',
+      content:'it should be photo',
+    },
+    {
+      id:'name2',
+      name:'毕业证书',
+      content:'it should be photo',
+    },
+    {
+      id:'name3',
+      name:'案例',
+      content:'还没想好',
+    }
+  ]
   },
 
   /**

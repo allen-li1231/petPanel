@@ -1,3 +1,11 @@
 {
-  "usingComponents": {}
+  "navigationBarTitleText": "医生详情",
+  "usingComponents": {
+    "mp-cells": "weui-miniprogram/cells/cells",
+    "mp-cell": "weui-miniprogram/cell/cell",
+    "mp-icon": "weui-miniprogram/icon/icon",
+    "i-notice-bar": "../../API/components/notice-bar/index",
+    "i-collapse": "../../API/components/collapse/index",
+    "i-collapse-item": "../../API/components/collapse-item/index"
+  }
 }
