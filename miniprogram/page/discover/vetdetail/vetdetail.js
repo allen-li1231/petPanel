@@ -10,22 +10,19 @@ Page({
     vetImg:'../../API/components/image/avatar-default-icon.png',
     vetName:'王医生',
     hosName:'喜乐缘宠物医院',
-    certiList:[{
+    certImg:'../../API/components/image/certificate.jpeg',
+    workYear:'6年',
+    expertise:'软组织外科，传染病',
+    caseList:[{
       id:'name1',
-      name:'兽医资格证',
-      content:'it should be photo',
+      title:'肿瘤切除',
+      content:'比格妞妞乳腺肿瘤后，肿瘤破溃，手术切除，十天拆线，恢复正常',      
     },
     {
       id:'name2',
-      name:'毕业证书',
-      content:'it should be photo',
-    },
-    {
-      id:'name3',
-      name:'案例',
-      content:'还没想好',
-    }
-  ]
+      title:'子宫蓄脓',
+      content:'小宝最近发现阴道口流出黄褐色物质，超声可见腹腔内大量液性暗区，手术摘除后恢复良好',
+    }]
   },
 
   /**

@@ -26,12 +26,18 @@
   </mp-cells>
 
   <mp-cells>
+    <mp-cell value="从业年限" footer="{{workYear}}"></mp-cell>
+    <mp-cell value="擅长" footer="{{expertise}}"></mp-cell>
+  <mp-cell link url="{{certImg}}" value="执业兽医师资格证书" footer="点击查看"><!-- 这里没写完-->
+  </mp-cell>
+  </mp-cells>
+  <mp-cells>
     <view class="caption-wrap">
-      <text class="title-certificate">医师专长</text>
+      <text class="caseTitle">服务案例</text>
       <i-collapse name="{{name}}" accordion>
-        <block wx:for="{{certiList}}" wx:key="item">
-          <i-collapse-item title="{{item.name}}" name="{{item.id}}">
-            <view slot="content">{{item.content}}</view>
+        <block wx:for="{{caseList}}" wx:key="item">
+          <i-collapse-item title="{{item.title}}" name="{{item.id}}">
+            <view slot="content" style="color:grey">{{item.content}}</view>
           </i-collapse-item>
         </block>
       </i-collapse>
