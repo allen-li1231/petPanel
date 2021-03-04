@@ -18,6 +18,47 @@ CustomPage({
     hosTele:'021-58982400',
     hosLicense:'全范围',
     hosExpired:'2021/10/21',
+    vetList:[{
+      name:'王医生',
+      vetImg:'../../API/components/image/avatar-default-icon.png',
+      navLink:'../vetdetail/vetdetail'
+    },
+    {
+      name:'李医生',
+      vetImg:'../../API/components/image/avatar-default-icon.png',
+      navLink:'../vetdetail/vetdetail',
+    },
+    {
+      name:'刘医生',
+      vetImg:'../../API/components/image/avatar-default-icon.png',
+      navLink:'../vetdetail/vetdetail',
+    },
+    {
+      name:'陈医生',
+      vetImg:'../../API/components/image/avatar-default-icon.png',
+      navLink:'../vetdetail/vetdetail',
+    },
+    {
+      name:'贾医生',
+      vetImg:'../../API/components/image/avatar-default-icon.png',
+      navLink:'../vetdetail/vetdetail',
+    }
+  ],
+  deviceList:[{
+    id:'name1',
+    name:'呼吸机',
+    content:'适用于抢救重症病患',
+  },
+  {
+    id:'name2',
+    name:'血透机',
+    content:'适用于严重肾病患者',
+  },
+  {
+    id:'name3',
+    name:'洗牙器械',
+    content:'满足洗牙需求',
+  }]
   },
 
   /**

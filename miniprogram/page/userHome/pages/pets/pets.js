@@ -20,8 +20,6 @@ CustomPage({
         slideButtons: [{
           type: 'warn',
           text: '删除',
-          extClass: 'test',
-          src: global.isDemo ? '/page/weui/example/cell/icon_del.svg' : '/example/cell/icon_del.svg', // icon的路径
         }],
     });
 },

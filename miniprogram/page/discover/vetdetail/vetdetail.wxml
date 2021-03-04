@@ -1,0 +1,46 @@
+<!--page/discover/vetdetail/vetdetail.wxml-->
+<view class="page-section">
+  <view class="msg-box">
+    <i-notice-bar icon="systemprompt" loop speed="{{speed}}">"{{msg}}"</i-notice-bar>
+  </view>
+
+  <mp-cells>
+    <mp-cell>
+      <view class="vet-info">
+        <view class="image">
+          <image class="vetPhoto" src="{{vetImg}}"></image>
+        </view>
+        <view class="base-info">
+          <view class="base-info-line1">
+            <view class="title-name">{{vetName}}</view>
+            <view class="flex-item icon">
+              <mp-icon type="outline" icon="star" color="#6495ED" size="25"></mp-icon>
+            </view>
+          </view>
+          <view class="base-info-line2">
+            <view class="hos-info">{{hosName}}</view>
+          </view>
+        </view>
+      </view>
+    </mp-cell>
+  </mp-cells>
+
+  <mp-cells>
+    <mp-cell value="从业年限" footer="{{workYear}}"></mp-cell>
+    <mp-cell value="擅长" footer="{{expertise}}"></mp-cell>
+  <mp-cell link url="{{certImg}}" value="执业兽医师资格证书" footer="点击查看"><!-- 这里没写完-->
+  </mp-cell>
+  </mp-cells>
+  <mp-cells>
+    <view class="caption-wrap">
+      <text class="caseTitle">服务案例</text>
+      <i-collapse name="{{name}}" accordion>
+        <block wx:for="{{caseList}}" wx:key="item">
+          <i-collapse-item title="{{item.title}}" name="{{item.id}}">
+            <view slot="content" style="color:grey">{{item.content}}</view>
+          </i-collapse-item>
+        </block>
+      </i-collapse>
+    </view>
+  </mp-cells>
+</view>

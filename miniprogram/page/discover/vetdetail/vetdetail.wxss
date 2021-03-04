@@ -1,0 +1,58 @@
+/* page/discover/vetdetail/vetdetail.wxss */
+.page-section{
+  width: 702rpx;
+  display:flex;
+  flex-direction:column;
+  margin: 20rpx auto;
+}
+.msg-box{
+  background-color:#FAFAD2;
+  margin-bottom: 30px;
+}
+.vet-info{
+  padding: 1px;
+  display: flex;
+  justify-content: space-between;
+}
+.image{
+  display: block;
+  width: 100px;
+  height: 100px;
+}
+.vetPhoto{
+  width: 100%;
+  height: 100%;
+}
+.title-name{
+  font-size: 24px;
+  color:rgb(94,103,175);
+  position:absolute;
+  left: 160px;
+}
+.flex-item {
+position:absolute;
+right: 20px;
+}
+.base-info-line2{
+  display: flex;
+  position:absolute;
+  left: 160px;
+  margin-top:40px;
+}
+.certImage{
+  float: right;
+  width: 100px;
+  height: 100px;
+}
+.certImg{
+  width: 100%;
+  height: 100%;
+}
+.weui-article__p{
+  color:grey;
+}
+.caseTitle{
+  font-size: 20px;
+  margin: 12px;
+  color:rgb(94,103,175);
+}
