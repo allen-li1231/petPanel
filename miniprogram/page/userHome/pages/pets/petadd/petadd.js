@@ -10,7 +10,7 @@ CustomPage({
     data: {
         showTopTips: false,
 
-        date: "2016-07-01",
+        date: "1980-09-01",
 
 
         kind: ["请选择种类","猫", "狗"],
