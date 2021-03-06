@@ -82,8 +82,8 @@ page {
   margin: 20rpx auto;
 }
 .text-box{
-  background-color:#FAFAD2;
-  border-radius: 5%;
+  background-color:#5cadff;
+  border-radius: 5px;
   margin-bottom: 30px;
 }
 .page-section-title{
@@ -101,8 +101,8 @@ page {
   font-size: 14px;
 }
 .submit{
-  color: rgb(94,103,175);
-  background-color:#FAFAD2;
+  color: #fff;
+  background-color:#5cadff;
   margin-right: 80px;
   margin-left: 80px;
   margin-top:30px;

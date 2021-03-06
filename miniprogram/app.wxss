@@ -117,7 +117,7 @@ input {
   margin-bottom: constant(safe-area-inset-bottom);
   margin-bottom: env(safe-area-inset-bottom);
   /* padding-bottom: 15px; */
-  padding-bottom: 15px;
+  margin-bottom: 0;
   text-align: center;
   color: rgb(94,103,175);
   font-size: 100;

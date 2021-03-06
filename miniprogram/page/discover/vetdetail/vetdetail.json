@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "医院详情",
+  "navigationBarTitleText": "医生详情",
   "usingComponents": {
     "mp-cells": "weui-miniprogram/cells/cells",
     "mp-cell": "weui-miniprogram/cell/cell",
