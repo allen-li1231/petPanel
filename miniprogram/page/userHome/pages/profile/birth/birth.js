@@ -12,14 +12,12 @@ Page({
    */
   data: {
     showTopTips: false,
-
-    date: "2016-09-01",
-    time: "12:01"
+    user_birth_date: "2016-09-01",
   },
-  bindDateChange: function (e) {
+  userBirthDateChange: function (e) {
     this.setData({
-        date: e.detail.value,
-        [`formData.date`]: e.detail.value
+      user_birth_date: e.detail.value,
+        [`formData.user_birth_date`]: e.detail.value
     })
 },
   /**

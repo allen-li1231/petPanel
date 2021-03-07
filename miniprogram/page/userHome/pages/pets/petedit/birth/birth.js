@@ -12,14 +12,12 @@ Page({
    */
   data: {
     showTopTips: false,
-
-    date: "2016-09-01",
-    time: "12:01"
+    pet_birth_date: "2016-09-01",
   },
-  bindDateChange: function (e) {
+  petBirthDateChange: function (e) {
     this.setData({
-        date: e.detail.value,
-        [`formData.date`]: e.detail.value
+      pet_birth_date: e.detail.value,
+        [`formData.pet_birth_date`]: e.detail.value
     })
 },
   /**

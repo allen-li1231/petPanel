@@ -1,11 +1,11 @@
 <!--page/userHome/pages/profile/mobile/mobile.wxml-->
 <view class="page" data-weui-theme="{{theme}}">
-    <view class="page__bd">
-<mp-cell ext-class="weui-cell_select weui-cell_select-before">
-                    <view slot="title" style="width: 105px">
-                      <view class="countrycode">+86</view>
-                      </view>
-                    <input class="weui-input" placeholder="请输入号码" />
-                </mp-cell>
-    </view>
+  <view class="page__bd">
+    <mp-cell ext-class="weui-cell_select weui-cell_select-before">
+      <view slot="title" style="width: 105px">
+        <view class="countrycode">+86</view>
+      </view>
+      <input class="weui-input" placeholder="请输入号码" />
+    </mp-cell>
+  </view>
 </view>

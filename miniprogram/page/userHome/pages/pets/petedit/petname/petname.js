@@ -13,7 +13,7 @@ Page({
    */
   data: {
     focus: false,
-    inputValue: ''
+    pet_name: ''
   },
 
   /**

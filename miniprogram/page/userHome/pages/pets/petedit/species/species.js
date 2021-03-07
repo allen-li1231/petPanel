@@ -13,21 +13,21 @@ CustomPage({
    * 页面的初始数据
    */
   data: {
-    radioItems: [
-    {name: '猫', value: '0', checked: true},
-    {name: '狗', value: '1'}]
+    lst_pet_species_condition: [
+    {pet_species_condition: '猫', value: '0', checked: true},
+    {pet_species_condition: '狗', value: '1'}]
 
   },
-  radioChange: function (e) {
+  petSpeciesChange: function (e) {
     console.log('radio发生change事件，携带value值为：', e.detail.value);
 
-    var radioItems = this.data.radioItems;
-    for (var i = 0, len = radioItems.length; i < len; ++i) {
-        radioItems[i].checked = radioItems[i].value == e.detail.value;
+    var lst_pet_species_condition = this.data.lst_pet_species_condition;
+    for (var i = 0, len = lst_pet_species_condition.length; i < len; ++i) {
+      lst_pet_species_condition[i].checked = lst_pet_species_condition[i].value == e.detail.value;
     }
 
     this.setData({
-        radioItems: radioItems,
+      lst_pet_species_condition: lst_pet_species_condition,
         [`formData.radio`]: e.detail.value
     });
 },

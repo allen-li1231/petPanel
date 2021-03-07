@@ -11,21 +11,21 @@ CustomPage({
   },
   data: {
     selected: 0,
-    hospitalList:[
+    lst_hospital_info:[
       {
-        name:'医院A',
-        distance:'x',
-        tag:'疫苗；普通外科'
+        hospital_name:'医院A',
+        hospital_distance:'x',
+        hospital_tag:'疫苗；普通外科'
       },
       {
-        name:'医院B',
-        distance:'y',
-        tag:'24小时急诊；中兽医；牙科；狗证'
+        hospital_name:'医院B',
+        hospital_distance:'y',
+        hospital_tag:'24小时急诊；中兽医；牙科；狗证'
       },
      {
-      name:'医院C',
-      distance:'z',
-      tag:'狗证'
+      hospital_name:'医院C',
+      hospital_distance:'z',
+      hospital_tag:'狗证'
      }
  ],
  navHos:'hosdetail/hosdetail',

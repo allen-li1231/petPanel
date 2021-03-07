@@ -13,8 +13,7 @@ CustomPage({
    * 页面的初始数据
    */
   data: {
-        countryCodes: ["+86", "+80", "+84", "+87"],
-        countryCodeIndex: 0,
+
   },
   formInputChange(e) {
     const {field} = e.currentTarget.dataset

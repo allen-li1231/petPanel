@@ -1,12 +1,12 @@
 <!--page/discover/hosdetail/hosdetail.wxml-->
 <view class="page-section">
   <view class="msg-box">
-    <i-notice-bar icon="systemprompt" loop>"{{msg}}"</i-notice-bar>
+    <i-notice-bar icon="systemprompt" loop>"{{hospital_message}}"</i-notice-bar>
   </view>
   <mp-cells>
     <mp-cell>
       <view class="hospital-info">
-        <view class="title-name">{{hosName}}</view>
+        <view class="title-name">{{hospital_name}}</view>
         <view class="flex-item icon">
           <mp-icon type="outline" icon="star" color="#6495ED" size="25"></mp-icon>
         </view>
@@ -14,21 +14,21 @@
     </mp-cell>
     <mp-cell>
       <view class="base-info">
-        <view class="address">{{hosAddress}}</view>
+        <view class="address">{{hospital_address}}</view>
         <view class="flex-item icon">
           <mp-icon type="outline" icon="location" color="#6495ED" size="25"></mp-icon>
         </view>
       </view>
-      <view class="tele">{{hosTele}}</view>
+      <view class="tele">{{hospital_tele_number}}</view>
     </mp-cell>
     <mp-cell>
       <view class="base-info">
         <view class="licenseTitle">诊疗范围：</view>
-        <view class="license">{{hosLicense}}</view>
+        <view class="license">{{hospital_license}}</view>
       </view>
       <view class="base-info">
         <view class="expiredTitle">有效期限：</view>
-        <view class="expireddate">{{hosExpired}}</view>
+        <view class="expireddate">{{hospital_license_expired_date}}</view>
       </view>
     </mp-cell>
   </mp-cells>
@@ -37,12 +37,12 @@
       <view class="title-vetname">院内医生</view>
     </mp-cell>
     <scroll-view class="vet-info" scroll-x="true" bindscroll="scroll">
-      <block wx:for="{{vetList}}" wx:key="item">
-        <navigator url="{{item.navLink}}" class="multi-info">
+      <block wx:for="{{lst_vet_info}}" wx:key="item">
+        <navigator url="{{item.vet_navigator_link}}" class="multi-info">
           <view class="image">
-            <image class="vetPhoto" src="{{item.vetImg}}"></image>
+            <image class="vetPhoto" src="{{item.vet_photo}}"></image>
           </view>
-          <view class="vetName">{{item.name}}</view>
+          <view class="vetName">{{item.vet_name}}</view>
         </navigator>
       </block>
     </scroll-view>
@@ -52,9 +52,9 @@
     <view class="caption-wrap">
       <text class="title-devicename">特色设施介绍</text>
       <i-collapse name="{{name}}" accordion>
-        <block wx:for="{{deviceList}}" wx:key="item">
-          <i-collapse-item title="{{item.name}}" name="{{item.id}}">
-            <view slot="content">{{item.content}}</view>
+        <block wx:for="{{lst_device_info}}" wx:key="item">
+          <i-collapse-item title="{{item.device_name}}" name="{{item.device_id}}">
+            <view slot="content">{{item.device_description}}</view>
           </i-collapse-item>
         </block>
       </i-collapse>

@@ -13,22 +13,22 @@ CustomPage({
    * 页面的初始数据
    */
   data: {
-    radioItems: [
-    {name: '已绝育', value: '0', checked: true},
-    {name: '未绝育', value: '1'},
-    {name: '怀孕中',value:'2'}]
+    lst_pet_sterilize_condition: [
+    {pet_sterilize_condition: '已绝育', value: '0', checked: true},
+    {pet_sterilize_condition: '未绝育', value: '1'},
+    {pet_sterilize_condition: '怀孕中',value:'2'}]
 
   },
-  radioChange: function (e) {
+  petSterilizeChange: function (e) {
     console.log('radio发生change事件，携带value值为：', e.detail.value);
 
-    var radioItems = this.data.radioItems;
-    for (var i = 0, len = radioItems.length; i < len; ++i) {
-        radioItems[i].checked = radioItems[i].value == e.detail.value;
+    var lst_pet_sterilize_condition = this.data.lst_pet_sterilize_condition;
+    for (var i = 0, len = lst_pet_sterilize_condition.length; i < len; ++i) {
+      lst_pet_sterilize_condition[i].checked = lst_pet_sterilize_condition[i].value == e.detail.value;
     }
 
     this.setData({
-        radioItems: radioItems,
+      lst_pet_sterilize_condition: lst_pet_sterilize_condition,
         [`formData.radio`]: e.detail.value
     });
 },

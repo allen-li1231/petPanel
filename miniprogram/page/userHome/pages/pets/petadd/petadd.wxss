@@ -4,8 +4,8 @@
   display: inline;
 }
 .save-btn{
-  color: rgb(94,103,175);
-  background-color:#FAFAD2;
+  color: #fff;
+  background-color: #5cadff;
   margin-right: 80px;
   margin-left: 80px;
   margin-top: -40px;

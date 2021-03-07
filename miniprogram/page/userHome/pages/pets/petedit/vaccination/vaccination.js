@@ -12,13 +12,12 @@ Page({
    */
   data: {
     showTopTips: false,
-
-    date: "2020-09-01",
+    pet_recent_vaccinate_date: "2020-09-01",
   },
-  bindDateChange: function (e) {
+  petVaccinateDateChange: function (e) {
     this.setData({
-        date: e.detail.value,
-        [`formData.date`]: e.detail.value
+      pet_recent_vaccinate_date: e.detail.value,
+        [`formData.pet_recent_vaccinate_date`]: e.detail.value
     })
 },
   /**

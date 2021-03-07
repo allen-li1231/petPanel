@@ -22,7 +22,7 @@
     "page/userHome/pages/pets/petedit/petname/petname",
     "page/userHome/pages/pets/petedit/birth/birth",
     "page/userHome/pages/pets/petedit/gender/gender",
-    "page/userHome/pages/pets/petedit/kind/kind",
+    "page/userHome/pages/pets/petedit/species/species",
     "page/userHome/pages/pets/petedit/sterilization/sterilization",
     "page/userHome/pages/pets/petedit/vaccination/vaccination",
 

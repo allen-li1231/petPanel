@@ -11,39 +11,39 @@ CustomPage({
   },
   data: {
     selected: 0,
-    list: ['医院', '医生'],
-    hospitalList:[
+    lst_favorites_tab_name: ['医院', '医生'],
+    lst_favorites_hospital_info:[
       {
-        name:'医院A',
-        distance:'x',
-        tag:'疫苗；普通外科'
+        hospital_name:'医院A',
+        hospital_distance:'x',
+        hospital_tag:'疫苗；普通外科'
       },
       {
-        name:'医院B',
-        distance:'y',
-        tag:'24小时急诊；中兽医；牙科；狗证'
+        hospital_name:'医院B',
+        hospital_distance:'y',
+        hospital_tag:'24小时急诊；中兽医；牙科；狗证'
       },
      {
-      name:'医院C',
-      distance:'z',
-      tag:'狗证'
+      hospital_name:'医院C',
+      hospital_distance:'z',
+      hospital_tag:'狗证'
      }
  ],
- vetList:[
+ lst_favorites_vet_info:[
    {
-     name:'医生A',
-     hospital:'医院A',
-     expertise:'肾内科'
+     vet_name:'医生A',
+     vet_workplace:'医院A',
+     vet_expertise:'肾内科'
    },
    {
-    name:'医生B',
-    hospital:'医院B',
-    expertise:'心脏科'
+    vet_name:'医生B',
+    vet_workplace:'医院B',
+    vet_expertise:'心脏科'
    },
    {
-    name:'医生C',
-    hospital:'医院C',
-    expertise:'牙科'
+    vet_name:'医生C',
+    vet_workplace:'医院C',
+    vet_expertise:'牙科'
    }
  ],
  navHos:'../../../discover/hosdetail/hosdetail',

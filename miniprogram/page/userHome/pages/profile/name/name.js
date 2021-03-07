@@ -13,7 +13,7 @@ Page({
    */
   data: {
     focus: false,
-    inputValue: ''
+    user_nickname: ''
   },
 
   /**

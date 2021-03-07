@@ -13,21 +13,21 @@ CustomPage({
    * 页面的初始数据
    */
   data: {
-    radioItems: [
-    {name: '男', value: '0', checked: true},
-    {name: '女', value: '1'}]
+    lst_user_gender_condition: [
+    {user_gender_condition: '男', value: '0', checked: true},
+    {user_gender_condition: '女', value: '1'}]
 
   },
-  radioChange: function (e) {
+  userGenderChange: function (e) {
     console.log('radio发生change事件，携带value值为：', e.detail.value);
 
-    var radioItems = this.data.radioItems;
-    for (var i = 0, len = radioItems.length; i < len; ++i) {
-        radioItems[i].checked = radioItems[i].value == e.detail.value;
+    var lst_user_gender_condition = this.data.lst_user_gender_condition;
+    for (var i = 0, len = lst_user_gender_condition.length; i < len; ++i) {
+      lst_user_gender_condition[i].checked = lst_user_gender_condition[i].value == e.detail.value;
     }
 
     this.setData({
-        radioItems: radioItems,
+      lst_user_gender_condition: lst_user_gender_condition,
         [`formData.radio`]: e.detail.value
     });
 },

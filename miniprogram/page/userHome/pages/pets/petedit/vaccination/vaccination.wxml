@@ -5,9 +5,9 @@
       <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell weui-cell_input">
           <mp-cell prop="date" ext-class="">
-            <picker data-field="date" mode="date" value="{{date}}" start="2000-09-01" end="2022-01-01"
-              bindchange="bindDateChange">
-              <view class="weui-input">{{date}}</view>
+            <picker data-field="date" mode="date" value="{{pet_recent_vaccinate_date}}" start="2000-09-01" end="2022-01-01"
+              bindchange="petVaccinateDateChange">
+              <view class="weui-input">{{pet_recent_vaccinate_date}}</view>
             </picker>
           </mp-cell>
         </view>

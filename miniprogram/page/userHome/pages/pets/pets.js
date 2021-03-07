@@ -12,7 +12,13 @@ CustomPage({
       }
     },
   data: {
-    profileName:'瓜瓜',
+    lst_pets_profile:[
+      {
+        pet_profile_name:'瓜瓜',
+      },
+      {
+        pet_profile_name:'科科',
+      }],
 
   },
   onLoad: function(){

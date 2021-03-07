@@ -2,7 +2,7 @@
 <view class="nav_title">
   <view class="nav_tab">
     <!-- 如果选中的下表等于当前的索引，就使用active class名，否则class名为common -->
-    <view wx:for="{{list}}" wx:key="list" class="{{selected==index?'active':'common'}}" data-index='{{index}}'
+    <view wx:for="{{lst_tab_name}}" wx:key="lst_tab_name" class="{{selected==index?'active':'common'}}" data-index='{{index}}'
       bindtap="selected">
       {{item}}
       <!-- 如果选中的下表等于当前的索引，就添加下划线 -->
@@ -21,14 +21,14 @@
                 <view class="weui-article__h2">#关于小程序</view>
                 <view class="weui-article__section">
                     <view class="weui-article__p">
-                        这是一个由个人发起的爱心项目，我们的宗旨只有一个，是让小动物能够得到最适合的医疗救助。
-                        请相信所有不够完善的地方都会得到改进，不变的是我们的诚意。
+                        这是一个由个人发起的爱心项目，我们的宗旨是让小动物能够得到最适合的医疗救助。
+                        我们将做到信息的透明化，推荐标准的客观化，根据不同情况向主人推送最适合的医疗资源信息。
                     </view>
                     </view>
                     <view class="weui-article__h2">#信息来源</view>
                     <view class="weui-article__section">
                     <view class="weui-article__p">
-                        这是一个由个人发起的爱心项目，我们的宗旨是让小动物能够得到最适合的医疗救助。
+                        本站信息主要来源于网络，也非常欢迎院方通过【知院】提供更多信息。
                     </view>
                     </view>
                     </view>

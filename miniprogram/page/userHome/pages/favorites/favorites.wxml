@@ -2,7 +2,7 @@
 <view class="nav_title">
   <view class="nav_tab">
     <!-- 如果选中的下表等于当前的索引，就使用active class名，否则class名为common -->
-    <view wx:for="{{list}}" wx:key="list" class="{{selected==index?'active':'common'}}" data-index='{{index}}'
+    <view wx:for="{{lst_favorites_tab_name}}" wx:key="lst_favorites_tab_name" class="{{selected==index?'active':'common'}}" data-index='{{index}}'
       bindtap="selected">
       {{item}}
       <!-- 如果选中的下表等于当前的索引，就添加下划线 -->
@@ -12,18 +12,18 @@
   <!-- tab1  -->
   <view wx:if="{{selected == 0}}">
     <view class="page-section">
-      <block wx:for="{{hospitalList}}" wx:key="*this">
+      <block wx:for="{{lst_favorites_hospital_info}}" wx:key="*this">
         <mp-cells>
           <mp-cell>
             <view class="title">
-              <view class="title-name">{{item.name}}</view>
+              <view class="title-name">{{item.hospital_name}}</view>
               <view class="flex-item icon">
                 <mp-icon type="field" icon="star" color="#6495ED" size="25"></mp-icon>
               </view>
             </view>
-            <view class="distance">距离{{item.distance}}公里</view>
+            <view class="distance">距离{{item.hospital_distance}}公里</view>
             <view class="detail">
-              <view class="tag">推荐：{{item.tag}}</view>
+              <view class="tag">推荐：{{item.hospital_tag}}</view>
               <navigator url="{{navHos}}" hover-class="ohter-navigator">
                 <view class="text-navigator">详情>></view>
               </navigator>
@@ -36,18 +36,18 @@
   <!-- tab2 -->
   <view wx:if="{{selected == 1}}">
     <view class="page-section">
-      <block wx:for="{{vetList}}" wx:key="*this">
+      <block wx:for="{{lst_favorites_vet_info}}" wx:key="*this">
         <mp-cells>
           <mp-cell>
             <view class="title">
-              <view class="title-name">{{item.name}}</view>
+              <view class="title-name">{{item.vet_name}}</view>
               <view class="flex-item icon">
                 <mp-icon type="field" icon="star" color="#6495ED" size="25"></mp-icon>
               </view>
             </view>
-            <view class="hospital">{{item.hospital}}</view>
+            <view class="hospital">{{item.vet_workplace}}</view>
             <view class="detail">
-              <view class="tag">擅长：{{item.expertise}}</view>
+              <view class="tag">擅长：{{item.vet_expertise}}</view>
               <navigator url="{{navVet}}" hover-class="ohter-navigator">
                 <view class="text-navigator">详情>></view>
               </navigator>
