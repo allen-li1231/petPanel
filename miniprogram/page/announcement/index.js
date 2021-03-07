@@ -10,7 +10,7 @@ CustomPage({
   },
   data: {
     selected: 0,
-    list: ['团队声明', '意见及反馈'],
+    lst_tab_name: ['团队声明', '意见及反馈'],
     focus: false,
     inputValue: ''
   },
