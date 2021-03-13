@@ -28,13 +28,13 @@ page {
 .active {
   line-height: 100rpx;
   text-align: center;
-  color: rgb(94,103,175);
+  color: rgb(70,118,166);
   flex: 1;
   font-size: 28rpx;
 }
 /* 下划线的样式 */
 .nav_underline {
-  background: rgb(94,103,175);
+  background: rgb(70,118,166);
   width: 54rpx;
   height: 6rpx;
   margin-top: -10rpx;
@@ -82,12 +82,12 @@ page {
   margin: 20rpx auto;
 }
 .text-box{
-  background-color:#5cadff;
+  background-color:rgb(234,177,115);
   border-radius: 5px;
   margin-bottom: 30px;
 }
 .page-section-title{
-  color:rgb(94,103,175);
+  color:rgb(70,118,166);
   font-size: 19px;
   padding-left: 0px;
 }
@@ -102,7 +102,7 @@ page {
 }
 .submit{
   color: #fff;
-  background-color:#5cadff;
+  background-color:rgb(234,177,115);
   margin-right: 80px;
   margin-left: 80px;
   margin-top:30px;
