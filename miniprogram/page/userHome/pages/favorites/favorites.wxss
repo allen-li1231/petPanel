@@ -33,7 +33,7 @@ page {
 }
 /* 下划线的样式 */
 .nav_underline {
-  color:rgb(70,118,166);
+  background: rgb(70,118,166);
   width: 54rpx;
   height: 6rpx;
   margin-top: -10rpx;

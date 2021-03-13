@@ -8,7 +8,7 @@
       <view class="hospital-info">
         <view class="title-name">{{hospital_name}}</view>
         <view class="flex-item icon">
-          <mp-icon type="outline" icon="star" color="#6495ED" size="25"></mp-icon>
+          <mp-icon type="outline" icon="star" color="rgb(234,177,115)" size="25"></mp-icon>
         </view>
       </view>
     </mp-cell>
