@@ -18,11 +18,11 @@
 }
 .title-name{
   font-size: 24px;
-  color:rgb(94,103,175);
+  color:rgb(70,118,166);
 }
 /* 修改navigator-text默认背景色 */
 .text-navigator {
-color: rgb(94,103,175);
+  color:rgb(70,118,166);
 background-color:	#F8F8FF;
 }
 .tag{

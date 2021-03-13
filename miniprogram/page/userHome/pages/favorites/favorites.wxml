@@ -18,13 +18,13 @@
             <view class="title">
               <view class="title-name">{{item.hospital_name}}</view>
               <view class="flex-item icon">
-                <mp-icon type="field" icon="star" color="#6495ED" size="25"></mp-icon>
+                <mp-icon type="field" icon="star" color="rgb(234,177,115)" size="25"></mp-icon>
               </view>
             </view>
             <view class="distance">距离{{item.hospital_distance}}公里</view>
             <view class="detail">
               <view class="tag">推荐：{{item.hospital_tag}}</view>
-              <navigator url="{{navHos}}" hover-class="ohter-navigator">
+              <navigator url="{{navigator_url_hospital}}" hover-class="ohter-navigator">
                 <view class="text-navigator">详情>></view>
               </navigator>
             </view>
@@ -42,13 +42,13 @@
             <view class="title">
               <view class="title-name">{{item.vet_name}}</view>
               <view class="flex-item icon">
-                <mp-icon type="field" icon="star" color="#6495ED" size="25"></mp-icon>
+                <mp-icon type="field" icon="star" color="rgb(234,177,115)" size="25"></mp-icon>
               </view>
             </view>
             <view class="hospital">{{item.vet_workplace}}</view>
             <view class="detail">
               <view class="tag">擅长：{{item.vet_expertise}}</view>
-              <navigator url="{{navVet}}" hover-class="ohter-navigator">
+              <navigator url="{{navigator_url_vet}}" hover-class="ohter-navigator">
                 <view class="text-navigator">详情>></view>
               </navigator>
             </view>

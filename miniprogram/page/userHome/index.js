@@ -15,15 +15,15 @@ Page({
   data: {
     List: [
         {
-          name: '宠物信息',
+          page_name: '宠物信息',
           page: 'pets'
         },
         {
-          name: '个人资料',
+          page_name: '个人资料',
           page: 'profile'
         },
         {
-          name: '我的收藏',
+          page_name: '我的收藏',
           page: 'favorites'
         },
     ],

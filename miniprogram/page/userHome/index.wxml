@@ -23,7 +23,7 @@
     <view class="kind-list">
       <block wx:key="_" wx:for-items="{{List}}">
           <navigator url="pages/{{item.page}}/{{item.page}}" class="navigator">
-            <view class="kind-list-text">{{item.name}}</view>
+            <view class="kind-list-text">{{item.page_name}}</view>
           </navigator>
       </block>
     </view>

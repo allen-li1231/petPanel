@@ -25,7 +25,7 @@
 }
 .title-name{
   font-size: 24px;
-  color:rgb(94,103,175);
+  color:rgb(70,118,166);
   position:absolute;
   left: 160px;
 }
@@ -54,5 +54,5 @@ right: 20px;
 .caseTitle{
   font-size: 20px;
   margin: 12px;
-  color:rgb(94,103,175);
+  color:rgb(70,118,166);
 }

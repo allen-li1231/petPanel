@@ -119,7 +119,7 @@ input {
   /* padding-bottom: 15px; */
   margin-bottom: 0;
   text-align: center;
-  color: rgb(94,103,175);
+  color: rgb(70,118,166);
   font-size: 100;
 }
 .icon-foot{

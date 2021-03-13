@@ -27,13 +27,13 @@ page {
 .active {
   line-height: 100rpx;
   text-align: center;
-  color: rgb(94,103,175);
+  color:rgb(70,118,166);
   flex: 1;
   font-size: 28rpx;
 }
 /* 下划线的样式 */
 .nav_underline {
-  background: rgb(94,103,175);
+  color:rgb(70,118,166);
   width: 54rpx;
   height: 6rpx;
   margin-top: -10rpx;
@@ -93,11 +93,11 @@ page {
 }
 .title-name{
   font-size: 24px;
-  color:rgb(94,103,175);
+  color:rgb(70,118,166);
 }
 /* 修改navigator-text默认背景色 */
 .text-navigator {
-color: rgb(94,103,175);
+  color:rgb(70,118,166);
 background-color:	#F8F8FF;
 }
 .tag{

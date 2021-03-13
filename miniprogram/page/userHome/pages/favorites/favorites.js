@@ -46,8 +46,8 @@ CustomPage({
     vet_expertise:'牙科'
    }
  ],
- navHos:'../../../discover/hosdetail/hosdetail',
- navVet:'../../../discover/hosdetail/vetdetail/vetdetail',
+ navigator_url_hospital:'../../../discover/hosdetail/hosdetail',
+ navigator_url_vet:'../../../discover/vetdetail/vetdetail',
   },
   //tab框
   selected: function (e) {
