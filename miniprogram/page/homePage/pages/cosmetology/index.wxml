@@ -13,7 +13,7 @@
         <view class="detail">
           <view class="tag">推荐：
           <block wx:for="{{item.hospital_tag}}" wx:key="*this"  wx:for-item="items">
-            <text wx:if="{{items.key == true}}" style="color:red;">{{items.str}}</text>               
+            <text wx:if="{{items.key == true}}" style="color:rgb(234,177,115);">{{items.str}}</text>               
             <text wx:else>{{items.str}}</text>
          </block> 
           </view>
