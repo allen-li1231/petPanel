@@ -10,6 +10,7 @@
     "page/homePage/pages/physical-examination/index",
     "page/homePage/pages/general-clinic/index",
     "page/homePage/pages/dog-license/index",
+    "page/homePage/pages/cosmetology/index",
 
     "page/discover/hosdetail/hosdetail",
     "page/discover/vetdetail/vetdetail",
@@ -43,7 +44,7 @@
   },
   "window": {
     "navigationBarTextStyle": "@navigationBarTextStyle",
-    "navigationBarTitleText": "演示",
+    "navigationBarTitleText": "",
     "navigationBarBackgroundColor": "@navigationBarBackgroundColor",
     "backgroundColor": "@backgroundColor"
   },
