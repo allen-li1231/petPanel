@@ -1,1 +1,32 @@
 /* page/homePage/pages/sterilization/index.wxss */
+/*修改文本对齐*/
+.page-section{
+  width: 702rpx;
+  display: flex;
+  flex-direction: column;
+  margin: 20rpx auto;
+}
+.title{
+  padding: 1px;
+  display: flex;
+  justify-content: space-between;
+}
+.detail{
+  padding: 1px;
+  display: flex;
+  justify-content: space-between;
+}
+.title-name{
+  font-size: 24px;
+  color:rgb(70,118,166);
+}
+/* 修改navigator-text默认背景色 */
+.text-navigator {
+  color:rgb(70,118,166);
+background-color:	#F8F8FF;
+}
+.tag{
+  width:70%;
+  font-size:15px;
+  color:#A9A9A9;
+}

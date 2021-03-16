@@ -30,6 +30,3 @@ background-color:	#F8F8FF;
   font-size:15px;
   color:#A9A9A9;
 }
-.tag_keyword{
-color:red;
-}

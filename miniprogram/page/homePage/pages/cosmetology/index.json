@@ -4,6 +4,6 @@
     "mp-cell": "weui-miniprogram/cell/cell",
     "mp-icon": "weui-miniprogram/icon/icon"
   },
-  "navigationBarTitleText": "知萌-美容",
-  "disableScroll": true
+  "disableScroll": true,
+  "navigationBarTitleText": "知萌-美容"
 }
