@@ -1,4 +1,5 @@
 import CustomPage from '../../../base/CustomPage'
+import WxValidate from '../../../../../util/WxValidate'
 
 CustomPage({    
     onShareAppMessage() {
@@ -10,7 +11,7 @@ CustomPage({
     data: {
         showTopTips: false,
 
-        date: "1980-09-01",
+        date: null,
 
 
         kind: ["请选择种类","猫", "狗"],
@@ -25,15 +26,7 @@ CustomPage({
         vaccination: "2021-02-13"
 
         },
-        rules: [{
-            name: 'name',
-            rules: {required: true, message: '请输入姓名'},
-        },
-        {
-            name: 'gender',
-            rules:{required: true, message:'请填写宠物性别'},
-        }
-    ],
+
     bindDateChange: function (e) {
         this.setData({
             date: e.detail.value,
