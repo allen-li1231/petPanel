@@ -11,9 +11,6 @@ CustomPage({
     data: {
         showTopTips: false,
 
-<<<<<<< HEAD
-        pet_birth_date: "1980-09-01",
-=======
         formData: {},
         formRules: [{
             name: 'petName',
@@ -36,7 +33,6 @@ CustomPage({
             name: 'petVaccineDate',
             rules: [{required: false}, {date: true, message: '疫苗日期格式异常'}],
         }],
->>>>>>> Allen_mainstream
 
         petBirth: null,
         petBirthRange: {
@@ -54,36 +50,18 @@ CustomPage({
         pet_recent_vaccinate_date: "2021-02-13"
 
         },
-<<<<<<< HEAD
-        rules: [{
-            name: 'name',
-            rules: {required: true, message: '请输入姓名'},
-        },
-        {
-            name: 'gender',
-            rules:{required: true, message:'请填写宠物性别'},
-        }
-    ],
-    petBirthDateChange: function (e) {
-=======
 
     formPetBirthChange: function (e) {
->>>>>>> Allen_mainstream
         this.setData({
             "formData.petBirth": e.detail.value,
             petBirth: e.detail.value
         })
     },
-<<<<<<< HEAD
-    petNameInputChange(e) {
-        const {field} = e.currentTarget.dataset
-=======
     formPetNameInputChange(e) {
         function  checkEmail(value) {
             return /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(value)
         }
         const petName = e.detail.value
->>>>>>> Allen_mainstream
         this.setData({
             "formData.petName": petName
         })
