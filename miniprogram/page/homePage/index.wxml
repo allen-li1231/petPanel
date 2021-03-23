@@ -4,7 +4,7 @@
 <view class="container">
   <view class="page-body-wrapper">
     <view class="index-hd">
-      <image class="index-logo" src="resources/kind/petPanel_logo.jpg"></image>
+      <image class="index-logo" src="resources/kind/petPanel_logo.png"></image>
       <view class="index-desc">Welcome to PetPanel, here we provide various medical services for your beloved pets.</view>
     </view>
     <view class="btn-area">

@@ -42,7 +42,7 @@ function formatLeadingZeroNumber(n, digitNum = 2) {
   return new Array(needNum).fill(0).join('') + n
 }
 
-function formatDateTime(date, withMs = false) {
+function formatDateTime(date, withHour = true, withMs = false) {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
   const day = date.getDate()
@@ -51,8 +51,11 @@ function formatDateTime(date, withMs = false) {
   const second = date.getSeconds()
   const ms = date.getMilliseconds()
 
-  let ret = [year, month, day].map(value => formatLeadingZeroNumber(value, 2)).join('-') +
-    ' ' + [hour, minute, second].map(value => formatLeadingZeroNumber(value, 2)).join(':')
+  let ret = [year, month, day].map(value => formatLeadingZeroNumber(value, 2)).join('-')
+  if (withHour) {
+    ret += ' ' + [hour, minute, second].map(value => formatLeadingZeroNumber(value, 2)).join(':')
+  }
+    
   if (withMs) {
     ret += '.' + formatLeadingZeroNumber(ms, 3)
   }
