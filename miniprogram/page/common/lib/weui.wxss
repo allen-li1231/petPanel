@@ -1188,7 +1188,8 @@ button.weui-form-preview__btn {
 }
 
 .weui-cell_select-before {
-  padding-right: 16px
+  padding-right: 16px;
+  height: 56px
 }
 
 .weui-cell_select-before .weui-select {
