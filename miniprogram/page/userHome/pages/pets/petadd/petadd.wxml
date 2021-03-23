@@ -3,16 +3,16 @@
     <mp-form-page title="宠物信息" subtitle="请在此填写您的宠物信息，我们将根据以下信息匹配合适的医疗服务。">
         <mp-form id="form" rules="{{rules}}" models="{{formData}}">
             <mp-cells title="基本信息">
-                <mp-cell prop="name" title="名字" ext-class="">
-                    <input bindinput="formInputChange" data-field="name" class="weui-input" placeholder="请输入宠物名字" />
+                <mp-cell prop="formPetName" title="名字" ext-class="">
+                    <input bindinput="formInputChange" class="weui-input" placeholder="请输入宠物名字" />
                 </mp-cell>
-                <mp-cell prop="date" title="生日" ext-class="">
-                    <picker data-field="date" mode="date" value="{{date}}" start="1980-09-01" end="2022-01-01"
+                <mp-cell prop="formPetBirth" title="生日" ext-class="">
+                    <picker mode="date" start="1980-09-01" end="2022-01-01"
                         bindchange="bindDateChange">
-                        <view class="weui-input">{{date}}</view>
+                        <view class="weui-input">{{date == null? "请输入宠物生日": date}}</view>
                     </picker>
                 </mp-cell>
-                <mp-cell prop="gender" title="性别" >
+                <mp-cell prop="formPetGender" title="性别" >
                     <radio-group name="radio">
                         <label>
                             <radio value="radio1" />男</label>
