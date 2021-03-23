@@ -1,7 +1,7 @@
 import CustomPage from '../../../base/CustomPage'
-import WxValidate from '../../../../../util/WxValidate'
+import {formatDateTime} from '../../../../../util/util'
 
-CustomPage({    
+CustomPage({
     onShareAppMessage() {
         return {
           title: '添加宠物信息',
@@ -11,8 +11,34 @@ CustomPage({
     data: {
         showTopTips: false,
 
-        date: null,
+        formData: {},
+        formRules: [{
+            name: 'petName',
+            rules: [{required: true, message: '宠物姓名是必选项'},
+            {maxlength: 50, message: '宠物姓名过长，请勿超过50字'}
+        ],
+        }, {
+            name: 'petBirth',
+            rules: [{required: false}, {date: true, message: '生日日期格式异常'}],
+        }, {
+            name: 'petGender',
+            rules: {required: true, message: '宠物性别必填'},
+        }, {
+            name: 'petType',
+            rules: {required: true, message: '宠物类型必填'},
+        }, {
+            name: 'petSterilize',
+            rules: {required: false},
+        }, {
+            name: 'petVaccineDate',
+            rules: [{required: false}, {date: true, message: '疫苗日期格式异常'}],
+        }],
 
+        petBirth: null,
+        petBirthRange: {
+            start: "1980-09-01",
+            end: formatDateTime(new Date(), false),
+        },
 
         kind: ["请选择种类","猫", "狗"],
         kindIndex: 0,
@@ -27,17 +53,23 @@ CustomPage({
 
         },
 
-    bindDateChange: function (e) {
+    formPetBirthChange: function (e) {
         this.setData({
-            date: e.detail.value,
-            [`formData.date`]: e.detail.value
+            "formData.petBirth": e.detail.value,
+            petBirth: e.detail.value
         })
     },
-    formInputChange(e) {
-        const {field} = e.currentTarget.dataset
+    formPetNameInputChange(e) {
+        function  checkEmail(value) {
+            return /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(value)
+        }
+        const petName = e.detail.value
         this.setData({
-            [`formData.${field}`]: e.detail.value
+            "formData.petName": petName
         })
+        if (!checkEmail(petName)) {
+            
+        }
     },
     bindTimeChange: function (e) {
         this.setData({
