@@ -1,7 +1,7 @@
 <!--page/discover/hosdetail/hosdetail.wxml-->
 <view class="page-section">
   <view class="msg-box">
-    <i-notice-bar icon="systemprompt" loop>"{{hospital_message}}"</i-notice-bar>
+    <i-notice-bar icon="systemprompt" loop>{{hospital_message}}</i-notice-bar>
   </view>
   <mp-cells>
     <mp-cell>

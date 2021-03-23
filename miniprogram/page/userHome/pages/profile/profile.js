@@ -2,7 +2,7 @@
 Page({
   onShareAppMessage() {
     return {
-      title: '名字',
+      title: '个人资料',
       path: 'page/userHome/pages/profile/profile'
     }
   },
