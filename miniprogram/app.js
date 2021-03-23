@@ -18,6 +18,10 @@ App({
   },
 
   onLaunch(opts, data) {
+    wx.hideTabBar({
+      animation: false,
+    })
+
     const that = this;
     const canIUseSetBackgroundFetchToken = wx.canIUse('setBackgroundFetchToken')
     if (canIUseSetBackgroundFetchToken) {
@@ -70,7 +74,9 @@ App({
           console.log('读取本地loginid失败')
         },
         complete: () => {
-          this.getWXContext(this.loginAction)
+          this.getWXContext(() => {
+            this.loginAction(wx.showTabBar)
+          })
         }
       })
     }
@@ -119,10 +125,6 @@ App({
 },
 
   loginAction(callback) {
-    wx.showLoading({
-      title: "加载中...",
-      mask: true,
-      });
     console.log("loginAction pushes data:", {
       loginid: this.globalData.lastLoginid,
       openid: this.globalData.openid,
@@ -159,7 +161,6 @@ App({
         console.error(err)
       },
       complete: () => {
-        wx.hideLoading();
         if (callback) callback()
       }
     })

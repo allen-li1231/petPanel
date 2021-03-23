@@ -14,7 +14,7 @@
     <view class="container">
   <view class="page-body-wrapper">
     <view class="index-hd">
-      <image class="index-logo" src="../homePage/resources/kind/petPanel_logo.jpg"></image>
+      <image class="index-logo" src="../homePage/resources/kind/petPanel_logo.png"></image>
       <view class="page__bd">
         <view class="weui-article">
             <view class="weui-article__section">

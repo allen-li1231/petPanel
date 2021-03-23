@@ -1,8 +1,9 @@
 <view class="page" data-weui-theme="{{theme}}">
     <mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
-    <mp-form-page title="宠物信息" subtitle="请在此填写您的宠物信息，我们将根据以下信息匹配合适的医疗服务。">
-        <mp-form id="form" rules="{{rules}}" models="{{formData}}">
+    <mp-form-page title="宠物信息" subtitle="请在此填写您的宠物信息，我们将根据以下信息匹配合适的医疗服务。信息填写越详细准确，服务也会更好哦">
+        <mp-form id="form" rules="{{formRules}}" models="{{formData}}">
             <mp-cells title="基本信息">
+<<<<<<< HEAD
                 <mp-cell prop="pet_name" title="名字" ext-class="">
                     <input bindinput="petNameInputChange" data-field="name" class="weui-input" placeholder="请输入宠物名字" />
                 </mp-cell>
@@ -14,6 +15,19 @@
                 </mp-cell>
                 <mp-cell prop="pet_gender" title="性别" >
                     <radio-group name="pet_gender_condition">
+=======
+                <mp-cell prop="formPetName" title="名字" ext-class="">
+                    <input bindinput="formPetNameInputChange" class="weui-input" placeholder="请输入宠物名字" />
+                </mp-cell>
+                <mp-cell prop="formPetBirth" title="生日" ext-class="">
+                    <picker mode="date" start="1980-09-01" end="2022-01-01"
+                        bindchange="formPetBirthChange">
+                        <view class="weui-input">{{petBirth == null? "请输入宠物生日": petBirth}}</view>
+                    </picker>
+                </mp-cell>
+                <mp-cell prop="formPetGender" title="性别" >
+                    <radio-group name="radio">
+>>>>>>> Allen_mainstream
                         <label>
                             <radio value="pet_gender_condition_1" />男</label>
                         <label>
@@ -23,22 +37,29 @@
 
             </mp-cells>
             <mp-cells title="详细信息">
-                <mp-cell ext-class="weui-cell_select weui-cell_select-after">
+                <mp-cell prop="formPetType" ext-class="weui-cell_select weui-cell_select-after">
                     <view slot="title" class="weui-label">种类</view>
                     <picker bindchange="petSpeciesChange" value="{{pet_species_index}}" range="{{lst_pet_species_condition}}">
                         <view class="weui-select">{{lst_pet_species_condition[pet_species_index]}}</view>
                     </picker>
                 </mp-cell>
-                <mp-cell ext-class="weui-cell_select weui-cell_select-after">
+                <mp-cell prop="formPetSterilize" ext-class="weui-cell_select weui-cell_select-after">
                     <view slot="title" class="weui-label">绝育情况</view>
                     <picker bindchange="petSterilizeChange" value="{{pet_sterilize_index}}" range="{{lst_pet_sterilize_condition}}">
                         <view class="weui-select">{{lst_pet_sterilize_condition[pet_sterilize_index]}}</view>
                     </picker>
                 </mp-cell>
+<<<<<<< HEAD
                 <mp-cell prop="vaccination" title="最近疫苗时间" ext-class="">
                     <picker data-field="pet_recent_vaccinate_date" mode="date" value="{{pet_recent_vaccinate_date}}" start="2000-09-01" end="2022-01-01"
                         bindchange="vaccinateDatechange">
                         <view class="weui-input">{{pet_recent_vaccinate_date}}</view>
+=======
+                <mp-cell prop="formPetVaccineDate" title="最近疫苗时间" ext-class="">
+                    <picker data-field="vaccination" mode="date" value="{{vaccination}}" start="2000-09-01" end="2022-01-01"
+                        bindchange="bindVaccinationchange">
+                        <view class="weui-input">{{vaccination}}</view>
+>>>>>>> Allen_mainstream
                     </picker>
                 </mp-cell>
             </mp-cells>
