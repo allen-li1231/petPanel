@@ -1,5 +1,5 @@
 <!--page/discover/hosdetail/hosdetail.wxml-->
-<view class="page-section">
+<view class="page" data-weui-theme="{{theme}}">
   <view class="msg-box">
     <i-notice-bar icon="systemprompt" loop>{{hospital_message}}</i-notice-bar>
   </view>

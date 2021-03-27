@@ -1,6 +1,5 @@
 <!--page/userHome/pages/favorites/favorites.wxml-->
-<view class="page" data-weui-theme="{{theme}}">
-<view class="nav_title">
+<view class="nav_title" data-weui-theme="{{theme}}">
   <view class="nav_tab">
     <!-- 如果选中的下表等于当前的索引，就使用active class名，否则class名为common -->
     <view wx:for="{{lst_favorites_tab_name}}" wx:key="lst_favorites_tab_name" class="{{selected==index?'active':'common'}}" data-index='{{index}}'
@@ -58,5 +57,4 @@
       </block>
     </view>
   </view>
-</view>
 </view>

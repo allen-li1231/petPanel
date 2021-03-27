@@ -1,5 +1,5 @@
 /* page/discover/vetdetail/vetdetail.wxss */
-.page-section{
+.page{
   width: 702rpx;
   display:flex;
   flex-direction:column;
@@ -7,7 +7,6 @@
 }
 .msg-box{
   background-color:#FAFAD2;
-  margin-bottom: 30px;
 }
 .vet-info{
   padding: 1px;
