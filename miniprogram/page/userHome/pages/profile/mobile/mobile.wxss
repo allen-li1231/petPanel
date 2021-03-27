@@ -1,4 +1,4 @@
 /* page/userHome/pages/profile/mobile/mobile.wxss */
 .countrycode{
-text-align: center
+margin-left:60rpx;
 }

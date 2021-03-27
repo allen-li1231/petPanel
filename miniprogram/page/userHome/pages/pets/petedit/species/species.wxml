@@ -1,5 +1,4 @@
 <!--page/userHome/pages/pets/petedit/kind/kind.wxml-->
-<view class="container">
   <view class="page" data-weui-theme="{{theme}}">
     <mp-cells title="">
       <mp-checkbox-group prop="radio" multi="{{false}}" bindchange="petSpeciesChange">
@@ -8,4 +7,3 @@
       </mp-checkbox-group>
     </mp-cells>
   </view>
-</view>

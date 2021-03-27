@@ -1,15 +1,7 @@
 <!--page/userHome/pages/profile/birth/birth.wxml-->
-<view class="container">
-  <view class="page-body">
-    <view class="page-section">
-      <view class="weui-cells weui-cells_after-title">
-        <view class="weui-cell weui-cell_input">
+<view class="page" data-weui-theme="{{theme}}">
           <mp-cell prop="date" ext-class="weui-input">
             <picker data-field="user_birth_date" mode="date" value="{{user_birth_date}}" start="2000-09-01" end="2022-01-01"
               bindchange="userBirthDateChange">{{user_birth_date}}</picker>
           </mp-cell>
-        </view>
-      </view>
-    </view>
-  </view>
 </view>
