@@ -13,3 +13,12 @@
   .save-btn::after {
     border: none;
   }
+  .weui-input{
+    color:grey;
+  }
+  .weui-select{
+    color:grey;
+  }
+  .formPetVaccineDate{
+    border: 3rpx solid #faca82;
+  }

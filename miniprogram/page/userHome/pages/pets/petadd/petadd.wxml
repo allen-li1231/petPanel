@@ -35,7 +35,8 @@
                         <view class="weui-select">{{lst_pet_sterilize_condition[pet_sterilize_index]}}</view>
                     </picker>
                 </mp-cell>
-                <mp-cell prop="formPetVaccineDate" title="最近疫苗时间" ext-class="">
+                <mp-cell prop="formPetVaccineDate">
+                    <view slot="title" style="width:'300px'">最近疫苗时间</view>
                     <picker data-field="vaccination" mode="date" value="{{vaccination}}" start="2000-09-01" end="2022-01-01"
                         bindchange="bindVaccinationchange">
                         <view class="weui-input">{{vaccination}}</view>
