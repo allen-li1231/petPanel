@@ -24,8 +24,8 @@ CustomPage({
             name: 'petGender',
             rules: {required: true, message: '宠物性别必填'},
         }, {
-            name: 'petType',
-            rules: {required: true, message: '宠物类型必填'},
+            name: 'petSpecies',
+            rules: {required: true, message: '宠物种类必填'},
         }, {
             name: 'petSterilize',
             rules: {required: false},
@@ -35,17 +35,16 @@ CustomPage({
         }],
 
         petBirth: null,
-        petBirthRange: {
+        petDateRange: {
             start: "1980-09-01",
             end: formatDateTime(new Date(), false),
         },
 
-        lst_pet_species_condition: ["请选择种类","猫", "狗"],
-        pet_species_index: 0,
+        lst_pet_species_condition: ["猫", "狗"],
+        pet_species_index: null,
 
-        lst_pet_sterilize_condition: ["请选择绝育情况","暂未绝育", "怀孕中","已绝育"],
-        pet_sterilize_index: 0,
-        
+        lst_pet_sterilize_condition: ["暂未绝育", "怀孕中","已绝育"],
+        pet_sterilize_index: null,
         
         pet_recent_vaccinate_date: "2021-02-13"
 
@@ -58,40 +57,40 @@ CustomPage({
         })
     },
     formPetNameInputChange(e) {
-        function  checkEmail(value) {
-            return /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(value)
-        }
         const petName = e.detail.value
         this.setData({
             "formData.petName": petName
         })
-        if (!checkEmail(petName)) {
-            
+    },
+    formPetGenderChange: function (e) {
+        console.log(e.detail)
+        this.setData({
+            "formData.petGender": e.detail.value
+        })
+    },
+    formPetSpeciesChange: function(e) {
+        if (e.detail.value !== 0) {
+            const petSpecies = this.data.lst_pet_species_condition[e.detail.value]
+            this.setData({
+                pet_species_index: e.detail.value,
+                "formData.petSpecies": petSpecies
+            })
         }
     },
-    bindTimeChange: function (e) {
-        this.setData({
-            time: e.detail.value
-        })
+    formPetSterilizeChange: function(e) {
+        console.log(e.detail)
+        if (e.detail.value !== 0) {
+            const petSterilize = this.data.lst_pet_sterilize_condition[e.detail.value]
+            this.setData({
+                pet_sterilize_index: e.detail.value,
+                "formData.petSterilize": petSterilize
+            })
+        }
     },
-    petSpeciesChange: function(e) {
-        console.log('picker species 发生选择改变，携带值为', e.detail.value);
-
-        this.setData({
-            pet_species_index: e.detail.value
-        })
-    },
-    petSterilizeChange: function(e) {
-        console.log('picker sterilization 发生选择改变，携带值为', e.detail.value);
-
-        this.setData({
-            pet_sterilize_index: e.detail.value
-        })
-    },
-    vaccinateDatechange: function (e) {
+    formPetVaccineDateChange: function (e) {
         this.setData({
             pet_recent_vaccinate_date: e.detail.value,
-            [`formData.pet_recent_vaccinate_date`]: e.detail.value
+            "formData.petVaccineDate": e.detail.value
         })
     },
     submitForm() {
@@ -103,17 +102,14 @@ CustomPage({
                     this.setData({
                         error: errors[firstError[0]].message
                     })
-
                 }
             } else {
+                console.log(this.data.formData)
                 wx.showToast({
                     title: '保存成功'
                 })
             }
         })
-        // this.selectComponent('#form').validateField('mobile', (valid, errors) => {
-        //     console.log('valid', valid, errors)
-        // })
     }
 
 });
