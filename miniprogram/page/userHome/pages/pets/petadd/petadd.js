@@ -46,7 +46,7 @@ CustomPage({
         lst_pet_sterilize_condition: ["暂未绝育", "怀孕中","已绝育"],
         pet_sterilize_index: null,
         
-        pet_recent_vaccinate_date: "2021-02-13"
+        pet_recent_vaccinate_date: null,
 
         },
 

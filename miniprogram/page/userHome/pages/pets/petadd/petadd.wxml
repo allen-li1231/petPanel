@@ -39,7 +39,7 @@
                     <view slot="title" style="width:'300px'">最近疫苗时间</view>
                     <picker data-field="vaccination" mode="date" value="{{vaccination}}" start="{{petDateRange.start}}" end="{{petDateRange.end}}"
                         bindchange="formPetVaccineDateChange">
-                        <view class="weui-input">{{vaccination}}</view>
+                        <view class="weui-input">{{pet_recent_vaccinate_date == null? "暂未": pet_recent_vaccinate_date}}</view>
                     </picker>
                 </mp-cell>
             </mp-cells>
