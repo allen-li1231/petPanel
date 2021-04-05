@@ -7,17 +7,17 @@
                     <input bindinput="formPetNameInputChange" class="weui-input" placeholder="请输入宠物名字" />
                 </mp-cell>
                 <mp-cell prop="formPetBirth" title="生日" ext-class="">
-                    <picker mode="date" start="1980-09-01" end="2022-01-01"
+                    <picker mode="date" start="{{petDateRange.start}}" end="{{petDateRange.end}}"
                         bindchange="formPetBirthChange">
                         <view class="weui-input">{{petBirth == null? "请输入宠物生日": petBirth}}</view>
                     </picker>
                 </mp-cell>
-                <mp-cell prop="formPetGender" title="性别" >
-                    <radio-group name="radio">
+                <mp-cell prop="formPetGender" title="性别" bindchange="formPetGenderChange">
+                    <radio-group name="radio" bindchange="formPetGenderChange">
                         <label>
-                            <radio value="pet_gender_condition_1" />男</label>
+                            <radio value="male" />男</label>
                         <label>
-                            <radio value="pet_gender_condition_2" />女</label>
+                            <radio value="female" />女</label>
                     </radio-group>
                 </mp-cell>
 
@@ -25,20 +25,20 @@
             <mp-cells title="详细信息">
                 <mp-cell prop="formPetType" ext-class="weui-cell_select weui-cell_select-after">
                     <view slot="title" class="weui-label">种类</view>
-                    <picker bindchange="petSpeciesChange" value="{{pet_species_index}}" range="{{lst_pet_species_condition}}">
-                        <view class="weui-select">{{lst_pet_species_condition[pet_species_index]}}</view>
+                    <picker bindchange="formPetSpeciesChange" value="{{pet_species_index}}" range="{{lst_pet_species_condition}}">
+                        <view class="weui-select">{{pet_species_index == null? "请选择宠物种类": lst_pet_species_condition[pet_species_index]}}</view>
                     </picker>
                 </mp-cell>
                 <mp-cell prop="formPetSterilize" ext-class="weui-cell_select weui-cell_select-after">
                     <view slot="title" class="weui-label">绝育情况</view>
-                    <picker bindchange="petSterilizeChange" value="{{pet_sterilize_index}}" range="{{lst_pet_sterilize_condition}}">
-                        <view class="weui-select">{{lst_pet_sterilize_condition[pet_sterilize_index]}}</view>
+                    <picker bindchange="formPetSterilizeChange" value="{{pet_sterilize_index}}" range="{{lst_pet_sterilize_condition}}">
+                        <view class="weui-select">{{pet_sterilize_index == null? "请选择绝育情况": lst_pet_sterilize_condition[pet_sterilize_index]}}</view>
                     </picker>
                 </mp-cell>
                 <mp-cell prop="formPetVaccineDate">
                     <view slot="title" style="width:'300px'">最近疫苗时间</view>
-                    <picker data-field="vaccination" mode="date" value="{{vaccination}}" start="2000-09-01" end="2022-01-01"
-                        bindchange="bindVaccinationchange">
+                    <picker data-field="vaccination" mode="date" value="{{vaccination}}" start="{{petDateRange.start}}" end="{{petDateRange.end}}"
+                        bindchange="formPetVaccineDateChange">
                         <view class="weui-input">{{vaccination}}</view>
                     </picker>
                 </mp-cell>
