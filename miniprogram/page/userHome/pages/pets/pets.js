@@ -31,6 +31,7 @@ CustomPage({
         name: "registeredPet",
         loginid: app.globalData.loginid
       },
+      //TODO: refresh pet list
     })
   },
 
