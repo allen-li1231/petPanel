@@ -64,6 +64,8 @@ App({
         traceUser: true,
       })
 
+      this.globalData.config = config
+
       // 获取loginid
       wx.getStorage({
         key: 'lastLoginid',

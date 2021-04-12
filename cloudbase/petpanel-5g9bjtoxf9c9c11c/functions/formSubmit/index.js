@@ -9,14 +9,19 @@ cloud.init({
 exports.main = async (event, context) => {
   console.log(event)
   if (event.name === "petRegister") {
-    const DB = cloud.database().collection("pets")
+    var DB = cloud.database().collection("userPet")
   }
   else {
-    const DB = cloud.database().collection("_corrupted")
+    var DB = cloud.database().collection("_corrupted")
+    const res = await DB.add({
+      data: event
+    })
+    return Error("data corrupted: " + event)
   }
-  event.delete("name")
+  
+  delete event.name
   const res = await DB.add({
     data: event
   })
-  return 0
+  return res
 }

@@ -12,13 +12,7 @@ CustomPage({
       }
     },
   data: {
-    lst_pets_profile:[
-      {
-        pet_profile_name:'瓜瓜',
-      },
-      {
-        pet_profile_name:'科科',
-      }],
+    lst_pets_profile:[],
 
   },
   onLoad: function(){
@@ -28,10 +22,21 @@ CustomPage({
           text: '删除',
         }],
     });
-},
-slideButtonTap(e) {
+  },
+  onShow: function(opts) {
+    const app = getApp()
+    wx.cloud.callFunction({
+      name: 'fetchAction',
+      data: {
+        name: "registeredPet",
+        loginid: app.globalData.loginid
+      },
+    })
+  },
 
-   },
+  slideButtonTap(e) {
+
+    },
 
 
   
