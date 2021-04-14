@@ -122,11 +122,11 @@ exports.main = async (event, context) => {
     }
   }
   else {
-    var loginid = null
+    var loginid = null, res = null
     var {createTime, _} = newLoginAction(event)
     if (event.openid) {
-      const res = await readUserInfoByOpenid(event)
-      console.log("got userInfo in database:", res)
+      res = await readUserInfoByOpenid(event)
+
       if (!res) {
         console.log("new userInfo payload created")
         var {createTime, loginid} = newLoginInfo(event)
@@ -139,7 +139,8 @@ exports.main = async (event, context) => {
       //TODO: Anonymous login
       console.log("developing...", event)
     }
-    
+
+    console.log("got userInfo in database:", res)
     return {
       createTime: createTime,
       loginid: loginid,
