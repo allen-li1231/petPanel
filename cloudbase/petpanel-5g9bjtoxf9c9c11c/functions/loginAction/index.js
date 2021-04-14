@@ -7,10 +7,11 @@ cloud.init({
 })
 
 const loginActionDB = cloud.database().collection("loginAction")
+const userInfoDB = cloud.database().collection("userInfo")
 
 
 updateUserInfoById = async function(event) {
-  var res = await loginActionDB
+  var res = await userInfoDB
     .doc(event.loginid)
     .update({
       data: {
@@ -18,7 +19,7 @@ updateUserInfoById = async function(event) {
       }
     })
     .then(res => {
-      console.log("userInfo updated for user:", event.userInfo.nickName)
+      console.log("userInfo updated for event:", event)
       return res
     })
     .catch(err => {
@@ -30,32 +31,65 @@ updateUserInfoById = async function(event) {
 
 
 readUserInfoById = async function(event) {
-  var userInfo = await loginActionDB
+  const res = await userInfoDB
     .doc(event.loginid)
     .get()
     .then(res => {
-      console.log("DB returns userInfo:", res.data)
-      return res.data.userInfo
+      console.log("DB returns userInfo:", res.data.userInfo)
+      return res.data
     })
     .catch(err => {
       console.error(err)
     })
+  return res
+}
 
-  return userInfo
+
+readUserInfoByOpenid = async function(event) {
+  const res = await userInfoDB
+  .where({
+    openid: event.openid
+  })
+  .get()
+  .then(res => {
+    console.log("DB returns where result:", res)
+    return res.data[0]
+  })
+  .catch(err => {
+    console.error(err)
+  })
+  return res
 }
 
 
 newLoginAction = async function(event) {
-  // first time login
+  //one record for one login
   const now = new Date()
   const res = await loginActionDB.add({
     data: {
       createTime: now,
       openid: event.openid,
-      userInfo: event.userInfo? event.userInfo: {}
     }
   })
-  console.log(res)
+  return {
+    createTime: now,
+    loginid: res._id,
+  }
+}
+
+
+newLoginInfo = async function(event) {
+  // first time login
+  const now = new Date()
+  const res = await userInfoDB.add({
+    data: {
+      openid: event.openid,
+      userInfo: event.userInfo? event.userInfo: {},
+      pets: {},
+      favourites: {}
+    }
+  })
+
   return {
     createTime: now,
     loginid: res._id,
@@ -75,18 +109,44 @@ exports.main = async (event, context) => {
     else {
       // return userInfo if server record exists
       // create a new record
-      event.userInfo = await readUserInfoById(event)
-      var {createTime, loginid} = await newLoginAction(event)
-      console.log("send userInfo to client:", event.userInfo)
+      var res = await readUserInfoById(event)
+      var {createTime, _} = await newLoginAction(event)
+      console.log("send res to client:", res)
       return {
         createTime,
-        loginid,
-        userInfo: event.userInfo
+        loginid: res._id,
+        userInfo: res.userInfo,
+        pets: res.pets,
+        favourites: res.favourites
       }
     }
   }
   else {
-    return await newLoginAction(event)
+    var loginid = null
+    var {createTime, _} = newLoginAction(event)
+    if (event.openid) {
+      const res = await readUserInfoByOpenid(event)
+      console.log("got userInfo in database:", res)
+      if (!res) {
+        console.log("new userInfo payload created")
+        var {createTime, loginid} = newLoginInfo(event)
+      }
+      else {
+        loginid = res._id
+      }
+    }
+    else {
+      //TODO: Anonymous login
+      console.log("developing...", event)
+    }
+    
+    return {
+      createTime,
+      loginid,
+      userInfo: res? res.userInfo: {},
+      pets: res? res.pets: {},
+      favourites: res? res.favourites: {}
+    }
   }
 
 }

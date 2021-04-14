@@ -12,6 +12,8 @@ App({
     openid: null,
     appid: null,
     userInfo: {},
+    userFavourite: {},
+    userPet: {},
     hasUserInfo: false,
     hasLoggedIn: false,
     lastLoginid: null,
@@ -143,6 +145,8 @@ App({
         console.log("loginAction returns:", res)
         this.globalData.accessTime = res.result.createTime
         this.globalData.loginid = res.result.loginid
+        this.globalData.userFavourite = res.result.favourites
+        this.globalData.userPet = res.result.pets
         this.globalData.hasLoggedIn = true
         if (res.result.userInfo && Object.keys(res.result.userInfo).length !== 0) {
           this.globalData.userInfo = res.result.userInfo
