@@ -141,8 +141,8 @@ exports.main = async (event, context) => {
     }
     
     return {
-      createTime,
-      loginid,
+      createTime: createTime,
+      loginid: loginid,
       userInfo: res? res.userInfo: {},
       pets: res? res.pets: {},
       favourites: res? res.favourites: {}
