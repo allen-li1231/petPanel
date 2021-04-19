@@ -5,7 +5,7 @@
       <block wx:key="_" wx:for-items="{{lst_pets_profile}}">
         <mp-slideview show="{{false}}" buttons="{{slideButtons}}" bindbuttontap="slideButtonTap">
           <navigator url="petedit/petedit">
-            <mp-cell class="petProfile">{{item.petName}}档案</mp-cell>
+            <mp-cell class="petProfile">{{item.petName}} 档案</mp-cell>
           </navigator>
         </mp-slideview>
       </block>

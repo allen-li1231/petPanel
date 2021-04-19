@@ -20,8 +20,10 @@ exports.main = async (event, context) => {
   }
   
   delete event.name
-  const res = await DB.add({
-    data: event
+  const res = await DB.where({
+    "userInfo.openId": event.openid,
   })
-  return res
+  .get()
+  console.log("fetch result:", res)
+  return res.data
 }

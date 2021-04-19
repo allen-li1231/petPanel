@@ -76,7 +76,6 @@ CustomPage({
         })
     },
     formPetGenderChange: function (e) {
-        console.log(e.detail)
         this.setData({
             "formData.petGender": e.detail.value
         })
@@ -84,7 +83,6 @@ CustomPage({
     formPetSpeciesChange: function(e) {
         if (e.detail.value !== 0) {
             const petSpecies = this.data.lst_pet_species_condition_en[e.detail.value]
-            console.log(petSpecies)
             this.setData({
                 pet_species_index: e.detail.value,
                 "formData.petSpecies": petSpecies
@@ -92,7 +90,6 @@ CustomPage({
         }
     },
     formPetSterilizeChange: function(e) {
-        console.log(e.detail)
         if (e.detail.value !== 0) {
             const petSterilize = this.data.lst_pet_sterilize_condition_en[e.detail.value]
             this.setData({
@@ -128,9 +125,8 @@ CustomPage({
 
                 let app = getApp()
                 this.data.formData.loginid = app.globalData.loginid
-                this.data.formData.openid = app.globalData.openid
                 this.data.formData.unionid = app.globalData.unionid
-                
+
                 wx.cloud.callFunction({
                     name: "formSubmit",
                     data: this.data.formData,
@@ -148,7 +144,7 @@ CustomPage({
                         })
                     },
                     fail: res => {
-                        console.log(res)
+                        console.log("formSubmit failed:", res)
                         wx.hideToast()
                         wx.showToast({
                             title: '请稍后重试',
