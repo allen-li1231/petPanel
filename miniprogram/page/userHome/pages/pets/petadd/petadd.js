@@ -118,7 +118,8 @@ CustomPage({
                         error: errors[firstError[0]].message
                     })
                 }
-            } else {
+            } 
+            else {
                 wx.showToast({
                     title: '请稍等...',
                     icon: "loading",
@@ -127,7 +128,9 @@ CustomPage({
 
                 let app = getApp()
                 this.data.formData.loginid = app.globalData.loginid
-
+                this.data.formData.openid = app.globalData.openid
+                this.data.formData.unionid = app.globalData.unionid
+                
                 wx.cloud.callFunction({
                     name: "formSubmit",
                     data: this.data.formData,
@@ -154,7 +157,6 @@ CustomPage({
                         })
                     },
                 })
-                
             }
         })
     }

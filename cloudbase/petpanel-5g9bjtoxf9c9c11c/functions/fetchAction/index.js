@@ -8,11 +8,11 @@ cloud.init({
 // 云函数入口函数
 exports.main = async (event, context) => {
   console.log(event)
+  var DB = cloud.database().collection("_corrupted")
   if (event.name === "registeredPet") {
-    var DB = cloud.database().collection("userPet")
+    DB = cloud.database().collection("userPet")
   }
   else {
-    var DB = cloud.database().collection("_corrupted")
     const res = await DB.add({
       data: event
     })

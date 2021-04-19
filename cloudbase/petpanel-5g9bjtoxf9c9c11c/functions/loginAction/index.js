@@ -85,8 +85,9 @@ newLoginInfo = async function(event) {
     data: {
       openid: event.openid,
       userInfo: event.userInfo? event.userInfo: {},
-      pets: {},
-      favourites: {}
+      // might be unused in the future
+      //pets: {},
+      //favourites: {}
     }
   })
 
@@ -116,8 +117,9 @@ exports.main = async (event, context) => {
         createTime,
         loginid: res._id,
         userInfo: res.userInfo,
-        pets: res.pets,
-        favourites: res.favourites
+        //might be unused in the future
+        //pets: res.pets,
+        //favourites: res.favourites
       }
     }
   }
@@ -145,8 +147,9 @@ exports.main = async (event, context) => {
       createTime: createTime,
       loginid: loginid,
       userInfo: res? res.userInfo: {},
-      pets: res? res.pets: {},
-      favourites: res? res.favourites: {}
+      // might be unused in the future
+      //pets: res? res.pets: {},
+      //favourites: res? res.favourites: {}
     }
   }
 

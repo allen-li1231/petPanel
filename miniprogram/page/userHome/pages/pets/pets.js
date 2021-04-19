@@ -32,6 +32,7 @@ CustomPage({
         loginid: app.globalData.loginid
       },
       //TODO: refresh pet list
+      
     })
   },
 

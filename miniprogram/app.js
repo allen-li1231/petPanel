@@ -10,6 +10,7 @@ App({
     accessTime: null,
     loginid: null,
     openid: null,
+    unionid: null,
     appid: null,
     userInfo: {},
     userFavourite: {},
@@ -122,6 +123,7 @@ App({
         // console.log("getWXContext returns:", res);
         this.globalData.openid = res.result.openid;
         this.globalData.appid = res.result.appid;
+        this.globalData.unionid = res.result.unionid;
       },
       fail: err => { console.error("Unable to get wxContext in time", err); },
       complete: () => {if (callback) callback()}
@@ -132,6 +134,7 @@ App({
     console.log("loginAction pushes data:", {
       loginid: this.globalData.lastLoginid,
       openid: this.globalData.openid,
+      unionid: this.globalData.unionid,
       userInfo: this.globalData.userInfo,
     })
     wx.cloud.callFunction({
@@ -139,6 +142,7 @@ App({
       data: {
         loginid: this.globalData.lastLoginid,
         openid: this.globalData.openid,
+        unionid: this.globalData.unionid,
         userInfo: this.globalData.userInfo,
       },
       success: res => {
