@@ -1,5 +1,14 @@
 <!--page/discover/index.wxml-->
 <view class="page-section">
+  <i-tabs current="{{ current_scroll }}" scroll bindchange="handleChangeScroll">
+    <i-tab key="vaccination" title="疫苗"></i-tab>
+    <i-tab key="sterilization" title="绝育"></i-tab>
+    <i-tab key="physical-examination" title="体检"></i-tab>
+    <i-tab key="general-clinic" title="看病"></i-tab>
+    <i-tab key="dog-license" title="狗证"></i-tab>
+    <i-tab key="cosmetology" title="美容"></i-tab>
+</i-tabs>
+<view wx:if="{{current_scroll == 'vaccination'}}">
   <block wx:for="{{lst_hospital_info}}" wx:key="item">
     <mp-cells>
       <mp-cell>
@@ -19,4 +28,5 @@
       </mp-cell>
     </mp-cells>
   </block>
+  </view>
 </view>
