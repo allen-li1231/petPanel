@@ -24,14 +24,19 @@ CustomPage({
     });
   },
   onShow: function(opts) {
+    const that = this
     const app = getApp()
     wx.cloud.callFunction({
       name: 'fetchAction',
       data: {
         name: "registeredPet",
-        loginid: app.globalData.loginid
+        openid: app.globalData.openid
       },
-      //TODO: refresh pet list
+      success: res => {
+        that.setData({
+          lst_pets_profile: res.result
+        })
+      }
     })
   },
 

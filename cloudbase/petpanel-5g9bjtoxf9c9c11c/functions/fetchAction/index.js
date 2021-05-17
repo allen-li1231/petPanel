@@ -8,11 +8,11 @@ cloud.init({
 // 云函数入口函数
 exports.main = async (event, context) => {
   console.log(event)
+  var DB = cloud.database().collection("_corrupted")
   if (event.name === "registeredPet") {
-    var DB = cloud.database().collection("userPet")
+    DB = cloud.database().collection("userPet")
   }
   else {
-    var DB = cloud.database().collection("_corrupted")
     const res = await DB.add({
       data: event
     })
@@ -20,8 +20,10 @@ exports.main = async (event, context) => {
   }
   
   delete event.name
-  const res = await DB.add({
-    data: event
+  const res = await DB.where({
+    "userInfo.openId": event.openid,
   })
-  return res
+  .get()
+  console.log("fetch result:", res)
+  return res.data
 }
