@@ -1,5 +1,8 @@
 <!--page/discover/index.wxml-->
 <view class="page-section">
+  <view class="page-section-spacing">
+      <search-bar placeholder="搜索" bind:handleSearch="searchRes"></search-bar>
+    </view>
   <block wx:for="{{lst_hospital_info}}" wx:key="item">
     <mp-cells>
       <mp-cell>

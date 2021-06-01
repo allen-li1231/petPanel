@@ -30,4 +30,22 @@ CustomPage({
  ],
  navHos:'hosdetail/hosdetail',
   },
+
+  searchRes:  function(hospitalinfo){
+    let searched = [];
+    for (let i = 0; i < hospitalinfo.length; i++) {
+      let info = {
+        "hospital_name": hospitalinfo[i].name,
+        "hospital_distance": 'x',
+        "hospital_tag":  hospitalinfo[i].distance
+      }
+      searched.push(info)
+    }
+    this.setData(
+      {
+        selected: 0,
+        'lst_hospital_info': searched
+      }
+    )
+  }
 })
