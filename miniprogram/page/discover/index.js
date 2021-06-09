@@ -11,6 +11,34 @@ CustomPage({
   },
   data: {
     selected: 0,
+    current: 'vaccination',
+    current_scroll: 'vaccination',
+    lst_tab_hospital:[
+      {
+        key:'vaccination',
+        title:'疫苗',
+      },
+      {
+        key:'sterilization',
+        title:'绝育',
+      },
+      {
+        key:'physical-examination',
+        title:'体检',
+      },
+      {
+        key:'general-clinic',
+        title:'看病',
+      },
+      {
+        key:'dog-license',
+        title:'狗证',
+      },
+      {
+        key:'cosmetology',
+        title:'美容',
+      },
+    ],
     lst_hospital_info:[
       {
         hospital_name:'医院A',
@@ -30,4 +58,10 @@ CustomPage({
  ],
  navHos:'hosdetail/hosdetail',
   },
+  handleChangeScroll ({ detail }) {
+    this.setData({
+        current_scroll: detail.key
+    });
+},
+  
 })

@@ -1,9 +1,7 @@
 {
   "disableScroll": true,
-  "navigationBarTitleText": "附近医院",
+  "navigationBarTitleText": "搜索结果",
   "usingComponents": {
-    "i-tabs": "../API/components/tabs/index",
-    "i-tab": "../API/components/tab/index",
     "mp-cells": "weui-miniprogram/cells/cells",
     "mp-cell": "weui-miniprogram/cell/cell",
     "mp-icon": "weui-miniprogram/icon/icon"
