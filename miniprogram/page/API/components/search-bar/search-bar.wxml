@@ -14,3 +14,7 @@
   </view>
   <view wx:if="{{inputValue}}" bindtap="handleTextbtnClick" class="text-btn">取消</view>
 </view>
+
+<!-- <view wx:if="{{inputValue}}">
+  <discover-cut></discover-cut>
+</view> -->

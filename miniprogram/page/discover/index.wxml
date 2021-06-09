@@ -1,5 +1,8 @@
 <!--page/discover/index.wxml-->
 <view class="page-section">
+  <view class="page-section-spacing">
+    <search-bar placeholder="搜索" bind:handleSearch="searchRes"></search-bar>
+  </view>
   <i-tabs current="{{ current_scroll }}" scroll bindchange="handleChangeScroll">
     <i-tab key="vaccination" title="疫苗"></i-tab>
     <i-tab key="sterilization" title="绝育"></i-tab>

@@ -14,6 +14,23 @@ Component({
       this.setData({
         inputValue: e.detail.value
       })
+      let ans = '';
+      wx.cloud.callFunction({
+        name: "searchAction",
+        data: {
+          context: e.detail.value
+        },
+        success: (res) => {
+          console.log("searchAction returns", res);
+          ans = res
+        },
+        fail: err => {
+          console.error(err)
+        },
+      })
+
+      this.triggerEvent("searchAction", ans);
+      // console.log("info", e.detail.value)
     },
     // 点击清空输入框icon
     handleDeleteClick: function() {
