@@ -65,7 +65,24 @@ CustomPage({
 },
   
 
-  searchRes:  function(hospitalinfo){
+  searchRes: function(context){
+    console.log(context)
+    wx.cloud.callFunction({
+      name: "searchAction",
+      data: {
+        name: "discover",
+        category: this.data.current_scroll,
+        context: context.detail
+      },
+      success: (res) => {
+        console.log("searchAction returns", res);
+        ans = res
+      },
+      fail: err => {
+        console.error(err)
+      },
+    })
+
     let searched = [];
     for (let i = 0; i < hospitalinfo.length; i++) {
       let info = {
