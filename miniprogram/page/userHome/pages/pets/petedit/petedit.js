@@ -38,7 +38,10 @@ Page({
           pet_sterilize_situation:res.result.petSterilize? res.result.petSterilize:'未填写',
           pet_recent_vaccinate_date:res.result.petVaccinateDate? res.result.petVaccinateDate:'未填写',
         })
-      }
+      },
+      fail: err => {
+        console.error(err)
+      },
     })
   },
 
