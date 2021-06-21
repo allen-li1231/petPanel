@@ -20,7 +20,26 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    const app = getApp();
+    let id = app.globalData.openid;
+    wx.cloud.callFunction({
+      name: 'getUserInfo',
+      data: {
+        id: id
+      },
+      success: res => {
+        that.setData({
+          user_info: res.result,
+          user_nickname:res.result.userInfo.nickName? res.result.userInfo.nickName:'未填写',
+          user_mobile_number:res.result.userInfo.mobileNumber? res.result.userInfo.mobileNumber:'未填写',
+          user_birth_date:res.result.userInfo.birthDate? res.result.userInfo.birthDate:'未填写',
+          user_gender:res.result.userInfo.gender? res.result.userInfo.gender:'未填写',
+        })
+      },
+      fail: err => {
+        console.error(err)
+      },
+    })
   },
 
   /**

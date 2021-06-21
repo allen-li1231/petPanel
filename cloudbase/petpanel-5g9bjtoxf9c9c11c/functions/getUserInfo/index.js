@@ -1,5 +1,5 @@
 // 云函数入口文件
-const cloud = require('../getUserInfo/node_modules/wx-server-sdk')
+const cloud = require('wx-server-sdk')
 
 cloud.init({
   env: cloud.DYNAMIC_CURRENT_ENV
@@ -9,8 +9,8 @@ cloud.init({
 exports.main = async (event, context) => {
   console.log(event)
   var DB = cloud.database().collection("_corrupted")
-  if (event.name === "getPetInfo") {
-    DB = cloud.database().collection("userPet")
+  if (event.name === "getUserInfo") {
+    DB = cloud.database().collection("userInfo")
   }
   else {
     DB.add({
@@ -21,7 +21,7 @@ exports.main = async (event, context) => {
 
   delete event.name
   const res = await DB.where({
-    "_id": event.id
+    "openid": event.id
   })
   .get()
   console.log("fetch result:", res)
