@@ -22,7 +22,24 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let id = options.id;
+    wx.cloud.callFunction({
+      name: 'getPetInfo',
+      data: {
+        id: id
+      },
+      success: res => {
+        that.setData({
+          lst_pets_profile: res.result,
+          pet_name:res.result.petName? res.result.petName:'未填写',
+          pet_birth:res.result.petBirth? res.result.petBirth:'未填写',
+          pet_gender:res.result.petGender? res.result.petGender:'未填写',
+          pet_species:res.result.petSpecies? res.result.petSpecies:'未填写',
+          pet_sterilize_situation:res.result.petSterilize? res.result.petSterilize:'未填写',
+          pet_recent_vaccinate_date:res.result.petVaccinateDate? res.result.petVaccinateDate:'未填写',
+        })
+      }
+    })
   },
 
   /**
