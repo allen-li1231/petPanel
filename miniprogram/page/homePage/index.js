@@ -49,11 +49,11 @@ Page({
         },
         {
           name: '待定',
-          page: 'tt'
+          page: 'searchResult'
         },
         {
           name: '待定',
-          page: 'tt'
+          page: 'searchResult'
         }
       ]
     ],

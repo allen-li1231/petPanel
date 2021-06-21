@@ -10,6 +10,7 @@
     "page/homePage/pages/general-clinic/index",
     "page/homePage/pages/dog-license/index",
     "page/homePage/pages/cosmetology/index",
+    "page/homePage/pages/searchResult/index",
     "page/discover/hosdetail/hosdetail",
     "page/discover/vetdetail/vetdetail",
     "page/userHome/pages/favorites/favorites",
