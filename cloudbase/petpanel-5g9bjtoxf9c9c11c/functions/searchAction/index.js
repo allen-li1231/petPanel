@@ -9,7 +9,7 @@ cloud.init({
 exports.main = async (event, context) => {
   console.log(event)
   var DB = cloud.database().collection("_corrupted")
-  if (event.name === "petRegister") {
+  if (event.name === "discover") {
     DB = cloud.database().collection("hospitalInfo")
   }
   else {

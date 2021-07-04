@@ -63,7 +63,16 @@ CustomPage({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    let pages = getCurrentPages(); 
+    let prevPage = pages[pages.length - 2]; 
+    for (var i = 0, len = this.data.lst_pet_species_condition.length; i < len; ++i) {
+      if(this.data.lst_pet_species_condition[i].checked){
+        prevPage.setData({  
+          pet_species: this.data.lst_pet_species_condition[i].pet_species_condition
+        });
+        break;
+      }
+    }
   },
 
   /**
