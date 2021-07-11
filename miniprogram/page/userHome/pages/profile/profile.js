@@ -27,15 +27,16 @@ Page({
     wx.cloud.callFunction({
       name: 'getUserInfo',
       data: {
+        name: 'getUserInfo',
         id: id
       },
       success: res => {
-        that.setData({
+        this.setData({
           user_info: res.result,
-          user_nickname:res.result.userInfo.nickName? res.result.userInfo.nickName:'未填写',
-          user_mobile_number:res.result.userInfo.mobileNumber? res.result.userInfo.mobileNumber:'未填写',
-          user_birth_date:res.result.userInfo.birthDate? res.result.userInfo.birthDate:'未填写',
-          user_gender:res.result.userInfo.gender? res.result.userInfo.gender:'未填写',
+          user_nickname:res.result[0].userInfo.nickName? res.result[0].userInfo.nickName:'未填写',
+          user_mobile_number:res.result[0].userInfo.mobileNumber? res.result[0].userInfo.mobileNumber:'未填写',
+          user_birth_date:res.result[0].userInfo.birthDate? res.result[0].userInfo.birthDate:'未填写',
+          user_gender:res.result[0].userInfo.gender? res.result[0].userInfo.gender:'未填写',
         })
       },
       fail: err => {

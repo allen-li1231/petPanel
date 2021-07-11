@@ -10,6 +10,7 @@ exports.main = async (event, context) => {
   console.log(event)
   var DB = cloud.database().collection("_corrupted")
   if (event.name === "getPetInfo") {
+    console.log("start req", event.name)
     DB = cloud.database().collection("userPet")
   }
   else {
