@@ -10,6 +10,9 @@ Page({
    * 页面的初始数据
    */
   data: {
+    editAble: 'none',
+    bgcolor: 'royalblue',
+    buttonName: '编辑',
     user_nickname:'未填写',
     user_birth_date:'未填写',
     user_gender:'未填写',
@@ -20,6 +23,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var genderMap = {
+      1: "男",
+      2: "女"
+    }
     console.log("option", options);
 
     const app = getApp();
@@ -36,7 +43,7 @@ Page({
           user_nickname:res.result[0].userInfo.nickName? res.result[0].userInfo.nickName:'未填写',
           user_mobile_number:res.result[0].userInfo.mobileNumber? res.result[0].userInfo.mobileNumber:'未填写',
           user_birth_date:res.result[0].userInfo.birthDate? res.result[0].userInfo.birthDate:'未填写',
-          user_gender:res.result[0].userInfo.gender? res.result[0].userInfo.gender:'未填写',
+          user_gender:res.result[0].userInfo.gender? genderMap[res.result[0].userInfo.gender]:'未填写',
         })
       },
       fail: err => {
@@ -45,6 +52,22 @@ Page({
     })
   },
 
+  editButton: function(){
+    if (this.data.editAble == true){
+      this.setData({
+        editAble: 'none',
+        bgcolor: 'royalblue',
+        buttonName: '编辑'
+      })
+    }else{
+      this.setData({
+        editAble: true,
+        bgcolor: 'green',
+        buttonName: '保存'
+      })
+    }
+  },
+  
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

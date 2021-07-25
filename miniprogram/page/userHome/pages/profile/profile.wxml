@@ -1,6 +1,6 @@
 <!--page/userHome/pages/profile/profile.wxml-->
 <view class="page" data-weui-theme="{{theme}}">
-    <view class="page__bd">
+    <view class="page__bd" style="pointer-events: {{editAble}}">
         <mp-cells ext-class="my-cells" title="基本信息">
             <mp-cell link url="name/name" value="名字" footer="{{user_nickname}}">
             </mp-cell>
@@ -13,5 +13,8 @@
           <mp-cell link url="mobile/mobile" value="手机号" footer="{{user_mobile_number}}">
           </mp-cell>
         </mp-cells>
+    </view>
+    <view>
+        <button class="edit-btn" style="background-color:{{bgcolor}}" bindtap="editButton">{{buttonName}}</button>
     </view>
 </view>
