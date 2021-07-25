@@ -1,21 +1,24 @@
 <!--page/userHome/pages/pets/petedit/petedit.wxml-->
 <view class="page" data-weui-theme="{{theme}}">
-    <view class="page__bd">
+    <view class="page__bd" style="pointer-events: {{editAble}}">
         <mp-cells ext-class="my-cells" title="基本信息">
-            <mp-cell link url="petname/petname" value="名字" footer="{{pet_name}}">
+            <mp-cell link url="petname/petname?name={{pet_name}}" value="名字" footer="{{pet_name}}">
             </mp-cell>
-            <mp-cell link url="birth/birth" value="生日" footer="{{pet_birth}}">
+            <mp-cell link url="birth/birth?birth={{pet_birth}}" value="生日" footer="{{pet_birth}}">
             </mp-cell>
-            <mp-cell link url="gender/gender" value="性别" footer="{{pet_gender}}">
+            <mp-cell link url="gender/gender?gender={{pet_gender}}" value="性别" footer="{{pet_gender}}">
             </mp-cell>
         </mp-cells>
         <mp-cells>
-            <mp-cell link url="species/species" value="种类" footer="{{pet_species}}">
+            <mp-cell link url="species/species?species={{pet_species}}" value="种类" footer="{{pet_species}}">
             </mp-cell>
-            <mp-cell link url="sterilization/sterilization" value="绝育情况" footer="{{pet_sterilize_situation}}">
+            <mp-cell link url="sterilization/sterilization?sterilization={{pet_sterilize_situation}}" value="绝育情况" footer="{{pet_sterilize_situation}}">
             </mp-cell>
-            <mp-cell link url="vaccination/vaccination" value="上次疫苗时间" footer="{{pet_recent_vaccinate_date}}">
+            <mp-cell link url="vaccination/vaccination?vaccination={{pet_recent_vaccinate_date}}" value="上次疫苗时间" footer="{{pet_recent_vaccinate_date}}">
             </mp-cell>
         </mp-cells>
+    </view>
+    <view>
+        <button class="edit-btn" style="background-color:{{bgcolor}}" bindtap="editButton">{{buttonName}}</button>
     </view>
 </view>

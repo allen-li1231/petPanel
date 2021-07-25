@@ -16,7 +16,7 @@ CustomPage({
     lst_pet_sterilize_condition: [
     {pet_sterilize_condition: '已绝育', value: '0', checked: true},
     {pet_sterilize_condition: '未绝育', value: '1'},
-    {pet_sterilize_condition: '怀孕中',value:'2'}]
+    {pet_sterilize_condition: '怀孕中', value:'2'}]
 
   },
   petSterilizeChange: function (e) {

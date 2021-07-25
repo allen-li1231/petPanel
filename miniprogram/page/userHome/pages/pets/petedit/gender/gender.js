@@ -35,7 +35,18 @@ CustomPage({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log("gender", options.gender)
+    var lst_pet_gender_condition = this.data.lst_pet_gender_condition;
+    if (options.gender == "male"){
+      lst_pet_gender_condition[0].checked = true
+      lst_pet_gender_condition[1].checked = false
+    }else if (options.gender == "female"){
+      lst_pet_gender_condition[0].checked = false
+      lst_pet_gender_condition[1].checked = true
+    }
+    this.setData({
+      lst_pet_gender_condition: lst_pet_gender_condition,
+    })
   },
 
   /**
