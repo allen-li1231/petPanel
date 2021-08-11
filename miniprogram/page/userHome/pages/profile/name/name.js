@@ -16,6 +16,13 @@ Page({
     user_nickname: ''
   },
 
+
+  editName: function (e) {
+    this.setData({
+      user_nickname: e.detail.value
+    })
+  },
+  
   /**
    * 生命周期函数--监听页面加载
    */
@@ -48,7 +55,11 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    let pages = getCurrentPages(); 
+    let prevPage = pages[pages.length - 2]; 
+    prevPage.setData({  
+      user_nickname: this.data.user_nickname
+    })
   },
 
   /**

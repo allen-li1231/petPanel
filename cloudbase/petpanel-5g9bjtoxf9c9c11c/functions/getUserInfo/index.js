@@ -9,8 +9,8 @@ cloud.init({
 exports.main = async (event, context) => {
   console.log(event)
   var DB = cloud.database().collection("_corrupted")
-  if (event.name === "discover") {
-    DB = cloud.database().collection("hospitalInfo")
+  if (event.name === "getUserInfo") {
+    DB = cloud.database().collection("userInfo")
   }
   else {
     DB.add({
@@ -21,14 +21,8 @@ exports.main = async (event, context) => {
 
   delete event.name
   const res = await DB.where({
-    "name": 
-    {
-      regexp:'.*'+event.detail.value+'.*',
-      options:'i'
-    }
+    "openid": event.id
   })
-  .skip(0) // 跳过结果集中的前 10 条，从第 11 条开始返回
-  .limit(10)
   .get()
   console.log("fetch result:", res)
   return res.data

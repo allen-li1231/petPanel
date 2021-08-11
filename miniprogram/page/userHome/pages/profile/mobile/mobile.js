@@ -53,7 +53,11 @@ CustomPage({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    let pages = getCurrentPages(); 
+    let prevPage = pages[pages.length - 2]; 
+    prevPage.setData({  
+      user_mobile_number: this.data.user_mobile_number? this.data.user_mobile_number:'未填写(非必填项)'
+    })
   },
 
   /**

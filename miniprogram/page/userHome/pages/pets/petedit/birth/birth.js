@@ -24,7 +24,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      pet_birth_date: options.birth
+    })
   },
 
   /**
@@ -52,7 +54,11 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    let pages = getCurrentPages(); 
+    let prevPage = pages[pages.length - 2]; 
+    prevPage.setData({  
+      pet_birth: this.data.pet_birth_date
+    })
   },
 
   /**

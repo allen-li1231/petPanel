@@ -1,5 +1,5 @@
 // 云函数入口文件
-const cloud = require('wx-server-sdk')
+const cloud = require('../getUserInfo/node_modules/wx-server-sdk')
 
 cloud.init({
   env: cloud.DYNAMIC_CURRENT_ENV
@@ -9,8 +9,9 @@ cloud.init({
 exports.main = async (event, context) => {
   console.log(event)
   var DB = cloud.database().collection("_corrupted")
-  if (event.name === "discover") {
-    DB = cloud.database().collection("hospitalInfo")
+  if (event.name === "getPetInfo") {
+    console.log("start req", event.name)
+    DB = cloud.database().collection("userPet")
   }
   else {
     DB.add({
@@ -21,14 +22,8 @@ exports.main = async (event, context) => {
 
   delete event.name
   const res = await DB.where({
-    "name": 
-    {
-      regexp:'.*'+event.detail.value+'.*',
-      options:'i'
-    }
+    "_id": event.id
   })
-  .skip(0) // 跳过结果集中的前 10 条，从第 11 条开始返回
-  .limit(10)
   .get()
   console.log("fetch result:", res)
   return res.data

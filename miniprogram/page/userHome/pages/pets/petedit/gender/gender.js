@@ -35,7 +35,18 @@ CustomPage({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log("gender", options.gender)
+    var lst_pet_gender_condition = this.data.lst_pet_gender_condition;
+    if (options.gender == "male"){
+      lst_pet_gender_condition[0].checked = true
+      lst_pet_gender_condition[1].checked = false
+    }else if (options.gender == "female"){
+      lst_pet_gender_condition[0].checked = false
+      lst_pet_gender_condition[1].checked = true
+    }
+    this.setData({
+      lst_pet_gender_condition: lst_pet_gender_condition,
+    })
   },
 
   /**
@@ -63,7 +74,16 @@ CustomPage({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    let pages = getCurrentPages(); 
+    let prevPage = pages[pages.length - 2]; 
+    for (var i = 0, len = this.data.lst_pet_gender_condition.length; i < len; ++i) {
+      if(this.data.lst_pet_gender_condition[i].checked){
+        prevPage.setData({  
+          pet_gender: this.data.lst_pet_gender_condition[i].pet_gender_condition
+        });
+        break;
+      }
+    }
   },
 
   /**

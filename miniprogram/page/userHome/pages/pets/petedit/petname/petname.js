@@ -16,11 +16,17 @@ Page({
     pet_name: ''
   },
 
+  editName: function (e) {
+    this.setData({
+      pet_name: e.detail.value
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({pet_name: options.name})
+    console.log("name", this.options.name)
   },
 
   /**
@@ -48,7 +54,11 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    let pages = getCurrentPages(); 
+    let prevPage = pages[pages.length - 2]; 
+    prevPage.setData({  
+      pet_name: this.data.pet_name
+    })    
   },
 
   /**
