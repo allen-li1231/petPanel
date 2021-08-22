@@ -23,9 +23,15 @@ CustomPage({
         }],
     });
   },
-  onShow: function(opts) {
+  onShow: async function(opts) {
     const that = this
     const app = getApp()
+    
+    wx.showToast({
+      title: '请稍等...',
+      icon: "loading",
+      mask: true
+  })
     wx.cloud.callFunction({
       name: 'fetchAction',
       data: {
@@ -36,6 +42,7 @@ CustomPage({
         that.setData({
           lst_pets_profile: res.result
         })
+        wx.hideToast()
       }
     })
   },
@@ -43,7 +50,4 @@ CustomPage({
   slideButtonTap(e) {
 
     },
-
-
-  
 })
