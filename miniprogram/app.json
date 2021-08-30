@@ -22,12 +22,7 @@
     "page/userHome/pages/pets/petedit/gender/gender",
     "page/userHome/pages/pets/petedit/species/species",
     "page/userHome/pages/pets/petedit/sterilization/sterilization",
-    "page/userHome/pages/pets/petedit/vaccination/vaccination",
-    "page/userHome/pages/profile/profile",
-    "page/userHome/pages/profile/name/name",
-    "page/userHome/pages/profile/gender/gender",
-    "page/userHome/pages/profile/birth/birth",
-    "page/userHome/pages/profile/mobile/mobile"
+    "page/userHome/pages/pets/petedit/vaccination/vaccination"
   ],
   "subpackages": [],
   "preloadRule": {

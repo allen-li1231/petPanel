@@ -1,5 +1,0 @@
-/* page/userHome/pages/profile/birth/birth.wxss */
-.weui-input{
-  margin-top:20rpx;
-  background-color:white;
-}

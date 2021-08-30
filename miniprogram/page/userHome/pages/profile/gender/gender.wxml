@@ -1,9 +1,0 @@
-<!--page/userHome/pages/profile/gender/gender.wxml-->
-  <view class="page" data-weui-theme="{{theme}}">
-    <mp-cells title="">
-      <mp-checkbox-group prop="radio" multi="{{false}}" bindchange="userGenderChange">
-        <mp-checkbox wx:for="{{lst_user_gender_condition}}" wx:key="value" label="{{item.user_gender_condition}}" value="{{item.value}}"
-          checked="{{item.checked}}"></mp-checkbox>
-      </mp-checkbox-group>
-    </mp-cells>
-  </view>

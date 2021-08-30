@@ -20,7 +20,7 @@ CustomPage({
         petGenderFemaleChecked: false,
 
         formData: {
-            petName: null,
+            name: "petRegister",
         },
 
         formRules: [{
@@ -72,6 +72,8 @@ CustomPage({
                 modifyView: true,
                 title: options.petName + " 宠物信息",
                 subtitle: "修改宠物信息后，点击下方保存按钮进行提交", 
+
+                "formData.name": "petModify",
                 petName: options.petName,
                 "formData.petName": options.petName,
                 petBirth: options.petBirth,
@@ -132,8 +134,8 @@ CustomPage({
 
     submitForm() {
         this.selectComponent('#form').validate((valid, errors) => {
-            console.log('valid', valid, errors)
             if (!valid) {
+                console.log('valid', valid, errors)
                 const firstError = Object.keys(errors)
                 if (firstError.length) {
                     this.setData({

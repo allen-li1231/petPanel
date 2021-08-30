@@ -14,7 +14,7 @@
         </view>
       </block>
       <block wx:else>
-        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{appGlobal.userInfo.avatarUrl}}" mode="cover"></image>
+        <image bindtap="getUserInfo" class="userinfo-avatar" src="{{appGlobal.userInfo.avatarUrl}}" mode="cover"></image>
         <text class="userinfo-nickname">{{appGlobal.userInfo.nickName}}</text>
       </block>
     </view>
