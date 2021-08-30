@@ -26,20 +26,20 @@
                 <mp-cell prop="formPetType" ext-class="weui-cell_select weui-cell_select-after">
                     <view slot="title" class="weui-label">种类</view>
                     <picker bindchange="formPetSpeciesChange" value="{{pet_species_index}}" range="{{lst_pet_species_condition}}">
-                        <view class="weui-select">{{pet_species_index == null? "请选择宠物种类": lst_pet_species_condition[pet_species_index]}}</view>
+                        <view class="weui-select">{{pet_species_index === null? "请选择宠物种类": lst_pet_species_condition[pet_species_index]}}</view>
                     </picker>
                 </mp-cell>
                 <mp-cell prop="formPetSterilize" ext-class="weui-cell_select weui-cell_select-after">
                     <view slot="title" class="weui-label">绝育情况</view>
                     <picker bindchange="formPetSterilizeChange" value="{{pet_sterilize_index}}" range="{{lst_pet_sterilize_condition}}">
-                        <view class="weui-select">{{pet_sterilize_index == null? "请选择绝育情况": lst_pet_sterilize_condition[pet_sterilize_index]}}</view>
+                        <view class="weui-select">{{pet_sterilize_index === null? "请选择绝育情况": lst_pet_sterilize_condition[pet_sterilize_index]}}</view>
                     </picker>
                 </mp-cell>
                 <mp-cell prop="formPetVaccineDate">
                     <view slot="title" style="width:'300px'">最近疫苗时间</view>
                     <picker mode="date" value="{{pet_recent_vaccinate_date}}" start="{{petDateRange.start}}" end="{{petDateRange.end}}"
                         bindchange="formPetVaccineDateChange">
-                        <view class="weui-input">{{pet_recent_vaccinate_date == null? "暂无": pet_recent_vaccinate_date}}</view>
+                        <view class="weui-input">{{pet_recent_vaccinate_date === null? "暂无": pet_recent_vaccinate_date}}</view>
                     </picker>
                 </mp-cell>
             </mp-cells>

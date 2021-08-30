@@ -74,6 +74,7 @@ CustomPage({
                 subtitle: "修改宠物信息后，点击下方保存按钮进行提交", 
 
                 "formData.name": "petModify",
+                "formData.id": options.id,
                 petName: options.petName,
                 "formData.petName": options.petName,
                 petBirth: options.petBirth,
