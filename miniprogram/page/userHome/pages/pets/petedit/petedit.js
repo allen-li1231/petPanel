@@ -58,6 +58,11 @@ Page({
    */
   onShow: function (options) {
     // const that = this
+    wx.showToast({
+      title: '请稍等...',
+      icon: "loading",
+      mask: true
+  })
     let id = this.data["id"];
     if (id != '0'){
       wx.cloud.callFunction({
@@ -72,15 +77,15 @@ Page({
             "male": "男",
             "female": "女"
         }
-        var speciesMap = {
-          "cat": "猫",
-          "dog": "狗"
-        }
-        var sterilizeMap = {
-          "unsterilized": "暂未绝育", 
-          "pregnanted": "暂未绝育", 
-          "sterilized": "已绝育"
-        }
+          var speciesMap = {
+            "cat": "猫",
+            "dog": "狗"
+          }
+          var sterilizeMap = {
+            "unsterilized": "暂未绝育", 
+            "pregnanted": "暂未绝育", 
+            "sterilized": "已绝育"
+          }
           this.setData({
             lst_pets_profile: res.result,
             pet_name:res.result[0].petName? res.result[0].petName:'未填写',
@@ -96,9 +101,23 @@ Page({
         fail: err => {
           console.error(err)
         },
+        complete: () => {
+          wx.hideToast()
+        }
       })
     }
-    
+    else {
+      wx.cloud.callFunction({
+        name: 'getPetInfo',
+        data: {
+          name: 'bad_pet_id_from_unknown_source',
+          id: id
+        },
+        success: res => {
+          console.log("res", res.result)
+        }
+      })
+    }
   },
 
   /**
