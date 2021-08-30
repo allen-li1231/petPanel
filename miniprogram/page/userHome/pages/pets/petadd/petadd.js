@@ -6,21 +6,23 @@ CustomPage({
     
     onShareAppMessage() {
         return {
-          title: '添加宠物信息',
+          title: '新建/修改宠物信息',
           path: 'page/userHome/pets/petadd/petadd'
         }
       },
 
-    onShow(opts) {
-        
-    },
-
     data: {
         showTopTips: false,
+        modifyView: false,
+        title: "新建宠物信息",
+        subtitle: "请在此填写您的宠物信息，我们将根据以下信息匹配合适的医疗服务。信息填写越详细准确，服务也会更好哦",
+        petGenderMaleChecked: false,
+        petGenderFemaleChecked: false,
 
         formData: {
-            name: "petRegister",
+            petName: null,
         },
+
         formRules: [{
             name: 'petName',
             rules: [{required: true, message: '宠物姓名是必选项'},
@@ -61,6 +63,31 @@ CustomPage({
 
         },
 
+    onLoad(options) {
+        if (Object.keys(options).length > 0){
+            wx.setNavigationBarTitle({
+              title: '修改宠物信息',
+            })
+            this.setData({
+                modifyView: true,
+                title: options.petName + " 宠物信息",
+                subtitle: "修改宠物信息后，点击下方保存按钮进行提交", 
+                petName: options.petName,
+                "formData.petName": options.petName,
+                petBirth: options.petBirth,
+                "formData.petBirth": options.petBirth,
+                petGenderMaleChecked: options.petGender === "male"? true: false,
+                petGenderFemaleChecked: options.petGender === "female"? true: false,
+                "formData.petGender": options.petGender,
+                pet_species_index: this.data.lst_pet_species_condition_en.indexOf(options.petSpecies),
+                "formData.petSpecies": options.petSpecies,
+                pet_sterilize_index: options.petSterilize? this.data.lst_pet_sterilize_condition_en.indexOf(options.petSterilize): 0,
+                "formData.petSterilize": options.petSterilize,
+                pet_recent_vaccinate_date: options.petVaccineDate? options.petVaccineDate: null,
+                "formData.petVaccineDate": options.petVaccineDate? options.petVaccineDate: null,
+            })
+        }
+    },
     formPetBirthChange: function (e) {
         this.setData({
             "formData.petBirth": e.detail.value,
