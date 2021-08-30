@@ -15,7 +15,7 @@
                 <mp-cell prop="formPetGender" title="性别" bindchange="formPetGenderChange">
                     <radio-group name="radio" bindchange="formPetGenderChange">
                         <label>
-                            <radio value="male" />男</label>
+                            <radio value="male" />男    </label>
                         <label>
                             <radio value="female" />女</label>
                     </radio-group>

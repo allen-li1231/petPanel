@@ -18,7 +18,7 @@
             </mp-cell>
         </mp-cells>
     </view>
-    <view>
-        <button class="edit-btn" style="background-color:{{bgcolor}}" bindtap="editButton">{{buttonName}}</button>
+    <view wx:if="{{formModified}}">
+        <button class="edit-btn" style="background-color:green" disabled="{{!formModified}}" bindtap="saveButton">保存</button>
     </view>
 </view>
