@@ -1,7 +1,9 @@
 // page/userHome/index.js
+import AOPage from '../API/AOPage'
 const app = getApp()
 
-Page({
+
+AOPage({
   onShareAppMessage() {
     return {
       title: '我的信息',

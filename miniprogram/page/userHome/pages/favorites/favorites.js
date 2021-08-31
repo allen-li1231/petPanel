@@ -1,8 +1,8 @@
 // page/userHome/pages/favorites/favorites.js
-import CustomPage from '../../base/CustomPage'
-const colorLight = 'rgba(0, 0, 0, .9)'
+import AOPage from '../../../API/AOPage'
 
-CustomPage({
+
+AOPage({
   onShareAppMessage() {
     return {
       title: '我的收藏',

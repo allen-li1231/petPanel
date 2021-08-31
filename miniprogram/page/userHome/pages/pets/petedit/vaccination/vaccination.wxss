@@ -1,5 +1,0 @@
-/* page/userHome/pages/pets/petedit/vaccination/vaccination.wxss */
-.weui-input{
-  margin-top:20rpx;
-  background-color:white;
-}

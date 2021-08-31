@@ -1,9 +1,0 @@
-<!--page/userHome/pages/pets/petedit/sterilization/sterilization.wxml-->
-  <view class="page" data-weui-theme="{{theme}}">
-    <mp-cells title="">
-      <mp-checkbox-group prop="radio" multi="{{false}}" bindchange="petSterilizeChange">
-        <mp-checkbox wx:for="{{lst_pet_sterilize_condition}}" wx:key="value" label="{{item.pet_sterilize_condition}}" value="{{item.value}}"
-          checked="{{item.checked}}"></mp-checkbox>
-      </mp-checkbox-group>
-    </mp-cells>
-  </view>

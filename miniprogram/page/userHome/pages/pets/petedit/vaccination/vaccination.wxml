@@ -1,9 +1,0 @@
-<!--page/userHome/pages/pets/petedit/vaccination/vaccination.wxml-->
-<view class="page" data-weui-theme="{{theme}}">
-  <mp-cell prop="date" ext-class="weui-input">
-    <picker data-field="date" mode="date" value="{{pet_recent_vaccinate_date}}" start="2000-09-01" end="2022-01-01"
-      bindchange="petVaccinateDateChange">
-      <view class="weui-input">{{pet_recent_vaccinate_date}}</view>
-    </picker>
-  </mp-cell>
-</view>

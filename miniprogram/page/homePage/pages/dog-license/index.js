@@ -1,8 +1,8 @@
 // page/homePage/pages/dog-license/index.js
-import CustomPage from '../../../userHome/base/CustomPage'
+import AOPage from '../../../API/AOPage'
 const colorLight = 'rgba(0, 0, 0, .9)'
 
-CustomPage({
+AOPage({
   onShareAppMessage() {
     return {
       title: '知萌-办狗证',

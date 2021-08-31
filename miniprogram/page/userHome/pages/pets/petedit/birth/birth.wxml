@@ -1,7 +1,0 @@
-<!--page/userHome/pages/pets/petedit/birth/birth.wxml-->
-<view class="page" data-weui-theme="{{theme}}">
-  <mp-cell prop="date" ext-class="weui-input">
-    <picker data-field="date" mode="date" value="{{pet_birth_date}}" start="2000-09-01" end="2022-01-01"
-      bindchange="petBirthDateChange">{{pet_birth_date}}</picker>
-  </mp-cell>
-</view>

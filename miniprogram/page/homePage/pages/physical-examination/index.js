@@ -1,8 +1,8 @@
 // page/homePage/pages/physical-examination/index.js
-import CustomPage from '../../../userHome/base/CustomPage'
-const colorLight = 'rgba(0, 0, 0, .9)'
+import AOPage from '../../../API/AOPage'
 
-CustomPage({
+
+AOPage({
   onShareAppMessage() {
     return {
       title: '知萌-体检',

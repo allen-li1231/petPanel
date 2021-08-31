@@ -36,7 +36,7 @@ function  insertOrUpdateData(collection, existedData, data) {
 }
 
 // 查询已插入/更新的数据中记录的服务端时间
-function  setCompletedData(collection, id) {
+function setCompletedData(collection, id) {
   db.collection(collection).doc(id).get()
     .then(res => {
       wx.showToast({
@@ -68,4 +68,12 @@ function insertData(collection) {
       showError()
       console.error('[数据库] [查询记录] 失败：', err)
     })
+}
+
+module.exports = {
+  formatTime,
+  formatLocation,
+  fib,
+  formatDateTime,
+  compareVersion
 }

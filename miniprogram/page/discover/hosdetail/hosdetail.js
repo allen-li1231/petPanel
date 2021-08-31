@@ -1,7 +1,7 @@
 // page/discover/hosdetail/hosdetail.js
-import CustomPage from '../../userHome/base/CustomPage'
+import AOPage from '../../API/AOPage'
 
-CustomPage({
+AOPage({
   onShareAppMessage() {
     return {
       title: '医院详情',

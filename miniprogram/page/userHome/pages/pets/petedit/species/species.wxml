@@ -1,9 +1,0 @@
-<!--page/userHome/pages/pets/petedit/kind/kind.wxml-->
-  <view class="page" data-weui-theme="{{theme}}">
-    <mp-cells title="">
-      <mp-checkbox-group prop="radio" multi="{{false}}" bindchange="petSpeciesChange">
-        <mp-checkbox wx:for="{{lst_pet_species_condition}}" wx:key="value" label="{{item.pet_species_condition}}" value="{{item.value}}"
-          checked="{{item.checked}}"></mp-checkbox>
-      </mp-checkbox-group>
-    </mp-cells>
-  </view>

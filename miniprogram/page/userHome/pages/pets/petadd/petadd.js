@@ -1,8 +1,8 @@
-import CustomPage from '../../../base/CustomPage'
+import AOPage from '../../../../API/AOPage'
 import {formatDateTime} from '../../../../../util/util'
 
 
-CustomPage({
+AOPage({
     
     onShareAppMessage() {
         return {
@@ -148,7 +148,8 @@ CustomPage({
                 wx.showToast({
                     title: '请稍等...',
                     icon: "loading",
-                    mask: true
+                    mask: true,
+                    duration: 30000
                 })
 
                 let app = getApp()
@@ -163,7 +164,7 @@ CustomPage({
                         wx.showToast({
                             title: '保存成功',
                             icon: 'success',
-                            duration: 2000,
+                            duration: 30000,
                             success: res => {
                                 wx.navigateBack({
                                     delta: 1,
@@ -177,7 +178,7 @@ CustomPage({
                         wx.showToast({
                             title: '请稍后重试',
                             icon: 'error',
-                            duration: 2000,
+                            duration: 30000,
                         })
                     },
                 })

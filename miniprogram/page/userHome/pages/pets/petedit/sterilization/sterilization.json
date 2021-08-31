@@ -1,9 +1,0 @@
-{
-  "navigationBarTitleText": "宠物绝育情况",
-  "usingComponents": {
-    "mp-cells": "weui-miniprogram/cells/cells",
-    "mp-cell": "weui-miniprogram/cell/cell",
-    "mp-checkbox": "weui-miniprogram/checkbox/checkbox",
-    "mp-checkbox-group": "weui-miniprogram/checkbox-group/checkbox-group"
-  }
-}

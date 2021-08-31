@@ -1,6 +1,7 @@
-const app = getApp()
+import AOPage from '../API/AOPage'
 
-Page({
+
+AOPage({
   onShow() {
     wx.getSystemInfo({
       success: (res) => {

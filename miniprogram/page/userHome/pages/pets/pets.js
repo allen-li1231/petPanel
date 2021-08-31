@@ -1,10 +1,8 @@
 // page/userHome/pages/pets/pets.js
-import CustomPage from '../../base/CustomPage'
+import AOPage from '../../../API/AOPage'
 
-const colorLight = 'rgba(0, 0, 0, .9)'
-const colorDark = 'rgba(255, 255, 255, .8)'
 
-CustomPage({
+AOPage({
   onShareAppMessage() {
       return {
         title: '宠物信息',
@@ -30,7 +28,8 @@ CustomPage({
     wx.showToast({
       title: '请稍等...',
       icon: "loading",
-      mask: true
+      mask: true,
+      duration: 30000
   })
     wx.cloud.callFunction({
       name: 'fetchAction',

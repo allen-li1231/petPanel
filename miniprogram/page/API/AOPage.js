@@ -1,6 +1,6 @@
 import themeMixin from './behaviors/theme'
 
-const CustomPage = function (options) {
+const AOPage = function (options) {
 	return Page(
 		Object.assign({}, options, {
 			behaviors: [themeMixin].concat(options.behaviors || []),
@@ -24,4 +24,4 @@ const CustomPage = function (options) {
 	)
 }
 
-export default CustomPage
+export default AOPage

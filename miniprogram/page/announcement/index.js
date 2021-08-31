@@ -1,7 +1,7 @@
 // page/announcement/index.js
-import CustomPage from '../userHome/base/CustomPage'
+import AOPage from '../API/AOPage'
 
-CustomPage({
+AOPage({
   onShareAppMessage() {
     return {
       title: '关于我们',
