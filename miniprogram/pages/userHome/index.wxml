@@ -2,31 +2,34 @@
 <import src="../common/foot.wxml" />
 <!--page/userHome/index.wxml-->
 
-<view class="index" data-weui-theme="{{theme}}">
-  <view class="index-hd">
-    <view class="userinfo">
-      <block wx:if="{{!appGlobal.hasUserInfo && canIUseGetUserInfo}}">
-        <button bindtap="getUserInfo"> 
-          授权小程序
-        </button>
-        <view class="index-desc">
-          点击按钮，授权小程序获得您的基本公开信息
-        </view>
-      </block>
-      <block wx:else>
-        <image bindtap="getUserInfo" class="userinfo-avatar" src="{{appGlobal.userInfo.avatarUrl}}" mode="cover"></image>
-        <text class="userinfo-nickname">{{appGlobal.userInfo.nickName}}</text>
-      </block>
+
+<view class="container">
+  <view class="index" data-weui-theme="{{theme}}">
+    <view class="index-hd">
+      <view class="userinfo">
+        <block wx:if="{{!appGlobal.hasUserInfo && canIUseGetUserInfo}}">
+          <button bindtap="getUserInfo"> 
+            授权小程序
+          </button>
+          <view class="index-desc">
+            点击按钮，授权小程序获得您的基本公开信息
+          </view>
+        </block>
+        <block wx:else>
+          <image bindtap="getUserInfo" class="userinfo-avatar" src="{{appGlobal.userInfo.avatarUrl}}" mode="cover"></image>
+          <text class="userinfo-nickname">{{appGlobal.userInfo.nickName}}</text>
+        </block>
+      </view>
+    </view>
+    <view wx:if="{{appGlobal.hasUserInfo}}" class="index-bd">
+      <view class="kind-list">
+        <block wx:key="_" wx:for-items="{{lst_page}}">
+            <navigator url="pages/{{item.page}}/{{item.page}}" class="navigator">
+              <view class="kind-list-text">{{item.page_name}}</view>
+            </navigator>
+        </block>
+      </view>
+      <template is="foot"></template>
     </view>
   </view>
-  <view wx:if="{{appGlobal.hasUserInfo}}" class="index-bd">
-    <view class="kind-list">
-      <block wx:key="_" wx:for-items="{{lst_page}}">
-          <navigator url="pages/{{item.page}}/{{item.page}}" class="navigator">
-            <view class="kind-list-text">{{item.page_name}}</view>
-          </navigator>
-      </block>
-    </view>
-  </view>
-  <template is="foot"></template>
 </view>

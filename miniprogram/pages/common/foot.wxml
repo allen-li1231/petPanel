@@ -1,5 +1,7 @@
 <template name="foot">
-  <navigator class="page-foot" openType="navigate" url="/pages/announcement/index" hover-class="none">
-    <view class="text-foot">关于我们</view>
-  </navigator>
+  <view class="page-body-wrapper">
+    <navigator class="page-foot" openType="navigate" url="/pages/announcement/index" hover-class="none">
+      关于我们
+    </navigator>
+  </view>
 </template>

@@ -20,7 +20,7 @@
     <view class="page-section-spacing">
       <search-bar placeholder="请输入关键字" bind:handleSearch="handleSearch"></search-bar>
     </view>
+    <template is="foot">
+    </template>
   </view>
-  <template is="foot">
-  </template>
 </view>
