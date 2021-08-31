@@ -2,15 +2,15 @@
 <view class="page" data-weui-theme="{{theme}}">
   <view class="page__bd">
     <mp-cells>
-      <block wx:key="_" wx:for-items="{{lst_pets_profile}}">
-        <mp-slideview show="{{false}}" buttons="{{slideButtons}}" bindbuttontap="slideButtonTap">
-          <navigator url="petadd/petadd?id={{item._id}}&petName={{item.petName}}&petBirth={{item.petBirth}}&petGender={{item.petGender}}&petSpecies={{item.petSpecies}}&petSterilize={{item.petSterilize}}&petVaccineDate={{item.petVaccineDate}}">
-            <mp-cell class="petProfile">{{item.petName}} 档案</mp-cell>
+      <block wx:key="i" wx:for-items="{{lst_slide_buttons}}">
+        <mp-slideview show="{{false}}" buttons="{{item.slideButtons}}" bindbuttontap="slideButtonTap">
+          <navigator url="{{item.slideButtons[0].data}}">
+            <mp-cell class="weui-slideview">{{item.petName}} 档案</mp-cell>
           </navigator>
         </mp-slideview>
       </block>
     </mp-cells>
-    <navigator url="petadd/petadd" hover-class="other-navigator">
+    <navigator wx:if="{{canCreatePetProfile}}" url="petadd/petadd" hover-class="other-navigator">
       <button class="addNew-btn">新建宠物信息</button>
     </navigator>
   </view>

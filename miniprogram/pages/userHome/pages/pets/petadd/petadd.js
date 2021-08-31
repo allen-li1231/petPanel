@@ -86,7 +86,7 @@ AOPage({
                 "formData.petSpecies": options.petSpecies,
                 pet_sterilize_index: options.petSterilize? this.data.lst_pet_sterilize_condition_en.indexOf(options.petSterilize): 0,
                 "formData.petSterilize": options.petSterilize,
-                pet_recent_vaccinate_date: options.petVaccineDate? options.petVaccineDate: null,
+                pet_recent_vaccinate_date: options.petVaccineDate? options.petVaccineDate: '暂无',
                 "formData.petVaccineDate": options.petVaccineDate? options.petVaccineDate: null,
             })
         }
