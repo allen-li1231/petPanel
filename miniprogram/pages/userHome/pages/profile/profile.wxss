@@ -1,0 +1,5 @@
+/* page/userHome/pages/profile/profile.wxss */
+.edit-btn {
+  color: #fff;
+  margin: 30px 100px 0 100px;
+}

@@ -1,6 +1,5 @@
 const config = require('./config')
 const themeListeners = []
-global.isDemo = true
 
 
 App({
@@ -18,6 +17,7 @@ App({
     hasUserInfo: false,
     hasLoggedIn: false,
     lastLoginid: null,
+    hasPetInfo: false
   },
 
   onLaunch(opts, data) {
@@ -117,15 +117,17 @@ App({
   // 通过云函数获取用户 openid，支持回调或 Promise
   getWXContext(callback) {
     wx.cloud.callFunction({
-      name: 'wxContext',
+      name: 'getWxContext',
       data: {},
       success: res => {
         // console.log("getWXContext returns:", res);
-        this.globalData.openid = res.result.openid;
-        this.globalData.appid = res.result.appid;
-        this.globalData.unionid = res.result.unionid;
+        this.globalData.openid = res.result.openid
+        this.globalData.appid = res.result.appid
+        this.globalData.unionid = res.result.unionid
       },
-      fail: err => { console.error("Unable to get wxContext in time", err); },
+      fail: err => {
+        console.error("Unable to get wxContext in time", err)
+      },
       complete: () => {if (callback) callback()}
     })
 },

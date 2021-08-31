@@ -15,7 +15,7 @@ AOPage({
    * 页面的初始数据
    */
   data: {
-    List: [
+    lst_page: [
         {
           page_name: '宠物信息',
           page: 'pets'
@@ -29,24 +29,16 @@ AOPage({
           page: 'favorites'
         },
     ],
-    theme: 'light',
     appGlobal: null,
     canIUseGetUserInfo: true,
   },
 
-  onLoad() {
+  onLoad(options) {
     this.setData({
-      theme: wx.getSystemInfoSync().theme || 'light',
-      appGlobal: app.globalData,
+      appGlobal: app.globalData
     })
-
-    if (wx.onThemeChange) {
-      wx.onThemeChange(({ theme }) => {
-        this.setData({ theme })
-      })
-    }
   },
-
+  
   getUserInfo() {
     wx.getUserProfile({
       desc: "获取和使用您的头像和基本信息",
@@ -67,15 +59,18 @@ AOPage({
             openid: app.globalData.openid,
             userInfo: app.globalData.userInfo,
           },
-          success: (res) => {
+          success: res => {
             console.log("userInfo update returns", res)
           },
           fail: err => {
             console.error(err)
+            wx.showToast({
+              title: '获取权限失败',
+              icon: 'error'
+            })
           },
         })
       }
     })
   },
-  
 })
