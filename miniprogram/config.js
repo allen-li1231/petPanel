@@ -12,6 +12,7 @@ const config = {
   // 云开发环境 ID
   envId: 'petpanel-5g9bjtoxf9c9c11c',
   // envId: 'test-f0b102',
+  max_pet: 15
 }
 
 module.exports = config

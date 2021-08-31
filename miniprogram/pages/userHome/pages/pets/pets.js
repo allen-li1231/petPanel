@@ -1,5 +1,7 @@
 // page/userHome/pages/pets/pets.js
 import AOPage from '../../../common/AOPage'
+const app = getApp()
+const MAX_PET = app.globalData.config.max_pet
 
 
 AOPage({
@@ -57,7 +59,7 @@ AOPage({
         }
         that.setData({
           lst_slide_buttons: lst_slide_buttons,
-          cancCreatePetProfile: lst_slide_buttons.length < 15
+          cancCreatePetProfile: lst_slide_buttons.length < MAX_PET
         })
         wx.hideToast()
       }
