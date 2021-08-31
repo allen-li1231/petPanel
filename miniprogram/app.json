@@ -1,25 +1,25 @@
 {
   "pages": [
-    "page/homePage/index",
-    "page/discover/index",
-    "page/userHome/index",
-    "page/announcement/index",
-    "page/homePage/pages/vaccination/index",
-    "page/homePage/pages/sterilization/index",
-    "page/homePage/pages/physical-examination/index",
-    "page/homePage/pages/general-clinic/index",
-    "page/homePage/pages/dog-license/index",
-    "page/homePage/pages/cosmetology/index",
-    "page/homePage/pages/searchResult/index",
-    "page/discover/hosdetail/hosdetail",
-    "page/discover/vetdetail/vetdetail",
-    "page/userHome/pages/favorites/favorites",
-    "page/userHome/pages/pets/pets",
-    "page/userHome/pages/pets/petadd/petadd"
+    "pages/homePage/index",
+    "pages/discover/index",
+    "pages/userHome/index",
+    "pages/announcement/index",
+    "pages/homePage/pages/vaccination/index",
+    "pages/homePage/pages/sterilization/index",
+    "pages/homePage/pages/physical-examination/index",
+    "pages/homePage/pages/general-clinic/index",
+    "pages/homePage/pages/dog-license/index",
+    "pages/homePage/pages/cosmetology/index",
+    "pages/homePage/pages/searchResult/index",
+    "pages/discover/hosdetail/hosdetail",
+    "pages/discover/vetdetail/vetdetail",
+    "pages/userHome/pages/favorites/favorites",
+    "pages/userHome/pages/pets/pets",
+    "pages/userHome/pages/pets/petadd/petadd"
   ],
   "subpackages": [],
   "preloadRule": {
-    "page/homePage/index": {
+    "pages/homePage/index": {
       "network": "all",
       "packages": []
     }
@@ -37,19 +37,19 @@
     "backgroundColor": "@tabBarBackgroundColor",
     "list": [
       {
-        "pagePath": "page/homePage/index",
+        "pagePath": "pages/homePage/index",
         "iconPath": "@iconPathComponent",
         "selectedIconPath": "@selectedIconPathComponent",
         "text": "首页"
       },
       {
-        "pagePath": "page/discover/index",
+        "pagePath": "pages/discover/index",
         "iconPath": "@iconPathCloud",
         "selectedIconPath": "@selectedIconPathCloud",
         "text": "发现"
       },
       {
-        "pagePath": "page/userHome/index",
+        "pagePath": "pages/userHome/index",
         "iconPath": "@iconPathAPI",
         "selectedIconPath": "@selectedIconPathAPI",
         "text": "我的"

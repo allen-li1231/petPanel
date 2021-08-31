@@ -1,4 +1,4 @@
-@import "./page/common/lib/weui.wxss";
+@import "./pages/common/lib/weui.wxss";
 
 
 /* reset */
