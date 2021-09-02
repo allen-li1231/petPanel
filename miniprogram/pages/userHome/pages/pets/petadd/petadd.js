@@ -79,8 +79,8 @@ AOPage({
                 "formData.petName": options.petName,
                 petBirth: options.petBirth,
                 "formData.petBirth": options.petBirth,
-                petGenderMaleChecked: options.petGender === "male"? true: false,
-                petGenderFemaleChecked: options.petGender === "female"? true: false,
+                petGenderMaleChecked: options.petGender === "male",
+                petGenderFemaleChecked: options.petGender === "female",
                 "formData.petGender": options.petGender,
                 pet_species_index: this.data.lst_pet_species_condition_en.indexOf(options.petSpecies),
                 "formData.petSpecies": options.petSpecies,
@@ -216,9 +216,6 @@ AOPage({
                 title: "删除失败",
                 icon: " error",
                 duration: 3000,
-                success: () => {
-                  this.onShow()
-                }
               })
             }
           })

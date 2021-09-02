@@ -47,7 +47,7 @@ exports.main = async (event, context) => {
       data: {
         createTime: now,
         openid: event.openid,
-        userInfo: event.userInfo? event.userInfo: {}
+        userInfo: event.userInfo || {}
       }
     })
     

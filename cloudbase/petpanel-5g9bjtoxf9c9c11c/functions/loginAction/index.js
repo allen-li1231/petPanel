@@ -84,7 +84,7 @@ newLoginInfo = async function(event) {
   const res = await userInfoDB.add({
     data: {
       openid: event.openid,
-      userInfo: event.userInfo? event.userInfo: {},
+      userInfo: event.userInfo || {},
       // might be unused in the future
       //pets: {},
       //favourites: {}

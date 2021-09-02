@@ -4,8 +4,7 @@
         <mp-form id="form" rules="{{formRules}}" models="{{formData}}">
             <mp-cells title="基本信息">
                 <mp-cell prop="formPetName" title="名字" ext-class="">
-                    <input bindinput="formPetNameInputChange" class="weui-input" placeholder="请输入宠物名字"
-                        value="{{petName}}" />
+                    <input bindinput="formPetNameInputChange" class="weui-input" placeholder="请输入宠物名字" value="{{petName}}" />
                 </mp-cell>
                 <mp-cell prop="formPetBirth" title="生日" ext-class="">
                     <picker mode="date" start="{{petDateRange.start}}" end="{{petDateRange.end}}"
@@ -54,9 +53,7 @@
         </mp-form>
         <view slot="button">
             <button class="save-btn" bindtap="submitForm">保存</button>
-            <view wx:if="{{modifyView}}">
-                <button class="delete-btn" bindtap="deleteForm">删除</button>
-            </view>
+            <button wx:if="{{modifyView}}" class="delete-btn" bindtap="deleteForm">删除</button>
         </view>
     </mp-form-page>
 </view>

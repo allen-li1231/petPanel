@@ -56,7 +56,7 @@ AOPage({
     let pages = getCurrentPages(); 
     let prevPage = pages[pages.length - 2]; 
     prevPage.setData({  
-      user_mobile_number: this.data.user_mobile_number? this.data.user_mobile_number:'未填写(非必填项)'
+      user_mobile_number: this.data.user_mobile_number || '未填写(非必填项)'
     })
   },
 
