@@ -59,7 +59,7 @@ AOPage({
         }
         that.setData({
           lst_slide_buttons: lst_slide_buttons,
-          cancCreatePetProfile: lst_slide_buttons.length < MAX_PET
+          canCreatePetProfile: lst_slide_buttons.length < MAX_PET
         })
         wx.hideToast()
       }
