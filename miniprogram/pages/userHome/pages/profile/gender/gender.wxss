@@ -1,5 +1,0 @@
-/* page/userHome/pages/profile/gender/gender.wxss */
-@import '../../common.wxss';
-.weui-agree .weui-agree__text {
-  display: inline;
-}

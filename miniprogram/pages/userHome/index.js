@@ -21,10 +21,6 @@ AOPage({
           page: 'pets'
         },
         {
-          page_name: '个人资料',
-          page: 'profile'
-        },
-        {
           page_name: '我的收藏',
           page: 'favorites'
         },
