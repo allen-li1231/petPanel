@@ -13,6 +13,15 @@
   .save-btn::after {
     border: none;
   }
+  .delete-btn{
+    color: #fff;
+    background-color:rgb(234,177,115);
+    margin-right: 80px;
+    margin-left: 80px;
+    }
+    .delete-btn::after {
+      border: none;
+    }
   .weui-input{
     color:grey;
   }

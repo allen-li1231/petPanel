@@ -184,6 +184,44 @@ AOPage({
                 })
             }
         })
+    },
+    deleteForm(){
+        wx.showToast({
+            title: '请稍等...',
+            icon: "loading",
+            mask: true,
+            duration: 30000
+        })
+        wx.cloud.callFunction({
+            name: "modifyAction",
+            data: {
+              name: "deletePet",
+              id: this.data.formData.id
+            },
+            success: res => {
+                wx.showToast({
+                    title: '删除成功',
+                    icon: 'success',
+                    duration: 30000,
+                    success: res => {
+                        wx.navigateBack({
+                            delta: 1,
+                        })
+                    }
+                })
+            },
+            fail: res => {
+              console.error(res)
+              wx.showToast({
+                title: "删除失败",
+                icon: " error",
+                duration: 3000,
+                success: () => {
+                  this.onShow()
+                }
+              })
+            }
+          })
     }
 
 });
