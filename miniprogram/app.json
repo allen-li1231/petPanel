@@ -12,7 +12,9 @@
     "pages/homePage/pages/cosmetology/index",
     "pages/homePage/pages/searchResult/index",
     "pages/discover/hosdetail/hosdetail",
+    "pages/discover/hosadd/hosadd",
     "pages/discover/vetdetail/vetdetail",
+    "pages/discover/vetadd/vetadd",
     "pages/userHome/pages/favorites/favorites",
     "pages/userHome/pages/pets/pets",
     "pages/userHome/pages/pets/petadd/petadd"

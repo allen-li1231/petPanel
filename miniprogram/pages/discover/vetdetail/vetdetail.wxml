@@ -12,6 +12,9 @@
         <view class="base-info">
           <view class="base-info-line1">
             <view class="title-name">{{vet_name}}</view>
+            <navigator url="../hosadd/hosadd" hover-class="other-navigator">
+              <view class="text-navigator">[编辑]</view>
+            </navigator>
             <view class="flex-item icon">
               <mp-icon type="outline" icon="star" color="rgb(234,177,115)" size="25"></mp-icon>
             </view>

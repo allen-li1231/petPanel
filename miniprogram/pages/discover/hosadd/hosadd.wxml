@@ -1,0 +1,48 @@
+<!--pages/discover/hosadd/hosadd.wxml-->
+<view class="page" data-weui-theme="{{theme}}">
+    <mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+    <mp-form-page title="{{title}}" subtitle="{{subtitle}}">
+        <mp-form id="form" rules="{{formRules}}" models="{{formData}}">
+            <mp-cells title="基本信息">
+                <mp-cell prop="formHospitalName" title="名字" ext-class="">
+                    <input bindinput="formHospitalNameInputChange" class="weui-input" placeholder="请输入医院名" value="{{hospitalName}}" />
+                </mp-cell>
+                <mp-cell prop="formHospitalAddress" title="地址" ext-class="">
+                    <input bindinput="formHospitalAddressInputChange" class="weui-input" placeholder="请输入地址" value="{{hospitalAddress}}" />
+                </mp-cell>
+                <mp-cell prop="formHospitalTeleNumber" title="联系电话" ext-class="">
+                    <input bindinput="formHospitalTeleNumberInputChange" class="weui-input" placeholder="请输入联系电话" value="{{hospitalTeleNumber}}" />
+                </mp-cell>
+                <mp-cell prop="formHospitalWorkTime" title="工作时间" ext-class="">
+                    <input bindinput="formHospitalWorkTimeInputChange" class="weui-input" placeholder="请输入工作时间" value="{{hospitalWorkTime}}" />
+                </mp-cell>
+
+            </mp-cells>
+            <mp-cells title="详细信息">
+                <mp-cell prop="formHospitalLicense" ext-class="weui-cell_select weui-cell_select-after">
+                    <view slot="title" class="weui-label">诊疗范围</view>
+                    <picker bindchange="formHospitalLicenseChange" value="{{hospital_license_index}}"
+                        range="{{lst_hospital_license_condition}}">
+                        <view class="weui-select">{{hospital_license_index === null? "请选择诊疗范围":
+                            lst_hospital_license_condition[hospital_license_index]}}</view>
+                    </picker>
+                </mp-cell>
+                <mp-cell prop="formHospitalLicenseExpirationDate" title="有效期限" ext-class="">
+                    <picker mode="date" start="{{hospitalLicenseExpirationDateRange.start}}" end="{{hospitalLicenseExpirationDateRange.end}}"
+                        bindchange="formHospitalLicenseExpirationDateChange">
+                        <view class="weui-input">{{hospitalLicenseExpirationDate == null? "请输入有效期限": hospitalLicenseExpirationDate}}</view>
+                    </picker>
+                </mp-cell>
+            </mp-cells>
+            <mp-cells title="诊疗资格证书图片">
+            <mp-cell>
+                <mp-uploader bindfail="uploadError" bindsuccess="uploadSuccess" select="{{selectFile}}" upload="{{uplaodFile}}" files="{{files}}" max-count="5"></mp-uploader>
+            </mp-cell>
+            </mp-cells>
+        </mp-form>
+        <view slot="button">
+            <button class="save-btn" bindtap="submitForm">保存</button>
+            <button wx:if="{{modifyView}}" class="delete-btn" bindtap="deleteForm">删除</button>
+        </view>
+    </mp-form-page>
+</view>

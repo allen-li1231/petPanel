@@ -55,3 +55,8 @@ right: 20px;
   margin: 12px;
   color:rgb(70,118,166);
 }
+.text-navigator {
+  color: rgb(234, 177, 115);
+  background-color: #F8F8FF;
+  margin-top: 4px;
+}
