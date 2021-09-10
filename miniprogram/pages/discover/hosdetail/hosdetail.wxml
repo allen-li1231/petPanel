@@ -7,6 +7,9 @@
     <mp-cell>
       <view class="hospital-info">
         <view class="title-name">{{hospital_name}}</view>
+        <navigator url="../../userHome/pages/pets/petadd/petadd" hover-class="other-navigator">
+          <view class="text-navigator">[编辑]</view>
+        </navigator>
         <view class="flex-item icon">
           <mp-icon type="outline" icon="star" color="rgb(234,177,115)" size="25"></mp-icon>
         </view>
@@ -60,5 +63,6 @@
       </i-collapse>
     </view>
   </mp-cells>
+
 
 </view>

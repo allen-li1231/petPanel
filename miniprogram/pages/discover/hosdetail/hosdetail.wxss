@@ -1,56 +1,73 @@
 /* page/discover/hosdetail/hosdetail.wxss */
-.page{
+.page {
   width: 702rpx;
-  display:flex;
-  flex-direction:column;
+  display: flex;
+  flex-direction: column;
   margin: 20rpx auto;
 }
-.msg-box{
-  background-color:#FAFAD2;
+
+.msg-box {
+  background-color: #FAFAD2;
 }
-.hospital-info{
+
+.hospital-info {
   padding: 1px;
   display: flex;
   justify-content: space-between;
 }
-.base-info{
+
+.base-info {
   padding: 1px;
   display: flex;
   justify-content: space-between;
 }
-.detail{
+
+.detail {
   padding: 1px;
   display: flex;
   justify-content: space-between;
 }
-.title-name{
+
+.title-name {
   font-size: 24px;
-  color:rgb(70,118,166);
+  color: rgb(70, 118, 166);
 }
-.title-vetname{
+
+.title-vetname {
   font-size: 20px;
-  color:rgb(70,118,166);
+  color: rgb(70, 118, 166);
 }
-.vet-info{
+
+.vet-info {
   margin: 20px;
   white-space: nowrap;
 }
-.multi-info{
+
+.multi-info {
   display: inline-block;
   width: 25%;
   position: relative;
 }
-.image{
-  display:block;
+
+.image {
+  display: block;
   width: 50px;
   height: 50px;
 }
-.vetPhoto{
+
+.vetPhoto {
   width: 100%;
   height: 100%;
 }
-.title-devicename{
+
+.title-devicename {
   font-size: 20px;
   margin: 12px;
-  color:rgb(70,118,166);
+  color: rgb(70, 118, 166);
+}
+
+.text-navigator {
+  color: rgb(234, 177, 115);
+  background-color: #F8F8FF;
+  margin-top: 4px;
 }

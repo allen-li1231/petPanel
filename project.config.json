@@ -1,5 +1,5 @@
 {
-  "miniprogramRoot": "./miniprogram",
+  "miniprogramRoot": "miniprogram/",
   "cloudfunctionRoot": "cloudfunctions/",
   "cloudbaseRoot": "cloudbase/",
   "setting": {
@@ -20,8 +20,8 @@
     "checkSiteMap": true,
     "uploadWithSourceMap": true,
     "compileHotReLoad": false,
-    "useMultiFrameRuntime": true,
-    "useApiHook": true,
+    "useMultiFrameRuntime": false,
+    "useApiHook": false,
     "useApiHostProcess": false,
     "babelSetting": {
       "ignore": [],
@@ -34,10 +34,7 @@
     "packNpmManually": false,
     "packNpmRelationList": [],
     "minifyWXSS": true,
-    "disableUseStrict": false,
-    "minifyWXML": true,
-    "showES6CompileOption": false,
-    "useSummerCompiler": false
+    "showES6CompileOption": false
   },
   "appid": "wx00c7b2ec47d78a0b",
   "projectname": "petPanel",
