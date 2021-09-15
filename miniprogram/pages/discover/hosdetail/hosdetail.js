@@ -42,6 +42,11 @@ AOPage({
       vet_name:'贾医生',
       vet_photo:'../../API/components/image/avatar-default-icon.png',
       vet_navigator_link:'../vetdetail/vetdetail',
+    },
+    {
+      vet_name:'添加',
+      vet_photo:'../../API/components/image/avatar-add-icon.png',
+      vet_navigator_link:'../vetadd/vetadd',
     }
   ],
   lst_device_info:[{
@@ -58,9 +63,20 @@ AOPage({
     device_id:'name3',
     device_name:'洗牙器械',
     device_description:'满足洗牙需求',
-  }]
+  }],
+  showOneButtonDialog: false,
+  oneButton: [{text: '确定'}],
   },
-
+  openConfirm: function () {
+    this.setData({
+        dialogShow: true
+    })
+},
+tapOneDialogButton(e) {
+    this.setData({
+        showOneButtonDialog: true
+    })
+},
   /**
    * 生命周期函数--监听页面加载
    */

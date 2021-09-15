@@ -23,10 +23,19 @@
 /* 修改navigator-text默认背景色 */
 .text-navigator {
   color:rgb(70,118,166);
-background-color:	#F8F8FF;
+  background-color:	#F8F8FF;
 }
 .tag{
   width:70%;
   font-size:15px;
   color:#A9A9A9;
+}
+.text-navigator-bottom{
+  color:rgb(70,118,166);
+  background-color:	#F8F8FF;
+  text-align:center;
+  position:fixed;
+  bottom:30rpx;
+  left:0;
+  right:0;
 }

@@ -71,3 +71,22 @@
   background-color: #F8F8FF;
   margin-top: 4px;
 }
+.vet-title-info{
+  padding: 1px;
+  display: flex;
+  justify-content: space-between;
+}
+.vet-lst-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.weui-btn{
+  color:rgb(70,118,166);
+  background-color:	#F8F8FF;
+  text-align:center;
+  position:fixed;
+  bottom:30rpx;
+  left:0;
+  right:0;
+}

@@ -12,7 +12,7 @@
         <view class="base-info">
           <view class="base-info-line1">
             <view class="title-name">{{vet_name}}</view>
-            <navigator url="../hosadd/hosadd" hover-class="other-navigator">
+            <navigator url="../vetadd/vetadd" hover-class="other-navigator">
               <view class="text-navigator">[编辑]</view>
             </navigator>
             <view class="flex-item icon">
@@ -31,7 +31,7 @@
     <mp-cell value="从业年限" footer="{{vet_work_year}}"></mp-cell>
     <mp-cell value="擅长" footer="{{vet_expertise}}"></mp-cell>
     <mp-cell link url="{{vet_certificate_photo}}" value="执业兽医师资格证书" footer="点击查看">
-      <!-- 这里没写完-->
+      <!-- 这里点击图片可以查看-->
     </mp-cell>
   </mp-cells>
   <mp-cells>

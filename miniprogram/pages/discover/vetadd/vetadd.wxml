@@ -1,2 +1,36 @@
 <!--pages/discover/vetadd/vetadd.wxml-->
-<text>pages/discover/vetadd/vetadd.wxml</text>
+<view class="page" data-weui-theme="{{theme}}">
+    <mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+    <mp-form-page title="{{title}}" subtitle="{{subtitle}}">
+        <mp-form id="form" rules="{{formRules}}" models="{{formData}}">
+            <mp-cells title="基本信息">
+                <mp-cell prop="formVetName" title="名字" ext-class="">
+                    <input bindinput="formVetNameInputChange" class="weui-input" placeholder="请输入姓名" value="{{vetName}}" />
+                </mp-cell>
+                <mp-cell prop="formVetType" title="职称" bindchange="formVetTypeChange">
+                    <radio-group name="radio" bindchange="formVetTypeChange">
+                        <label>
+                            <radio value="assistant" checked="{{vetTypeAssistantChecked}}" />助理兽医师
+                        </label>
+                        <br/>
+                        <label>
+                            <radio value="vet" checked="{{vetTypeVetChecked}}" />兽医师
+                        </label>
+                    </radio-group>
+                </mp-cell>
+            </mp-cells>
+            <!--
+                只在选择【兽医师】时需要上传图片，选择【助理兽医师】时隐藏
+            -->
+            <mp-cells title="执业兽医资格证书">
+            <mp-cell>
+                <mp-uploader bindfail="uploadError" bindsuccess="uploadSuccess" select="{{selectFile}}" upload="{{uplaodFile}}" files="{{files}}" max-count="5"></mp-uploader>
+            </mp-cell>
+            </mp-cells>
+        </mp-form>
+        <view slot="button">
+            <button class="save-btn" bindtap="submitForm">保存</button>
+            <button wx:if="{{modifyView}}" class="delete-btn" bindtap="deleteForm">删除</button>
+        </view>
+    </mp-form-page>
+</view>

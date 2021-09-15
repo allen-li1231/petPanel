@@ -37,20 +37,24 @@
   </mp-cells>
   <mp-cells>
     <mp-cell>
-      <view class="title-vetname">院内医生</view>
+      <view class="vet-title-info">
+        <view class="title-vetname">院内医生</view>
+      </view>
     </mp-cell>
     <scroll-view class="vet-info" scroll-x="true" bindscroll="scroll">
       <block wx:for="{{lst_vet_info}}" wx:key="item">
         <navigator url="{{item.vet_navigator_link}}" class="multi-info">
-          <view class="image">
-            <image class="vetPhoto" src="{{item.vet_photo}}"></image>
+          <view class="vet-lst-info">
+            <view class="image">
+              <image class="vetPhoto" src="{{item.vet_photo}}"></image>
+            </view>
+            <view class="vetName">{{item.vet_name}}</view>
           </view>
-          <view class="vetName">{{item.vet_name}}</view>
         </navigator>
       </block>
     </scroll-view>
   </mp-cells>
-
+  <!--
   <mp-cells>
     <view class="caption-wrap">
       <text class="title-devicename">特色设施介绍</text>
@@ -63,6 +67,13 @@
       </i-collapse>
     </view>
   </mp-cells>
-
-
+-->
+  <button class="weui-btn" style="width:80vw" bindtap="tapOneDialogButton">
+    <!--这里设置点击直接反馈给后台就好了。跳一个反馈成功的popup-->
+    <text>如该医院已不存在，请联系我们</text>
+  </button>
+  <mp-dialog title="反馈成功" show="{{showOneButtonDialog}}" bindbuttontap="tapDialogButton" buttons="{{oneButton}}">
+    <view>感谢反馈，我们会尽快核实</view>
+    <!--这里要设置点确定之后弹框消失-->
+  </mp-dialog>
 </view>

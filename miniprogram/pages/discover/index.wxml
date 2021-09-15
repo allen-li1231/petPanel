@@ -31,5 +31,8 @@
       </mp-cell>
     </mp-cells>
   </block>
+  <navigator url="hosadd/hosadd" hover-class="other-navigator">
+    <view class="text-navigator-bottom">找不到结果？</view>
+    </navigator>
   </view>
 </view>

@@ -1,1 +1,30 @@
 /* pages/discover/vetadd/vetadd.wxss */
+@import '../../userHome/pages/common.wxss';
+.weui-agree .weui-agree__text {
+  display: inline;
+}
+.save-btn{
+  color: #fff;
+  background-color:green;
+  margin-right: 80px;
+  margin-left: 80px;
+  margin-top: -40px;
+  }
+  .save-btn::after {
+    border: none;
+  }
+  .delete-btn{
+    color: #fff;
+    background-color:rgb(234,177,115);
+    margin-right: 80px;
+    margin-left: 80px;
+    }
+    .delete-btn::after {
+      border: none;
+    }
+  .weui-input{
+    color:grey;
+  }
+  .weui-select{
+    color:grey;
+  }

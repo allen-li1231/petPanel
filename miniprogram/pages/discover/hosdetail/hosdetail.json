@@ -6,6 +6,7 @@
     "mp-icon": "weui-miniprogram/icon/icon",
     "i-notice-bar": "../../API/components/notice-bar/index",
     "i-collapse": "../../API/components/collapse/index",
-    "i-collapse-item": "../../API/components/collapse-item/index"
+    "i-collapse-item": "../../API/components/collapse-item/index",
+    "mp-dialog": "weui-miniprogram/dialog/dialog"
   }
 }
