@@ -60,3 +60,14 @@ right: 20px;
   background-color: #F8F8FF;
   margin-top: 4px;
 }
+.weui-btn{
+  color:rgb(70,118,166);
+  background-color:	#F8F8FF;
+  font-size: 15px;
+  font:normal;
+  text-align:center;
+  position:fixed;
+  bottom:30rpx;
+  left:0;
+  right:0;
+}

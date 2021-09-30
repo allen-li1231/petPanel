@@ -46,4 +46,12 @@
       </i-collapse>
     </view>
   </mp-cells>
+  <button class="weui-btn" style="width:80vw" bindtap="tapOneDialogButton">
+    <!--这里设置点击直接反馈给后台就好了。跳一个反馈成功的popup-->
+    <text>如该医生已不在职，请联系我们</text>
+  </button>
+  <mp-dialog title="反馈成功" show="{{showOneButtonDialog}}" bindbuttontap="tapDialogButton" buttons="{{oneButton}}">
+    <view>感谢反馈，我们会尽快核实</view>
+    <!--这里要设置点确定之后弹框消失-->
+  </mp-dialog>
 </view>

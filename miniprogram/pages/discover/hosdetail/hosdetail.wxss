@@ -84,6 +84,8 @@
 .weui-btn{
   color:rgb(70,118,166);
   background-color:	#F8F8FF;
+  font-size: 15px;
+  font:normal;
   text-align:center;
   position:fixed;
   bottom:30rpx;

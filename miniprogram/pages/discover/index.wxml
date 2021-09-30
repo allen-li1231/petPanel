@@ -10,29 +10,27 @@
     <i-tab key="general-clinic" title="看病"></i-tab>
     <i-tab key="dog-license" title="狗证"></i-tab>
     <i-tab key="cosmetology" title="美容"></i-tab>
-</i-tabs>
-<view wx:if="{{current_scroll == 'vaccination'}}">
-  <block wx:for="{{lst_hospital_info}}" wx:key="item">
-    <mp-cells>
-      <mp-cell>
-        <view class ="title" >
-          <view class="title-name">{{item.hospital_name}}</view>
-          <view class="flex-item icon">
-            <mp-icon type="outline" icon="star" color="rgb(234,177,115)" size="25"></mp-icon>
-          </view>
-        </view>
-        <view class="distance">距离{{item.hospital_distance}}公里</view>
-        <view class="detail">
-          <view class="tag">推荐：{{item.hospital_tag}}</view>
+  </i-tabs>
+  <view wx:if="{{current_scroll == 'vaccination'}}">
+    <block wx:for="{{lst_hospital_info}}" wx:key="item">
+      <mp-cells>
+        <mp-cell>
           <navigator url="{{navHos}}" hover-class="ohter-navigator">
+            <view class="title">
+              <view class="title-name">{{item.hospital_name}}</view>
+              <view class="flex-item icon">
+                <mp-icon type="outline" icon="star" color="rgb(234,177,115)" size="25"></mp-icon>
+              </view>
+            </view>
+            <view class="distance">距离{{item.hospital_distance}}公里</view>
+            <view class="tag">推荐：{{item.hospital_tag}}</view>
             <view class="text-navigator">详情>></view>
-            </navigator>
-          </view>
-      </mp-cell>
-    </mp-cells>
-  </block>
-  <navigator url="hosadd/hosadd" hover-class="other-navigator">
-    <view class="text-navigator-bottom">找不到结果？</view>
+          </navigator>
+        </mp-cell>
+      </mp-cells>
+    </block>
+    <navigator url="hosadd/hosadd" hover-class="other-navigator">
+      <view class="text-navigator-bottom">找不到结果？</view>
     </navigator>
   </view>
 </view>

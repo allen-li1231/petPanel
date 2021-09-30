@@ -22,9 +22,20 @@ Page({
       vet_case_id:'name2',
       vet_case_title:'子宫蓄脓',
       vet_case_content:'小宝最近发现阴道口流出黄褐色物质，超声可见腹腔内大量液性暗区，手术摘除后恢复良好',
-    }]
+    }],
+    showOneButtonDialog: false,
+    oneButton: [{text: '确定'}],
   },
-
+  openConfirm: function () {
+    this.setData({
+        dialogShow: true
+    })
+},
+tapOneDialogButton(e) {
+    this.setData({
+        showOneButtonDialog: true
+    })
+},
   /**
    * 生命周期函数--监听页面加载
    */

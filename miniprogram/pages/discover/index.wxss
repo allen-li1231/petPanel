@@ -11,11 +11,6 @@
   display: flex;
   justify-content: space-between;
 }
-.detail{
-  padding: 1px;
-  display: flex;
-  justify-content: space-between;
-}
 .title-name{
   font-size: 24px;
   color:rgb(70,118,166);
@@ -24,6 +19,9 @@
 .text-navigator {
   color:rgb(70,118,166);
   background-color:	#F8F8FF;
+  position:absolute;
+  right:10px;
+  bottom:15px;
 }
 .tag{
   width:70%;
@@ -32,7 +30,6 @@
 }
 .text-navigator-bottom{
   color:rgb(70,118,166);
-  background-color:	#F8F8FF;
   text-align:center;
   position:fixed;
   bottom:30rpx;
